@@ -964,3 +964,7 @@ footer h2 {
 .mfp-bg {
     z-index: 9999;
 }
+
+.player {
+    z-index: 999999;
+}
