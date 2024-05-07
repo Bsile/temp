@@ -105,6 +105,7 @@ a:active {
     animation: bg-animation .2s infinite;
     opacity: .9;
     visibility: visible;
+    z-index: -99;
 }
 
 @keyframes bg-animation {
@@ -264,6 +265,8 @@ a:active {
     padding-top: 30px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-kerning: none;
+    width: 100%;
 }
 
 #description h3 {
@@ -277,6 +280,8 @@ a:active {
     padding-top: 15px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-kerning: none;
+    width: 100%;
 
 }
 
@@ -292,11 +297,19 @@ a:active {
     color: var(--contenttransparent);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-kerning: none;
+    width: 100%;
 }
 
 .line {
     overflow: hidden;
+    position: relative;
 }
+
+.word{
+    position: relative;
+}
+
 
 .pulse {
     display: block;
@@ -492,7 +505,7 @@ nav h3 {
     font-size: medium;
     font-weight: 400;
     letter-spacing: -1px;
-    color: var(--content);
+    color: var(--contenttransparent);
     opacity: 50%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -506,7 +519,7 @@ nav h3 {
     font-weight: 400;
     letter-spacing: -1px;
     text-align: right;
-    color: var(--content);
+    color: var(--contenttransparent);
     opacity: 50%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -949,5 +962,5 @@ footer h2 {
 }
 
 .mfp-bg {
-    z-index: 1;
+    z-index: 9999;
 }

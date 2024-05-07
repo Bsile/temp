@@ -104,12 +104,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener("DOMContentLoaded", (event) => {
 
-
-
   // Split text into spans
   let typeSplit = new SplitType("[text-split]", {
-    types: "lines, words, chars",
-    tagName: "span"
+    types: "lines, words",
+    tagName: "span",
+    wordClass: 'word'
   });
 
   const textrev = gsap.timeline();
