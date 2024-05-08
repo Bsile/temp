@@ -403,6 +403,7 @@ nav h3 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: all ease 0.3s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 nav h3:hover {
@@ -444,6 +445,7 @@ nav h3:hover {
     border-radius: 12px;
     cursor: pointer;
     transition: all ease 0.4s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #work .box:hover {
