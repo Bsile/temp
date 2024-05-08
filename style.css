@@ -198,6 +198,7 @@ a:active {
     width: 50%;
     cursor: pointer;
     transition: all ease 0.4s;
+    border-radius: 12px;
 }
 
 #reel:hover {
@@ -208,16 +209,16 @@ a:active {
 #video {
     width: 100%;
     border-radius: 12px;
-    border: solid;
-    border-width: 1px;
-    border-color: var(--border);
     object-fit: cover;
     transition: all ease 0.4s;
+    outline: solid;
+    outline-width: 1px;
+    outline-color: var(--border);
 }
 
 #video:hover {
-    border-color: var(--borderhover);
     transition: all ease 0.4s;
+    outline-color: var(--borderhover);
 }
 
 #profil {
@@ -408,8 +409,10 @@ nav h3:hover {
     width: 100px;
     height: 100px;
     border-radius: 100%;
-    object-fit: cover;
     z-index: 0;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
 }
 
 #work {
@@ -722,15 +725,6 @@ footer h2 {
         visibility: hidden;
     }
 
-    #reel {
-        width: calc(100%);
-    }
-
-    #video {
-        object-fit: cover;
-        height: -webkit-fill-available;
-    }
-
     #content {
         width: 100%;
     }
@@ -771,9 +765,10 @@ footer h2 {
 
     #pp {
         position: absolute;
+        border: none;
         outline: solid;
         outline-color: var(--container);
-        outline-width: 4px;
+        outline-width: 3px;
         z-index: 1;
         width: 87px;
         height: 87px;
