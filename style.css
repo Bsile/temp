@@ -21,16 +21,37 @@ body:not(.dark-mode) {
     width: 100%;
     background-color: var(--background);
     overflow-x: hidden;
+    position: sticky;
     --background: #090B0C;
     --container: #121212;
     --box: #222222;
     --border: #787878;
-    --content: #fff;
-    --contenttransparent: rgba(255, 255, 255, 0.5);
+    --borderhover: #c9c9c9;
+    --content: rgb(235, 233, 252, 1);
+    --contenttransparent: rgba(235, 233, 252, 0.5);
     --overlayon: rgba(0, 0, 0, 0.8);
     --overlayoff: rgba(0, 0, 0, 0.0);
     transition: all ease 0.4s;
-    display: contents;
+    display: table-row-group;
+}
+
+.dark-mode {
+    height: 100%;
+    width: 100%;
+    background-color: var(--background);
+    overflow-x: hidden;
+    position: sticky;
+    --background: #f6f4f3;
+    --container: #FBFBFE;
+    --box: #FBFBFE;
+    --border: #cacaca;
+    --borderhover: #515151;
+    --content: rgb(5, 3, 21, 1);
+    --contenttransparent: rgba(5, 3, 21, 0.5);
+    --overlayon: rgba(0, 0, 0, 0.8);
+    --overlayoff: rgba(255, 255, 255, 0.0);
+    transition: all ease 0.4s;
+    display: table-row-group;
 }
 
 #mouse {
@@ -45,23 +66,8 @@ body:not(.dark-mode) {
     justify-content: center;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    transition: background-color ease 0.4s;
     /*cursor: none;*/
-}
-
-.dark-mode {
-    height: 100%;
-    width: 100%;
-    background-color: var(--background);
-    overflow-x: hidden;
-    --background: #ededed;
-    --container: #f6f4f3;
-    --box: #f6f4f3;
-    --border: #cacaca;
-    --content: #000000;
-    --contenttransparent: rgba(0, 0, 0, 0.5);
-    --overlayon: rgba(0, 0, 0, 0.8);
-    --overlayoff: rgba(255, 255, 255, 0.0);
-    transition: all ease 0.4s;
 }
 
 a:link {
@@ -206,6 +212,12 @@ a:active {
     border-width: 1px;
     border-color: var(--border);
     object-fit: cover;
+    transition: all ease 0.4s;
+}
+
+#video:hover {
+    border-color: var(--borderhover);
+    transition: all ease 0.4s;
 }
 
 #profil {
@@ -388,6 +400,10 @@ nav h3 {
     transition: all ease 0.3s;
 }
 
+nav h3:hover {
+    border-color: var(--borderhover);
+}
+
 #storie {
     width: 100px;
     height: 100px;
@@ -426,6 +442,7 @@ nav h3 {
 #work .box:hover {
     translate: 0 -0.8vw;
     transition: all ease 0.4s;
+    border-color: var(--borderhover);
 }
 
 @media screen and (max-width: 1280px) {
