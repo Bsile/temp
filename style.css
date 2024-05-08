@@ -768,7 +768,7 @@ footer h2 {
         border: none;
         outline: solid;
         outline-color: var(--container);
-        outline-width: 3px;
+        outline-width: 4px;
         z-index: 1;
         width: 87px;
         height: 87px;
