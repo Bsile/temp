@@ -1,4 +1,4 @@
-import { showPage, hidePage } from '/assets/barba/transition.js';
+import { showPage, hidePage } from '/temp/assets/barba/transition.js';
 
 barba.init({
   debug: true,
