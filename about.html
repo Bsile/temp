@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basile. R - Motion Designer</title>
+    <link rel="shortcut icon" href="favicon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body onload="onload()" data-barba="wrapper">
+
+    <div class="bg"></div>
+    <div id="mouse"></div>
+
+    <div class="pt">
+        <div class="pt_wrapper">
+            <div class="pt_text">
+                <h2 id="pagename">pageName</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+
+        <div id="container" data-barba="container" data-barba-namespace="about">
+            <div id="header">
+                <div id="content">
+                    <nav class="mobile">
+                        <h3 id="link"><a href="index.html" onclick="changeText('work')">Work ↘</a></h3>
+                        <h3 id="link"><a href="about.html" onclick="changeText('about')">À propos ↘</a></h3>
+                        <h3 id="link"><a href="contact.html" onclick="changeText('contact')">Contact ↘</a></h3>
+                    </nav>
+                    <div id="profil">
+                        <div id="avatar">
+                            <a id="link" class="popup-vimeo" href="http://vimeo.com/898815441?autoplay=1&loop=1&">
+                                <div id="avatarcenter">
+
+                                    <img id="pp" src="assets/images/photodeprofil.webp" alt="photo de profil">
+                                    <div id="storie" class="mobile">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div id="nickname">
+                            <div>
+                                <h1>Basile. R</h1>
+                            </div>
+                            <div class="available">
+                                <span class="pulse"></span>
+                                <h5>Disponible</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="description">
+                        <h2 text-split="">
+                            Freelance & étudiant motion designer
+                        </h2>
+                        <h3 text-split="">
+                            Créateur passionné d’expériences motion innovantes, <br>je façonne avec le cœur un avenir
+                            aux
+                            pixels uniques.
+                        </h3>
+                        <h4 text-split="">
+                            France / Montpellier
+                        </h4>
+                    </div>
+                    <nav class="desk">
+                        <h3 id="link"><a href="index.html" onclick="changeText('work')">Work ↘</a></h3>
+                        <h3 id="link"><a href="about.html" onclick="changeText('about')">À propos ↘</a></h3>
+                        <h3 id="link"><a href="contact.html" onclick="changeText('contact')">Contact ↘</a></h3>
+                    </nav>
+                </div>
+                <div id="reel" class="desk">
+                    <a id="link" class="popup-vimeo" href="http://vimeo.com/898815441?autoplay=1&loop=1&"><video
+                            id="video" autoplay loop preload=metadata muted>
+                            <source src="assets/videos/makebetterthumb.webm" type="video/mp4">
+                        </video></a>
+                </div>
+            </div>
+            <div id="work">
+                <div class="box" id="link" href="makebetter.html">
+                    <div id="cover">
+                        <video loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()">
+                            <source src="assets/videos/makebetterthumb.webm" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="desc">
+                        <h3 text-split="">MakeBetter</h3>
+                        <div id="details">
+                            <h5 text-split="">Animation d'interface</h5>
+                            <h6 text-split="">2024 - Projet client</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" id="link" href="latavernedudesign.html">
+                    <div id="cover">
+                        <video loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()">
+                            <source src="assets/videos/ltddthumb.webm" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="desc">
+                        <h3 text-split="">La Taverne Du Design</h3>
+                        <div id="details">
+                            <h5 text-split="">Vidéo promotionnelle</h5>
+                            <h6 text-split="">2023 - Projet client</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" id="link" href="ring.html">
+                    <div id="cover">
+                        <img src="assets/images/ninecover.webp" alt="MakeBetter">
+                        <video loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()"
+                            onmouseleave="this.pause();this.currentTime=0;">
+                            <source src="assets/videos/ninethumb.webm" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="desc">
+                        <h3 text-split="">Ring</h3>
+                        <div id="details">
+                            <h5 text-split="">Essai à la fake 3D</h5>
+                            <h6 text-split="">2023 - Projet personnel</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" id="link" href="nine.html">
+                    <div id="cover">
+                        <img src="assets/images/ninecover.webp" alt="MakeBetter">
+                        <video loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()"
+                            onmouseleave="this.pause();this.currentTime=0;">
+                            <source src="assets/videos/ninethumb.webm" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="desc">
+                        <h3 text-split="">Nine Marketing & Digital</h3>
+                        <div id="details">
+                            <h5 text-split="">Vidéo de présentation</h5>
+                            <h6 text-split="">2023 - Projet client</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" id="link" href="mixx.html">
+                    <div id="cover">
+                        <video loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()">
+                            <source src="assets/videos/mixxthumb.webm" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="desc">
+                        <h3 text-split="">Mixx</h3>
+                        <div id="details">
+                            <h5 text-split="">Animation de marque</h5>
+                            <h6 text-split="">2022 - Projet fictif</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="box" id="link" href="humanoids.html">
+                    <div id="cover">
+                        <img src="assets/images/grass-cover.webp" alt="MakeBetter">
+                        <video loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()"
+                            onmouseleave="this.pause();this.currentTime=0;">
+                            <source src="assets/videos/ninethumb.webm" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="desc">
+                        <h3 text-split="">Humanoids</h3>
+                        <div id="details">
+                            <h5 text-split="">Série 3D</h5>
+                            <h6 text-split="">202X - Projet personnel</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="desk">
+
+            <div id="line1">
+                <div id="email">
+                    <a id="link" href="mailto:basiler.contact@gmail.com">
+                        <h3>basiler.contact@gmail.com</h3>
+                    </a>
+                </div>
+                <div id="darkmode">
+                    <a id="link" onclick="darkmode()"><span class="darkcircle"></span></a>
+                </div>
+                <div id="legal1">
+                    <a id="link" href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
+                        <h4>CGU</h4>
+                    </a>
+                    <a id="link" href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
+                        <h4>CGV</h4>
+                    </a>
+                </div>
+            </div>
+            <div id="line2">
+                <div id="socials">
+                    <a id="link"
+                        href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
+                        target="_blank">
+                        <h2>WhatsApp ↗</h2>
+                    </a>
+                    <a id="link" href="https://www.linkedin.com/in/basile-r/" target="_blank">
+                        <h2>LinkedIn ↗</h2>
+                    </a><br>
+                    <a id="link" href="https://www.instagram.com/Bsile_R/" target="_blank">
+                        <h2>Instagram ↗</h2>
+                    </a>
+                    <a id="link" href="https://twitter.com/Bsile_R" target="_blank">
+                        <h2>X ↗</h2>
+                    </a>
+                </div>
+                <div id="extra">
+                    <a id="link" href="sandbox.html">
+                        <p>Extra pixels</p>
+                    </a>
+                </div>
+                <div id="legal2">
+                    <a id="link" href="mentions-legales">
+                        <h4>Mentions légales</h4>
+                    </a><br>
+                    <h4>© 2024 legal</h4>
+                </div>
+            </div>
+        </footer>
+        <footer class="mobilefooter">
+
+            <div id="line1">
+                <div id="extra">
+                    <p>Extra pixels</p>
+                </div>
+                <div id="darkmode">
+                    <a class="footerdarkmode" onclick="darkmode()"><span class="darkcircle"></span></a>
+                </div>
+                <div id="socials">
+                    <a href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
+                        target="_blank">
+                        <h2>WhatsApp ↗</h2>
+                    </a>
+                    <a href="https://www.linkedin.com/in/basile-r/" target="_blank">
+                        <h2>LinkedIn ↗</h2>
+                    </a><br>
+                    <a href="https://www.instagram.com/Bsile_R/" target="_blank">
+                        <h2>Instagram ↗</h2>
+                    </a>
+                    <a href="https://twitter.com/Bsile_R">
+                        <h2>X ↗</h2>
+                    </a>
+                </div>
+                <div id="email">
+                    <a href="mailto:basiler.contact@gmail.com">
+                        <h3>basiler.contact@gmail.com</h3>
+                    </a>
+                </div>
+            </div>
+            <div id="line2">
+                <div id="legal2">
+                    <a href="mentions-legales">
+                        <h4>Mentions légales</h4>
+                    </a><br>
+                    <a href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
+                        <h4>CGU</h4>
+                    </a>
+                    <a href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
+                        <h4>CGV</h4>
+                    </a>
+                </div>
+                <div id="legal1">
+                    <h4>© 2024 legal</h4>
+                </div>
+
+            </div>
+        </footer>
+        <div id="marge"></div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="assets/script/script.js"></script>
+    <script src="assets/barba/barba-transition.js" type="module"></script>
+</body>
+
+</html>
