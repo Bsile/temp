@@ -76,7 +76,6 @@ function growOnHover() {
 
     }
 }
-
 growOnHover();
 
 
@@ -91,18 +90,16 @@ function onload() {
 }
 
 
-
+function popupvimeo() {
 $(document).ready(function() {
   $('.popup-vimeo').magnificPopup({type:'iframe',removalDelay: 300,mainClass: 'mfp-fade'});
 });
-
-
+}
+popupvimeo()
 
 
 function textanimation() {
 gsap.registerPlugin(ScrollTrigger);
-
-window.addEventListener("DOMContentLoaded", (event) => {
 
   // Split text into spans
   let typeSplit = new SplitType("[text-split]", {
@@ -111,6 +108,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
     wordClass: 'word'
   });
 
+  
+  // Text animation
   const textrev = gsap.timeline();
 
             textrev.from(".word",{
@@ -121,10 +120,25 @@ window.addEventListener("DOMContentLoaded", (event) => {
             });
 
             gsap.set("[text-split]", { opacity: 1 });
-})
+  
 }
-
 textanimation()
 
 
-
+function changeText(text) {
+  const divTexte = document.getElementById('pagename');
+  
+  switch(text) {
+      case 'work':
+          divTexte.textContent = 'Work';
+          break;
+      case 'about':
+          divTexte.textContent = 'About';
+          break;
+      case 'contact':
+          divTexte.textContent = 'Contact';
+          break;
+      default:
+          break;
+  }
+}

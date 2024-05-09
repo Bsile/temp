@@ -1,13 +1,13 @@
 .inter-font {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "slnt" 0;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
 }
 
- 
+
 * {
     margin: 0;
     padding: 0;
@@ -60,7 +60,7 @@ body:not(.dark-mode) {
     background-color: var(--content);
     border-radius: 50%;
     position: fixed;
-    z-index: 98;
+    z-index: 99999999;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -323,7 +323,7 @@ a:active {
     position: relative;
 }
 
-.word{
+.word {
     position: relative;
 }
 
@@ -987,3 +987,45 @@ footer h2 {
 .player {
     z-index: 999999;
 }
+
+.pt {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 99999;
+}
+
+.pt_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
+}
+
+.pt_text h2 {
+    overflow: hidden;
+    padding-bottom: 16rem;
+    font-family: Inter;
+    font-size: x-large;
+    letter-spacing: -1px;
+    font-weight: 400;
+    color: var(--content);
+    padding-bottom: 2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+  
