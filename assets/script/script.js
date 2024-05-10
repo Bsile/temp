@@ -65,13 +65,13 @@ function growOnHover() {
     // Hover an element
     function onMouseHover() {
       TweenMax.to(mouse, .3, {
-        scale: 2
+        scale: 2,
       });
 
     }
     function onMouseHoverOut() {
       TweenMax.to(mouse, .3, {
-        scale: 1
+        scale: 1,
       });
 
     }
@@ -122,7 +122,6 @@ gsap.registerPlugin(ScrollTrigger);
             gsap.set("[text-split]", { opacity: 1 });
   
 }
-textanimation()
 
 
 function changeText(text) {
@@ -141,4 +140,36 @@ function changeText(text) {
       default:
           break;
   }
+
 }
+
+
+var tl = gsap.timeline()
+tl.set("#loader h3", {
+  visibility: "visible"
+})
+tl.from("#loader h3", {
+  yPercent:100,
+  opacity:0,
+  duration:1,
+  stagger:0.1,
+  ease: "expo.inOut",
+})
+tl.to("#loader h3",{
+  opacity:1,
+  yPercent:-100,
+  duration:1,
+  stagger:0.1,
+  ease: "expo.inOut",
+})
+  .to("#loader",{
+  yPercent:-100,
+  duration:1,
+  ease:"expo.inOut",
+}, '<')
+.add(textanimation, '<')
+tl.to("#loader",{
+  display:"none"
+})
+
+
