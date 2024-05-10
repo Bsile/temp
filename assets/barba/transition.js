@@ -17,8 +17,9 @@ const showPage = () => {
     });
 
     return new Promise((resolve) => {
-        gsap.timeline({defaults: {duration: animation.duration, ease: animation.ease } })
-        .fromTo(animation.element, {yPercent: 100}, {yPercent: 0}
+        gsap.timeline({ defaults: { duration: animation.duration, ease: animation.ease } })
+
+        .fromTo(animation.element, { yPercent: 100 }, { yPercent: 0 }
 
         )
         .to(animation.text, {
@@ -26,14 +27,14 @@ const showPage = () => {
             stagger: 0.032,
             onComplete: resolve,
         },
-        0.16
-    );
-    });
+            0.16
+        );
+});
 };
 
 const hidePage = () => {
-    gsap.timeline({defaults: { duration: animation.duration, ease: animation.ease } })
-    .to(animation.element, {yPercent: -100})
+    gsap.timeline({ defaults: { duration: animation.duration, ease: animation.ease } })
+        .to(animation.element, { yPercent: -100 })
 };
 
 export { showPage, hidePage };

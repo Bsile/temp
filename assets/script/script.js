@@ -45,36 +45,36 @@ locoScroll()
 function growOnHover() {
   const hoverables = document.querySelectorAll('#link');
 
-      // Listeners
+  // Listeners
 
   document.body.addEventListener('mousemove', onMouseMove);
   for (let i = 0; i < hoverables.length; i++) {
     hoverables[i].addEventListener('mouseenter', onMouseHover);
     hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
   }
-     // Move the cursor
+  // Move the cursor
 
-     function onMouseMove(e) {
-      TweenMax.to(mouse, .5, {
-        x: e.clientX - 0,
-        y: e.clientY - 0
-      });
+  function onMouseMove(e) {
+    TweenMax.to(mouse, .5, {
+      x: e.clientX - 0,
+      y: e.clientY - 0
+    });
 
-    }
+  }
 
-    // Hover an element
-    function onMouseHover() {
-      TweenMax.to(mouse, .3, {
-        scale: 2,
-      });
+  // Hover an element
+  function onMouseHover() {
+    TweenMax.to(mouse, .3, {
+      scale: 2,
+    });
 
-    }
-    function onMouseHoverOut() {
-      TweenMax.to(mouse, .3, {
-        scale: 1,
-      });
+  }
+  function onMouseHoverOut() {
+    TweenMax.to(mouse, .3, {
+      scale: 1,
+    });
 
-    }
+  }
 }
 growOnHover();
 
@@ -91,15 +91,15 @@ function onload() {
 
 
 function popupvimeo() {
-$(document).ready(function() {
-  $('.popup-vimeo').magnificPopup({type:'iframe',removalDelay: 300,mainClass: 'mfp-fade'});
-});
+  $(document).ready(function () {
+    $('.popup-vimeo').magnificPopup({ type: 'iframe', removalDelay: 300, mainClass: 'mfp-fade' });
+  });
 }
 popupvimeo()
 
 
 function textanimation() {
-gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
   // Split text into spans
   let typeSplit = new SplitType("[text-split]", {
@@ -108,68 +108,70 @@ gsap.registerPlugin(ScrollTrigger);
     wordClass: 'word'
   });
 
-  
+
   // Text animation
   const textrev = gsap.timeline();
 
-            textrev.from(".word",{
-              y:120,
-              stagger:0.03,
-              duration:1,
-              ease: "circ.out",
-            });
+  textrev.from(".word", {
+    y: 120,
+    stagger: 0.03,
+    duration: 1,
+    ease: "circ.out",
+  });
 
-            gsap.set("[text-split]", { opacity: 1 });
-  
+  gsap.set("[text-split]", { opacity: 1 });
+
 }
 
 
 function changeText(text) {
   const divTexte = document.getElementById('pagename');
-  
-  switch(text) {
-      case 'work':
-          divTexte.textContent = 'Work';
-          break;
-      case 'about':
-          divTexte.textContent = 'About';
-          break;
-      case 'contact':
-          divTexte.textContent = 'Contact';
-          break;
-      default:
-          break;
+
+  switch (text) {
+    case 'work':
+      divTexte.textContent = 'Work';
+      break;
+    case 'about':
+      divTexte.textContent = 'About';
+      break;
+    case 'contact':
+      divTexte.textContent = 'Contact';
+      break;
+    default:
+      break;
   }
 
 }
 
 
-var tl = gsap.timeline()
-tl.set("#loader h3", {
-  visibility: "visible"
-})
-tl.from("#loader h3", {
-  yPercent:100,
-  opacity:0,
-  duration:1,
-  stagger:0.1,
-  ease: "expo.inOut",
-})
-tl.to("#loader h3",{
-  opacity:1,
-  yPercent:-100,
-  duration:1,
-  stagger:0.1,
-  ease: "expo.inOut",
-})
-  .to("#loader",{
-  yPercent:-100,
-  duration:1,
-  ease:"expo.inOut",
-}, '<')
-.add(textanimation, '<')
-tl.to("#loader",{
-  display:"none"
-})
 
-
+function introanimation() {
+  var tl = gsap.timeline()
+  tl.set("#loader h3", {
+    visibility: "visible"
+  })
+  tl.from("#loader h3", {
+    yPercent: 100,
+    opacity: 1,
+    duration: 1,
+    stagger: 0.1,
+    ease: "power3.out",
+  })
+  tl.to("#loader h3", {
+    opacity: 1,
+    yPercent: -100,
+    duration: 1,
+    stagger: 0.1,
+    ease: "expo.inOut",
+  })
+    .to("#loader", {
+      yPercent: -100,
+      duration: 1,
+      ease: "expo.inOut",
+    }, '<')
+    .add(textanimation, '<')
+  tl.to("#loader", {
+    display: "none"
+  })
+}
+introanimation()
