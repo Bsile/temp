@@ -99,7 +99,6 @@ popupvimeo()
 
 
 function textanimation() {
-  gsap.registerPlugin(ScrollTrigger);
 
   // Split text into spans
   let typeSplit = new SplitType("[text-split]", {
@@ -122,6 +121,7 @@ function textanimation() {
   gsap.set("[text-split]", { opacity: 1 });
 
 }
+textanimation()
 
 
 function changeText(text) {
@@ -144,12 +144,17 @@ function changeText(text) {
 }
 
 
-
 function introanimation() {
   var tl = gsap.timeline()
   tl.set("#loader h3", {
     visibility: "visible"
   })
+    .set("#video, #content", {
+      yPercent: 50,
+    })
+    .set("#work", {
+      yPercent: 20,
+    })
   tl.from("#loader h3", {
     yPercent: 100,
     opacity: 1,
@@ -157,21 +162,54 @@ function introanimation() {
     stagger: 0.1,
     ease: "power3.out",
   })
+  tl.add('start')
   tl.to("#loader h3", {
     opacity: 1,
     yPercent: -100,
     duration: 1,
     stagger: 0.1,
     ease: "expo.inOut",
-  })
-    .to("#loader", {
-      yPercent: -100,
-      duration: 1,
-      ease: "expo.inOut",
-    }, '<')
-    .add(textanimation, '<')
+  }, 'start')
+  tl.to("#content, #video", {
+    yPercent: 0,
+    duration: 1,
+    ease: "expo.inOut",
+  }, 'start')
+  tl.to("#work", {
+    yPercent: 0,
+    duration: 1.1,
+    ease: "expo.inOut",
+  }, 'start')
+  tl.to("#loader", {
+    yPercent: -100,
+    duration: 1,
+    ease: "expo.inOut",
+  }, 'start')
   tl.to("#loader", {
     display: "none"
   })
 }
 introanimation()
+
+
+function pageentrance() {
+  var tl = gsap.timeline();
+  tl.set("#video, #content", {
+    yPercent: 50,
+  })
+  .set("#work", {
+    yPercent: 20,
+  });
+  tl.add('start');
+  tl.to("#content, #video", {
+    yPercent: 0,
+    duration: 1,
+    ease: "expo.inOut",
+  }, 'start');
+  tl.to("#work", {
+    yPercent: 0,
+    duration: 1.1,
+    ease: "expo.inOut",
+  }, 'start');
+  tl.delay(0.1);
+}

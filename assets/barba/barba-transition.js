@@ -1,4 +1,4 @@
-import { showPage, hidePage } from '/assets/barba/transition.js';
+import { showPage, hidePage } from '/temp/assets/barba/transition.js';
 
 barba.init({
   debug: true,
@@ -14,10 +14,12 @@ barba.init({
 
       enter() {
         hidePage();
+
       },
     },
   ],
 });
+
 
 barba.hooks.once((data) => {
   updateHeader(data.next.namespace);
@@ -31,10 +33,11 @@ barba.hooks.enter((data) => {
 
 
 
-
 barba.hooks.after((data) => {
     
     textanimation();
+
+    pageentrance();
 
     popupvimeo();
 
