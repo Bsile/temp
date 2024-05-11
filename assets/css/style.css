@@ -202,7 +202,6 @@ footer {
     height: 100%;
     width: auto;
     margin: 0vw 15vw;
-    padding-bottom: 5vw;
 }
 
 footer h3 {
@@ -455,7 +454,7 @@ footer h2 {
     width: auto;
     background-color: var(--container);
     padding: 5vw 5vw 3vw 5vw;
-    margin: 5vw;
+    margin: 0vw 5vw 5vw 5vw;
     border: solid;
     border-color: var(--border);
     border-width: 1px;
