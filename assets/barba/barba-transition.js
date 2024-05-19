@@ -30,8 +30,6 @@ barba.hooks.enter((data) => {
 
 
 barba.hooks.after((data) => {
-    
-    textanimation();
 
     pageentrance();
 

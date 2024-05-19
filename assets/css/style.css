@@ -355,6 +355,7 @@ footer h2 {
 
 #extra p {
     color: var(--contenttransparent);
+    transition: all ease 0.4s;
 }
 
 
@@ -574,6 +575,7 @@ footer h2 {
     outline: solid;
     outline-width: 1px;
     outline-color: var(--border);
+    transition: all ease 0.4s;
 }
 
 #video:hover {

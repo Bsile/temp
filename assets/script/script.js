@@ -82,7 +82,6 @@ function lenis(){
 lenis();
 
 
-
 function growOnHover() {
   const hoverables = document.querySelectorAll('#link');
 
@@ -118,6 +117,28 @@ function growOnHover() {
   }
 }
 growOnHover();
+
+
+function isSafari() {
+  return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+}
+
+function safariEdit() {
+  const elements = document.getElementsByClassName("bg");
+  if (isSafari()) {
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.visibility = 'hidden';
+    }
+  } else {
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.visibility = 'visible';
+    }
+  }
+}
+
+safariEdit();
+
+
 
 
 function darkmode() {
