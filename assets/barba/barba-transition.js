@@ -20,7 +20,6 @@ barba.init({
   ],
 });
 
-
 barba.hooks.once((data) => {
   updateHeader(data.next.namespace);
 });
@@ -30,9 +29,6 @@ barba.hooks.enter((data) => {
 });
 
 
-
-
-
 barba.hooks.after((data) => {
     
     textanimation();
@@ -40,8 +36,6 @@ barba.hooks.after((data) => {
     pageentrance();
 
     popupvimeo();
-
-    locoScroll();
 
     growOnHover();
 

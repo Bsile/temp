@@ -24,22 +24,63 @@ function locoScroll() {
         top: 0,
         left: 0,
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
       };
     }
 
-    // follwoing line is not required to work pinning on touch screen
+    
 
-    /* pinType: document.querySelector("#main").style.transform
-      ? "transform"
-      : "fixed"*/
-  });
+  // follwoing line is not required to work pinning on touch screen
 
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+  /* pinType: document.querySelector("#main").style.transform
+    ? "transform"
+    : "fixed"*/
+});
 
-  ScrollTrigger.refresh();
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.init());
+new ResizeObserver(() => locoScroll.update()).observe(document.querySelector("#main"));
+
+ScrollTrigger.refresh();
+
 }
-locoScroll()
+
+
+function lenis(){
+  // init lenis
+  const lenis = new Lenis({
+    lerp: 0.1,
+    smooth: true,
+  });
+  
+  const loop = (time) => {
+    lenis.raf(time);
+    requestAnimationFrame(loop);
+  };
+  
+  requestAnimationFrame(loop);
+  
+  lenis.on('scroll', (e) => {
+    console.log(e)
+  })
+  
+  lenis.on('scroll', ScrollTrigger.update)
+  
+  gsap.ticker.add((time)=>{
+    lenis.raf(time * 1000)
+  })
+  
+  gsap.ticker.lagSmoothing(0)
+  
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      lenis.scrollTo(this.getAttribute('href'))
+    });
+  })
+}
+lenis();
+
 
 
 function growOnHover() {
@@ -121,7 +162,6 @@ function textanimation() {
   gsap.set("[text-split]", { opacity: 1 });
 
 }
-textanimation()
 
 
 function changeText(text) {
@@ -197,9 +237,9 @@ function pageentrance() {
   tl.set("#video, #content", {
     yPercent: 50,
   })
-  .set("#work", {
-    yPercent: 20,
-  });
+    .set("#work", {
+      yPercent: 20,
+    });
   tl.add('start');
   tl.to("#content, #video", {
     yPercent: 0,

@@ -9,7 +9,6 @@
         "slnt" 0;
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -19,8 +18,8 @@
 
 html,
 body:not(.dark-mode) {
-    height: 100%;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: var(--background);
     overflow-x: hidden;
     position: sticky;
@@ -38,8 +37,8 @@ body:not(.dark-mode) {
 }
 
 .dark-mode {
-    height: 100%;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: var(--background);
     overflow-x: hidden;
     position: sticky;
@@ -150,20 +149,55 @@ nav h3 {
     font-family: Inter;
     font-size: large;
     cursor: pointer;
-    border-bottom: solid var(--content) 1px;
     font-weight: 400;
     letter-spacing: -1px;
-    display: inline;
+    display: inline-block;
     color: var(--content);
     width: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: all ease 0.3s;
     -webkit-tap-highlight-color: transparent;
+	overflow: hidden;
+	transform: translateY(0);
+
+    &:before,
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 1px;
+		background: var(--content);
+		transition: all 750ms ease;
+	}
+	
+	&:before {
+		transform: translateX(-200%);
+	}
+	
+	&:hover {
+		&:before {
+			transform: translateX(0%);
+		}
+		&:after {
+			transform: translateX(200%);
+		}
+	}
 }
 
-nav h3:hover {
-    border-color: var(--borderhover);
+.arrowicontop {
+    width: auto;
+    height: 12px;
+    fill: var(--content);
+    transition: all ease 0.4s;
+}
+
+.arrowiconbot {
+    width: auto;
+    height: 12px;
+    fill: var(--content);
 }
 
 
@@ -248,7 +282,6 @@ footer #line2 {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: end;
 }
 
 footer #socials {
@@ -260,20 +293,46 @@ footer #legal2 {
 }
 
 footer h2 {
-    margin-top: 35px;
     font-family: Inter;
     font-size: large;
     cursor: pointer;
-    border-bottom: solid var(--content) 1px;
     font-weight: 400;
     letter-spacing: -1px;
     margin-right: 1vw;
-    display: inline;
+    display: inline-block;
     color: var(--content);
     width: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: all ease 0.4s;
+    transition: all ease 0.3s;
+    -webkit-tap-highlight-color: transparent;
+	overflow: hidden;
+	transform: translateY(0);
+
+    &:before,
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 1px;
+		background: var(--content);
+		transition: all 750ms ease;
+	}
+	
+	&:before {
+		transform: translateX(-200%);
+	}
+	
+	&:hover {
+		&:before {
+			transform: translateX(0%);
+		}
+		&:after {
+			transform: translateX(200%);
+		}
+	}
 }
 
 #marge {
@@ -283,16 +342,19 @@ footer h2 {
 #extra {
     position: absolute;
     left: 50%;
+    bottom: 5vw;
     transform: translate(-50%, 0%);
     font-family: Inter;
     font-size: smaller;
     font-weight: 400;
     letter-spacing: -1px;
-    color: var(--content);
-    opacity: 50%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: all ease 0.4s;
+}
+
+#extra p {
+    color: var(--contenttransparent);
 }
 
 
@@ -562,6 +624,7 @@ footer h2 {
     padding-bottom: 2px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
 }
 
 #header h5 {
@@ -574,6 +637,7 @@ footer h2 {
     padding-left: 7px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
 }
 
 #description h2 {
@@ -581,13 +645,13 @@ footer h2 {
     font-size: large;
     font-weight: 400;
     letter-spacing: -1px;
-    opacity: 0;
     color: var(--content);
     padding-top: 30px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-kerning: none;
     width: 100%;
+    transition: all ease 0.4s;
 }
 
 #description h3 {
@@ -596,13 +660,13 @@ footer h2 {
     font-weight: 400;
     letter-spacing: -1px;
     margin-right: 11vw;
-    opacity: 0;
     color: var(--content);
     padding-top: 15px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-kerning: none;
     width: 100%;
+    transition: all ease 0.4s;
 
 }
 
@@ -613,13 +677,13 @@ footer h2 {
     letter-spacing: -1px;
     margin-right: 13vw;
     color: var(--content);
-    opacity: 0;
     padding-top: 15px;
     color: var(--contenttransparent);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-kerning: none;
     width: 100%;
+    transition: all ease 0.4s;
 }
 
 .pulse {
@@ -727,6 +791,7 @@ footer h2 {
     object-fit: cover;
     object-position: center;
     border-radius: 12px;
+    transition: all ease 0.4s;
 }
 
 .box img {
@@ -760,7 +825,6 @@ footer h2 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: all ease 0.4s;
-    opacity: 0;
 }
 
 #work .box h5 {
@@ -769,11 +833,9 @@ footer h2 {
     font-weight: 400;
     letter-spacing: -1px;
     color: var(--contenttransparent);
-    opacity: 50%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: all ease 0.4s;
-    opacity: 0;
 }
 
 #work .box h6 {
@@ -783,11 +845,9 @@ footer h2 {
     letter-spacing: -1px;
     text-align: right;
     color: var(--contenttransparent);
-    opacity: 50%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: all ease 0.4s;
-    opacity: 0;
 }
 
 #details {
@@ -914,7 +974,6 @@ footer h2 {
     }
 
     footer h2 {
-        margin-top: 35px;
         margin-right: 1vw;
         line-height: 30px;
     }
@@ -1070,23 +1129,6 @@ footer h2 {
         padding-top: 0vw;
     }
 
-    footer h2 {
-        margin-top: 35px;
-        font-family: Inter;
-        font-size: large;
-        cursor: pointer;
-        border-bottom: solid var(--content) 1px;
-        font-weight: 400;
-        letter-spacing: -1px;
-        margin-right: 1vw;
-        display: inline;
-        color: var(--content);
-        width: auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        transition: all ease 0.4s;
-    }
-
     #marge {
         height: 5vw;
     }
@@ -1100,20 +1142,8 @@ footer h2 {
     }
 
     #extra {
-        position: absolute;
-        left: 50%;
         display: contents;
         text-align: center;
-        transform: translate(-50%, 0%);
-        font-family: Inter;
-        font-size: smaller;
-        font-weight: 400;
-        letter-spacing: -1px;
-        color: var(--content);
-        opacity: 50%;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        transition: all ease 0.4s;
     }
 
     #darkmode {
