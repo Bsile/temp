@@ -951,6 +951,7 @@ footer h2 {
     font-size: large;
     font-weight: 400;
     letter-spacing: -1px;
+    line-height: 1.5;
     margin-right: 11vw;
     color: var(--content);
     padding-top: 15px;

@@ -28,58 +28,77 @@ function locoScroll() {
       };
     }
 
-    
-
-  // follwoing line is not required to work pinning on touch screen
-
-  /* pinType: document.querySelector("#main").style.transform
-    ? "transform"
-    : "fixed"*/
-});
 
 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.init());
-new ResizeObserver(() => locoScroll.update()).observe(document.querySelector("#main"));
+    // follwoing line is not required to work pinning on touch screen
 
-ScrollTrigger.refresh();
+    /* pinType: document.querySelector("#main").style.transform
+      ? "transform"
+      : "fixed"*/
+  });
+
+
+  ScrollTrigger.addEventListener("refresh", () => locoScroll.init());
+  new ResizeObserver(() => locoScroll.update()).observe(document.querySelector("#main"));
+
+  ScrollTrigger.refresh();
 
 }
 
 
-function lenis(){
+let lenis;
+
+function initializeLenis() {
+  if (lenis) {
+    lenis.destroy(); // Détruire l'ancienne instance de Lenis si elle existe
+    console.log('Lenis destroyed');
+  }
+
   // init lenis
-  const lenis = new Lenis({
+  lenis = new Lenis({
     lerp: 0.1,
     smooth: true,
   });
-  
+
+  console.log('Lenis initialized');
+
   const loop = (time) => {
     lenis.raf(time);
     requestAnimationFrame(loop);
   };
-  
+
   requestAnimationFrame(loop);
-  
+
   lenis.on('scroll', (e) => {
-    console.log(e)
-  })
-  
-  lenis.on('scroll', ScrollTrigger.update)
-  
-  gsap.ticker.add((time)=>{
-    lenis.raf(time * 1000)
-  })
-  
-  gsap.ticker.lagSmoothing(0)
-  
+    console.log(e);
+  });
+
+  lenis.on('scroll', ScrollTrigger.update);
+
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+
+  gsap.ticker.lagSmoothing(0);
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      lenis.scrollTo(this.getAttribute('href'))
+      lenis.scrollTo(this.getAttribute('href'));
     });
-  })
+  });
 }
-lenis();
+
+// Initialisation initiale
+initializeLenis();
+
+
+
+
+
+
+
+
 
 
 function growOnHover() {
