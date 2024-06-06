@@ -31,6 +31,8 @@ body:not(.dark-mode) {
     --borderhover: #606060;
     --content: rgb(235, 233, 252, 1);
     --contenttransparent: rgba(235, 233, 252, 0.5);
+    --blurbg: rgba(219, 219, 219, .25);
+    --contenthover: rgba(235, 233, 252, 0.01);
     --overlayon: rgba(0, 0, 0, 0.8);
     --overlayoff: rgba(0, 0, 0, 0.0);
     --line: hsl(0 0% 95% / 0.1);
@@ -52,6 +54,8 @@ body:not(.dark-mode) {
     --borderhover: #909090;
     --content: rgb(5, 3, 21, 1);
     --contenttransparent: rgba(5, 3, 21, 0.5);
+    --blurbg: rgba(219, 219, 219, .25);
+    --contenthover: rgba(5, 3, 21, 0.01);
     --overlayon: rgba(0, 0, 0, 0.8);
     --overlayoff: rgba(255, 255, 255, 0.0);
     --line: hsla(0, 0%, 5%, 0.1);
@@ -86,8 +90,18 @@ body::before {
     justify-content: center;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    transition: background-color ease 0.4s;
     /* cursor: none; */
+}
+
+#mouse h5{
+    font-family: Inter;
+    font-size:  4pt;
+    font-weight: 600;
+    color: var(--containersolid);
+    opacity: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: color ease .4s;
 }
 
 a:link {
@@ -143,6 +157,12 @@ a:active {
     position: relative;
 }
 
+::selection {
+    /* Change highlight background color to black */
+    background: var(--content);
+    /* Change highlight text color to red */
+    color: var(--background);
+  }
 
 
 /* Responsive */
@@ -847,10 +867,45 @@ footer h2 {
     cursor: pointer;
     transition: all ease 0.4s;
     border-radius: 12px;
+    translate: 0;
 }
 
 #reel:hover {
     translate: 0 -0.8vw;
+    transition: all ease 0.4s;
+}
+
+#playcontainer {
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    z-index: 1;
+    transition: all ease 0.4s;
+}
+
+#playbg {
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    z-index: 1;
+    border-radius: 100%;
+    background-color: var(--blurbg);
+    opacity: 1;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    transition: all ease 0.4s;
+}
+
+.playicon {
+    width: 16px;
+    height: 18px;
+    fill: rgb(5, 3, 21, 1);
     transition: all ease 0.4s;
 }
 
@@ -981,8 +1036,8 @@ footer h2 {
 
 .pulse {
     display: block;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: #00B22B;
     box-shadow: #00b22a7d;
@@ -1138,8 +1193,8 @@ footer h2 {
     cursor: pointer;
     transition: all ease 0.4s;
     -webkit-tap-highlight-color: transparent;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+   /* backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);*/
 }
 
 #work .box:hover {
@@ -1284,6 +1339,64 @@ footer h2 {
 
 
 
+/* Index testimonials */
+
+#testimonials {
+    height: auto;
+    display: flex;
+    padding: 2vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--box);
+    border: solid;
+    border-color: var(--border);
+    border-width: 1px;
+    border-radius: 12px;
+    transition: all ease 0.4s;
+    margin: 2vw 0vw;
+}
+
+#quote {
+    height: 100%;
+    width: calc(33.33% - 2vw);
+    position: relative;
+    transition: all ease 0.4s;
+}
+
+#quote h5 {
+    font-family: Inter;
+    font-size: medium;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    text-align: center;
+}
+
+#quote h5 span {
+    color: var(--content);
+}
+
+#highlight {
+    padding-bottom: 1vw;
+}
+
+#profile {
+    display: flex;
+    justify-content: center;
+}
+
+#testiprofile {
+    height: 18px;
+    width: 18px;
+    border-radius: 100%;
+    margin-right: 9px;
+}
+
+
+
 
 
 
@@ -1317,44 +1430,6 @@ footer h2 {
 
 
 
-
-
-
-
-@media screen and (max-width: 1280px) {
-    
-
-    
-
-    
-}
-
-@media screen and (max-width: 740px) {
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-}
 
 
 

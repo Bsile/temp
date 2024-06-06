@@ -55,7 +55,7 @@ function initializeLenis() {
   }
 
   // init lenis
-  lenis = new Lenis({
+  lenis = new Lenis({ wrapper: document.body });({
     lerp: 0.1,
     smooth: true,
   });
@@ -88,21 +88,15 @@ function initializeLenis() {
     });
   });
 }
-
-// Initialisation initiale
 initializeLenis();
-
-
-
-
-
-
 
 
 
 
 function growOnHover() {
   const hoverables = document.querySelectorAll('#link');
+  const texthoverables = document.querySelectorAll('#textlink');
+  const textinteraction = document.querySelectorAll('#hoverinteraction')
 
   // Listeners
 
@@ -110,6 +104,10 @@ function growOnHover() {
   for (let i = 0; i < hoverables.length; i++) {
     hoverables[i].addEventListener('mouseenter', onMouseHover);
     hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
+  }
+  for (let i = 0; i < texthoverables.length; i++) {
+    texthoverables[i].addEventListener('mouseenter', textOnMouseHover);
+    texthoverables[i].addEventListener('mouseleave', textOnMouseHoverOut);
   }
   // Move the cursor
 
@@ -126,11 +124,38 @@ function growOnHover() {
     TweenMax.to(mouse, .3, {
       scale: 2,
     });
+    TweenMax.to(textinteraction, .3, {
+      scale: 1,
+    });
 
   }
   function onMouseHoverOut() {
     TweenMax.to(mouse, .3, {
       scale: 1,
+    });
+    TweenMax.to(textinteraction, .3, {
+      scale: 0,
+    });
+
+  }
+
+  function textOnMouseHover() {
+    TweenMax.to(mouse, .3, {
+      scale: 2,
+    });
+    TweenMax.to(mouse, 0, {
+      backdropFilter: 'invert(1) grayscale(1)',
+      backgroundColor: 'var(--contenthover)',
+    });
+
+  }
+  function textOnMouseHoverOut() {
+    TweenMax.to(mouse, .3, {
+      scale: 1,
+    });
+    TweenMax.to(mouse, 0, {
+      backdropFilter: 'none',
+      backgroundColor: 'var(--content)',
     });
 
   }
@@ -204,6 +229,29 @@ function textanimation() {
 }
 
 
+function textOnHover(text) {
+  const divTexte = document.getElementById('hoverinteraction');
+
+  switch (text) {
+    case 'reel':
+      divTexte.textContent = 'Play';
+      break;
+    case 'project':
+      divTexte.textContent = 'Voir';
+      break;
+      case 'btn':
+      divTexte.textContent = ' ';
+      break;
+      case 'dark':
+      divTexte.textContent = 'Switch';
+      break;
+    default:
+      break;
+  }
+
+}
+
+
 function changeText(text) {
   const divTexte = document.getElementById('pagename');
 
@@ -250,7 +298,7 @@ function introanimation() {
     stagger: 0.1,
     ease: "expo.inOut",
   }, 'start')
-  tl.to("#content, #video", {
+  tl.to("#content, #video, #playcontainer", {
     yPercent: 0,
     duration: 1,
     ease: "expo.inOut",
