@@ -55,7 +55,7 @@ function initializeLenis() {
   }
 
   // init lenis
-  lenis = new Lenis({ wrapper: document.body });({
+  lenis = new Lenis;({
     lerp: 0.1,
     smooth: true,
   });
@@ -243,7 +243,7 @@ function textOnHover(text) {
       divTexte.textContent = ' ';
       break;
       case 'dark':
-      divTexte.textContent = 'Switch';
+      divTexte.textContent = ' ';
       break;
     default:
       break;
@@ -280,7 +280,7 @@ function introanimation() {
     .set("#video, #content", {
       yPercent: 50,
     })
-    .set("#work", {
+    .set("#work, #testimonials", {
       yPercent: 20,
     })
   tl.from("#loader h3", {
@@ -298,12 +298,12 @@ function introanimation() {
     stagger: 0.1,
     ease: "expo.inOut",
   }, 'start')
-  tl.to("#content, #video, #playcontainer", {
+  tl.to("#content, #video", {
     yPercent: 0,
     duration: 1,
     ease: "expo.inOut",
   }, 'start')
-  tl.to("#work", {
+  tl.to("#work, #testimonials", {
     yPercent: 0,
     duration: 1.1,
     ease: "expo.inOut",
@@ -341,3 +341,182 @@ function pageentrance() {
   }, 'start');
   tl.delay(0.1);
 }
+
+
+function webglpixeleffect() {
+  const imageContainer = document.getElementById("imageContainer");
+  const imageElement = document.getElementById("webglpixeleffect");
+
+  let easeFactor = 0.02;
+  let scene, camera, renderer, planeMesh;
+  let mousePosition = { x: 0.5, y: 0.5 };
+  let targetMousePosition = { x: 0.5, y: 0.5 };
+  let aberrationIntensity = 0.0;
+  let prevPosition = { x: 0.5, y: 0.5 };
+
+  const vertexShader = `
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `;
+
+  const fragmentShader = `
+    varying vec2 vUv;
+    uniform sampler2D u_texture;
+    uniform vec2 u_mouse;
+    uniform vec2 u_prevMouse;
+    uniform float u_aberrationIntensity;
+
+    void main() {
+        vec2 gridUV = floor(vUv * vec2(20.0, 20.0)) / vec2(20.0, 20.0);
+        vec2 centerOfPixel = gridUV + vec2(1.0/20.0, 1.0/20.0);
+
+        vec2 mouseDirection = u_mouse - u_prevMouse;
+
+        vec2 pixelToMouseDirection = centerOfPixel - u_mouse;
+        float pixelDistanceToMouse = length(pixelToMouseDirection);
+        float strength = smoothstep(0.3, 0.0, pixelDistanceToMouse);
+
+        vec2 uvOffset = strength * - mouseDirection * 0.2;
+        vec2 uv = vUv - uvOffset;
+
+        vec4 colorR = texture2D(u_texture, uv + vec2(strength * u_aberrationIntensity * 0.01, 0.0));
+        vec4 colorG = texture2D(u_texture, uv);
+        vec4 colorB = texture2D(u_texture, uv - vec2(strength * u_aberrationIntensity * 0.01, 0.0));
+
+        gl_FragColor = vec4(colorR.r, colorG.g, colorB.b, 1.0);
+    }
+  `;
+
+  function initializeScene(texture) {
+    scene = new THREE.Scene();
+
+    const imageAspect = imageElement.naturalWidth / imageElement.naturalHeight;
+    const containerAspect = imageContainer.offsetWidth / imageContainer.offsetHeight;
+
+    camera = new THREE.OrthographicCamera(
+      -containerAspect, containerAspect, 1, -1, 0.01, 10
+    );
+    camera.position.z = 1;
+
+    const shaderUniforms = {
+      u_mouse: { type: "v2", value: new THREE.Vector2() },
+      u_prevMouse: { type: "v2", value: new THREE.Vector2() },
+      u_aberrationIntensity: { type: "f", value: 0.0 },
+      u_texture: { type: "t", value: texture }
+    };
+
+    let planeWidth, planeHeight;
+    if (containerAspect > imageAspect) {
+      planeWidth = 2 * containerAspect;
+      planeHeight = planeWidth / imageAspect;
+    } else {
+      planeHeight = 2;
+      planeWidth = planeHeight * imageAspect;
+    }
+
+    const geometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
+
+    planeMesh = new THREE.Mesh(
+      geometry,
+      new THREE.ShaderMaterial({
+        uniforms: shaderUniforms,
+        vertexShader,
+        fragmentShader
+      })
+    );
+
+    scene.add(planeMesh);
+
+    renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setSize(imageContainer.offsetWidth, imageContainer.offsetHeight);
+
+    imageContainer.appendChild(renderer.domElement);
+  }
+
+  function onResize() {
+    const containerAspect = imageContainer.offsetWidth / imageContainer.offsetHeight;
+    const imageAspect = imageElement.naturalWidth / imageElement.naturalHeight;
+
+    camera.left = -containerAspect;
+    camera.right = containerAspect;
+    camera.top = 1;
+    camera.bottom = -1;
+    camera.updateProjectionMatrix();
+
+    let planeWidth, planeHeight;
+    if (containerAspect > imageAspect) {
+      planeWidth = 2 * containerAspect;
+      planeHeight = planeWidth / imageAspect;
+    } else {
+      planeHeight = 2;
+      planeWidth = planeHeight * imageAspect;
+    }
+
+    planeMesh.geometry.dispose();
+    planeMesh.geometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
+
+    renderer.setSize(imageContainer.offsetWidth, imageContainer.offsetHeight);
+  }
+
+  window.addEventListener('resize', onResize);
+
+  initializeScene(new THREE.TextureLoader().load(imageElement.src));
+
+  animateScene();
+
+  function animateScene() {
+    requestAnimationFrame(animateScene);
+
+    mousePosition.x += (targetMousePosition.x - mousePosition.x) * easeFactor;
+    mousePosition.y += (targetMousePosition.y - mousePosition.y) * easeFactor;
+
+    planeMesh.material.uniforms.u_mouse.value.set(
+      mousePosition.x,
+      1.0 - mousePosition.y
+    );
+
+    planeMesh.material.uniforms.u_prevMouse.value.set(
+      prevPosition.x,
+      1.0 - prevPosition.y
+    );
+
+    aberrationIntensity = Math.max(0.0, aberrationIntensity - 0.05);
+
+    planeMesh.material.uniforms.u_aberrationIntensity.value = aberrationIntensity;
+
+    renderer.render(scene, camera);
+  }
+
+  imageContainer.addEventListener("mousemove", handleMouseMove);
+  imageContainer.addEventListener("mouseenter", handleMouseEnter);
+  imageContainer.addEventListener("mouseleave", handleMouseLeave);
+
+  function handleMouseMove(event) {
+    easeFactor = 0.02;
+    let rect = imageContainer.getBoundingClientRect();
+    prevPosition = { ...targetMousePosition };
+
+    targetMousePosition.x = (event.clientX - rect.left) / rect.width;
+    targetMousePosition.y = (event.clientY - rect.top) / rect.height;
+
+    aberrationIntensity = 1;
+  }
+
+  function handleMouseEnter(event) {
+    easeFactor = 0.02;
+    let rect = imageContainer.getBoundingClientRect();
+
+    mousePosition.x = targetMousePosition.x = (event.clientX - rect.left) / rect.width;
+    mousePosition.y = targetMousePosition.y = (event.clientY - rect.top) / rect.height;
+  }
+
+  function handleMouseLeave() {
+    easeFactor = 0.05;
+    targetMousePosition = { ...prevPosition };
+  }
+}
+
+webglpixeleffect();
