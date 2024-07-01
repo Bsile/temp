@@ -1863,6 +1863,7 @@ canvas {
 
     #descright {
         width: 100%;
+        padding-top: 10vw;
     }
 
     .schoolcontent {
