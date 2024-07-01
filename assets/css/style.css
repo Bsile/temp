@@ -1688,6 +1688,10 @@ canvas {
     display: none;
 }
 
+#lefttext h5 br {
+    display: none;
+}
+
 #righttext {
     height: auto;
     width: calc(50% - 2.5vw);
@@ -1878,6 +1882,10 @@ canvas {
     }
 
     #storytext h5 br {
+        display: block;
+    }
+
+    #lefttext h5 br {
         display: block;
     }
 
