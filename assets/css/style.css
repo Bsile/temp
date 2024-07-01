@@ -1840,6 +1840,10 @@ canvas {
         padding-bottom: 40px;
     }
 
+    #storytitle {
+        padding-top: 10vh;
+    }
+
     #rightcolumnstory {
         width: 100%;
     }
@@ -1861,8 +1865,12 @@ canvas {
         display: grid;
     }
 
+    .schoolintro {
+        padding-top: 10vh;
+    }
+
     .xpintro {
-        padding-top: 20vw;
+        padding-top: 10vh;
     }
 
     .xpcontent {
