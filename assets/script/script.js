@@ -1,91 +1,49 @@
-function locoScroll() {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector("#main"),
-    smooth: true,
-
-    // for tablet smooth
-    tablet: { smooth: true },
-
-    // for mobile
-    smartphone: { smooth: true }
-  });
-  locoScroll.on("scroll", ScrollTrigger.update);
-
-  ScrollTrigger.scrollerProxy("#main", {
-    scrollTop(value) {
-      return arguments.length
-        ? locoScroll.scrollTo(value, 0, 0)
-        : locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    }
-
-
-
-    // follwoing line is not required to work pinning on touch screen
-
-    /* pinType: document.querySelector("#main").style.transform
-      ? "transform"
-      : "fixed"*/
-  });
-
-
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.init());
-  new ResizeObserver(() => locoScroll.update()).observe(document.querySelector("#main"));
-
-  ScrollTrigger.refresh();
-
+// Vérifiez si lenis n'est pas déjà déclaré globalement
+if (typeof window.lenis === 'undefined') {
+  window.lenis = null;
 }
 
-
-let lenis;
-
 function initializeLenis() {
-  if (lenis) {
-    lenis.destroy(); // Détruire l'ancienne instance de Lenis si elle existe
-    console.log('Lenis destroyed');
+  if (window.lenis) {
+    window.lenis.destroy(); // Détruire l'ancienne instance de Lenis si elle existe
+    /*console.log('Lenis destroyed');*/
   }
 
   // init lenis
-  lenis = new Lenis;({
+  window.lenis = new Lenis({
     lerp: 0.1,
     smooth: true,
   });
 
-  console.log('Lenis initialized');
+  /*console.log('Lenis initialized');*/
 
   const loop = (time) => {
-    lenis.raf(time);
+    window.lenis.raf(time);
     requestAnimationFrame(loop);
   };
 
   requestAnimationFrame(loop);
 
-  lenis.on('scroll', (e) => {
-    console.log(e);
+  window.lenis.on('scroll', (e) => {
+    /*console.log(e);*/
   });
 
-  lenis.on('scroll', ScrollTrigger.update);
+  window.lenis.on('scroll', ScrollTrigger.update);
 
   gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
+    window.lenis.raf(time * 1000);
   });
 
   gsap.ticker.lagSmoothing(0);
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    const clickListener = function (e) {
       e.preventDefault();
-      lenis.scrollTo(this.getAttribute('href'));
-    });
+      window.lenis.scrollTo(this.getAttribute('href'));
+    };
+
+    anchor.removeEventListener('click', clickListener);
+    anchor.addEventListener('click', clickListener);
   });
 }
 initializeLenis();
@@ -93,33 +51,62 @@ initializeLenis();
 
 
 
+
+
+let mouseMoveListener;
+let hoverListeners = [];
+let textHoverListeners = [];
+
 function growOnHover() {
   const hoverables = document.querySelectorAll('#link');
   const texthoverables = document.querySelectorAll('#textlink');
   const textinteraction = document.querySelectorAll('#hoverinteraction')
 
-  // Listeners
+  if (mouseMoveListener) {
+    document.body.removeEventListener('mousemove', mouseMoveListener);
+  }
+  mouseMoveListener = onMouseMove;
+  document.body.addEventListener('mousemove', mouseMoveListener);
 
-  document.body.addEventListener('mousemove', onMouseMove);
+  hoverListeners.forEach(listener => {
+    listener.element.removeEventListener('mouseenter', listener.mouseEnter);
+    listener.element.removeEventListener('mouseleave', listener.mouseLeave);
+  });
+  hoverListeners = [];
+
   for (let i = 0; i < hoverables.length; i++) {
+    hoverListeners.push({
+      element: hoverables[i],
+      mouseEnter: onMouseHover,
+      mouseLeave: onMouseHoverOut
+    });
     hoverables[i].addEventListener('mouseenter', onMouseHover);
     hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
   }
+
+  textHoverListeners.forEach(listener => {
+    listener.element.removeEventListener('mouseenter', listener.mouseEnter);
+    listener.element.removeEventListener('mouseleave', listener.mouseLeave);
+  });
+  textHoverListeners = [];
+
   for (let i = 0; i < texthoverables.length; i++) {
+    textHoverListeners.push({
+      element: texthoverables[i],
+      mouseEnter: textOnMouseHover,
+      mouseLeave: textOnMouseHoverOut
+    });
     texthoverables[i].addEventListener('mouseenter', textOnMouseHover);
     texthoverables[i].addEventListener('mouseleave', textOnMouseHoverOut);
   }
-  // Move the cursor
 
   function onMouseMove(e) {
-    TweenMax.to(mouse, .5, {
+    TweenMax.to(mouse, 0.5, {
       x: e.clientX - 0,
       y: e.clientY - 0
     });
-
   }
 
-  // Hover an element
   function onMouseHover() {
     TweenMax.to(mouse, .3, {
       scale: 2,
@@ -127,8 +114,8 @@ function growOnHover() {
     TweenMax.to(textinteraction, .3, {
       scale: 1,
     });
-
   }
+
   function onMouseHoverOut() {
     TweenMax.to(mouse, .3, {
       scale: 1,
@@ -136,7 +123,6 @@ function growOnHover() {
     TweenMax.to(textinteraction, .3, {
       scale: 0,
     });
-
   }
 
   function textOnMouseHover() {
@@ -147,8 +133,8 @@ function growOnHover() {
       backdropFilter: 'invert(1) grayscale(1)',
       backgroundColor: 'var(--contenthover)',
     });
-
   }
+
   function textOnMouseHoverOut() {
     TweenMax.to(mouse, .3, {
       scale: 1,
@@ -157,10 +143,25 @@ function growOnHover() {
       backdropFilter: 'none',
       backgroundColor: 'var(--content)',
     });
-
   }
 }
 growOnHover();
+
+
+function resetCursor() {
+  TweenMax.to(mouse, .3, {
+    scale: 1,
+    backdropFilter: 'none',
+    backgroundColor: 'var(--content)'
+  })
+  TweenMax.to(mouse, 1, {
+    x: e.clientX - 0,
+    y: e.clientY - 0
+  });
+}
+
+
+
 
 
 function isSafari() {
@@ -179,7 +180,6 @@ function safariEdit() {
     }
   }
 }
-
 safariEdit();
 
 
@@ -196,12 +196,26 @@ function onload() {
 }
 
 
+
+
 function popupvimeo() {
   $(document).ready(function () {
-    $('.popup-vimeo').magnificPopup({ type: 'iframe', removalDelay: 300, mainClass: 'mfp-fade' });
+    console.log('Removing previous event listeners for .popup-vimeo...');
+    // Détacher tous les écouteurs d'événements précédemment attachés à .popup-vimeo
+    $('.popup-vimeo').off('click.magnificPopup');
+
+    console.log('Adding new event listeners for .popup-vimeo...');
+    // Ajouter les nouveaux écouteurs d'événements
+    $('.popup-vimeo').magnificPopup({ 
+      type: 'iframe', 
+      removalDelay: 300, 
+      mainClass: 'mfp-fade' 
+    });
   });
 }
-popupvimeo()
+
+popupvimeo();
+
 
 
 function textanimation() {
@@ -229,6 +243,8 @@ function textanimation() {
 }
 
 
+
+
 function textOnHover(text) {
   const divTexte = document.getElementById('hoverinteraction');
 
@@ -239,10 +255,10 @@ function textOnHover(text) {
     case 'project':
       divTexte.textContent = 'Voir';
       break;
-      case 'btn':
+    case 'btn':
       divTexte.textContent = ' ';
       break;
-      case 'dark':
+    case 'dark':
       divTexte.textContent = ' ';
       break;
     default:
@@ -250,6 +266,8 @@ function textOnHover(text) {
   }
 
 }
+
+
 
 
 function changeText(text) {
@@ -272,15 +290,17 @@ function changeText(text) {
 }
 
 
+
+
 function introanimation() {
   var tl = gsap.timeline()
   tl.set("#loader h3", {
     visibility: "visible"
   })
-    .set("#video, #content", {
+    .set(".intro1", {
       yPercent: 50,
     })
-    .set("#work, #testimonials", {
+    .set(".intro2", {
       yPercent: 20,
     })
   tl.from("#loader h3", {
@@ -298,12 +318,12 @@ function introanimation() {
     stagger: 0.1,
     ease: "expo.inOut",
   }, 'start')
-  tl.to("#content, #video", {
+  tl.to(".intro1", {
     yPercent: 0,
     duration: 1,
     ease: "expo.inOut",
   }, 'start')
-  tl.to("#work, #testimonials", {
+  tl.to(".intro2", {
     yPercent: 0,
     duration: 1.1,
     ease: "expo.inOut",
@@ -320,21 +340,23 @@ function introanimation() {
 introanimation()
 
 
+
+
 function pageentrance() {
   var tl = gsap.timeline();
-  tl.set("#video, #content", {
+  tl.set(".intro1", {
     yPercent: 50,
   })
-    .set("#work", {
+    .set(".intro2", {
       yPercent: 20,
     });
   tl.add('start');
-  tl.to("#content, #video", {
+  tl.to(".intro1", {
     yPercent: 0,
     duration: 1,
     ease: "expo.inOut",
   }, 'start');
-  tl.to("#work", {
+  tl.to(".intro2", {
     yPercent: 0,
     duration: 1.1,
     ease: "expo.inOut",
@@ -343,12 +365,61 @@ function pageentrance() {
 }
 
 
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  function isAboutPage() {
+    return window.location.pathname.endsWith('about.html');
+  }
+
+  if (isAboutPage()) {
+    loadScripts().then(() => {
+      webglpixeleffect();
+      imgOnHover();
+    });
+  }
+});
+
+function loadScripts() {
+  return new Promise((resolve, reject) => {
+    if (typeof THREE !== 'undefined') {
+      console.log('Three.js is already loaded.');
+      resolve();
+    } else {
+      // Check if the script is already being loaded
+      const existingScript = document.querySelector('script[src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"]');
+      if (existingScript) {
+        console.log('Three.js script is already being loaded.');
+        existingScript.addEventListener('load', resolve);
+        existingScript.addEventListener('error', reject);
+      } else {
+        console.log('Loading Three.js script...');
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js';
+        script.onload = () => {
+          console.log('Three.js script loaded successfully.');
+          resolve();
+        };
+        script.onerror = () => {
+          console.error('Failed to load Three.js script.');
+          reject();
+        };
+        document.head.appendChild(script);
+      }
+    }
+  });
+}
+
+let renderer, scene, camera, planeMesh;
+let animationFrameId = null;
+
 function webglpixeleffect() {
+  console.log('Initializing WebGL effect...');
   const imageContainer = document.getElementById("imageContainer");
   const imageElement = document.getElementById("webglpixeleffect");
 
   let easeFactor = 0.02;
-  let scene, camera, renderer, planeMesh;
   let mousePosition = { x: 0.5, y: 0.5 };
   let targetMousePosition = { x: 0.5, y: 0.5 };
   let aberrationIntensity = 0.0;
@@ -391,6 +462,7 @@ function webglpixeleffect() {
   `;
 
   function initializeScene(texture) {
+    console.log('Initializing scene...');
     scene = new THREE.Scene();
 
     const imageAspect = imageElement.naturalWidth / imageElement.naturalHeight;
@@ -437,6 +509,7 @@ function webglpixeleffect() {
   }
 
   function onResize() {
+    console.log('Resizing...');
     const containerAspect = imageContainer.offsetWidth / imageContainer.offsetHeight;
     const imageAspect = imageElement.naturalWidth / imageElement.naturalHeight;
 
@@ -465,10 +538,10 @@ function webglpixeleffect() {
 
   initializeScene(new THREE.TextureLoader().load(imageElement.src));
 
-  animateScene();
-
   function animateScene() {
-    requestAnimationFrame(animateScene);
+    animationFrameId = requestAnimationFrame(animateScene);
+
+    if (!renderer || !scene || !camera) return;
 
     mousePosition.x += (targetMousePosition.x - mousePosition.x) * easeFactor;
     mousePosition.y += (targetMousePosition.y - mousePosition.y) * easeFactor;
@@ -490,10 +563,9 @@ function webglpixeleffect() {
     renderer.render(scene, camera);
   }
 
-  imageContainer.addEventListener("mousemove", handleMouseMove);
-  imageContainer.addEventListener("mouseenter", handleMouseEnter);
-  imageContainer.addEventListener("mouseleave", handleMouseLeave);
+  animateScene();
 
+  // Définitions de fonctions pour les écouteurs d'événements
   function handleMouseMove(event) {
     easeFactor = 0.02;
     let rect = imageContainer.getBoundingClientRect();
@@ -517,6 +589,113 @@ function webglpixeleffect() {
     easeFactor = 0.05;
     targetMousePosition = { ...prevPosition };
   }
+
+  // Ajout des nouveaux event listeners
+  console.log('Adding new event listeners...');
+  imageContainer.addEventListener("mousemove", handleMouseMove);
+  imageContainer.addEventListener("mouseenter", handleMouseEnter);
+  imageContainer.addEventListener("mouseleave", handleMouseLeave);
+
+  // Nettoyage
+  function cleanupWebGL() {
+    if (renderer) {
+      console.log('Cleaning up WebGL...');
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
+
+      // Suppression des event listeners de imageContainer
+      console.log('Removing event listeners...');
+      imageContainer.removeEventListener("mousemove", handleMouseMove);
+      imageContainer.removeEventListener("mouseenter", handleMouseEnter);
+      imageContainer.removeEventListener("mouseleave", handleMouseLeave);
+
+      // Suppression de l'écouteur d'événements resize
+      window.removeEventListener('resize', onResize);
+
+      // Suppression de l'élément renderer de imageContainer
+      if (renderer.domElement) {
+        renderer.domElement.remove();
+      }
+
+      // Dispose du renderer Three.js
+      renderer.dispose();
+      renderer.forceContextLoss();
+      renderer.context = null;
+      renderer.domElement = null;
+      renderer = null;
+
+      // Nettoyage de la scène Three.js
+      if (scene) {
+        while (scene.children.length > 0) {
+          const child = scene.children[0];
+          scene.remove(child);
+          if (child.geometry) child.geometry.dispose();
+          if (child.material) child.material.dispose();
+        }
+      }
+
+      scene = null;
+      camera = null;
+      planeMesh = null;
+    }
+  }
+
+  // Assurez-vous d'ajouter cleanupWebGL à la portée globale pour pouvoir l'appeler depuis l'extérieur
+  window.cleanupWebGL = cleanupWebGL;
 }
 
-webglpixeleffect();
+
+
+
+
+
+
+
+let imgMouseMoveListener;
+let imgHoverListeners = [];
+
+function imgOnHover() {
+  const imghover = document.querySelectorAll('#imghover');
+  const imgbehind = document.querySelector('#imgbehind');
+
+  if (imgMouseMoveListener) {
+    document.body.removeEventListener('mousemove', imgMouseMoveListener);
+  }
+  imgMouseMoveListener = onMouseMove;
+  document.body.addEventListener('mousemove', imgMouseMoveListener);
+
+  imgHoverListeners.forEach(listener => {
+    listener.element.removeEventListener('mouseenter', listener.mouseEnter);
+    listener.element.removeEventListener('mouseleave', listener.mouseLeave);
+  });
+  imgHoverListeners = [];
+
+  for (let i = 0; i < imghover.length; i++) {
+    imgHoverListeners.push({
+      element: imghover[i],
+      mouseEnter: imgOnMouseHover,
+      mouseLeave: imgOnMouseHoverOut
+    });
+    imghover[i].addEventListener('mouseenter', imgOnMouseHover);
+    imghover[i].addEventListener('mouseleave', imgOnMouseHoverOut);
+  }
+
+  function onMouseMove(e) {
+    TweenMax.to(imgbehind, 1, {
+      x: e.pageX,
+      y: e.pageY
+    });
+  }
+
+  function imgOnMouseHover() {
+    TweenMax.to(imgbehind, .2, {
+      scale: 1,
+    });
+  }
+
+  function imgOnMouseHoverOut() {
+    TweenMax.to(imgbehind, .2, {
+      scale: 0,
+    });
+  }
+}

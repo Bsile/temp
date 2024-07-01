@@ -26,7 +26,7 @@ body:not(.dark-mode) {
     --background: #090B0C;
     --container: hsla(0, 0%, 7%, 0.25);
     --containersolid: hsla(0, 0%, 7%);
-    --box: hsla(0, 0%, 14%, 0.25);
+    --box: hsl(0deg 0% 7.45%);
     --border: #303030;
     --borderhover: #606060;
     --content: rgb(235, 233, 252, 1);
@@ -48,8 +48,8 @@ body:not(.dark-mode) {
     position: sticky;
     --background: #f0f0f0;
     --container: hsla(0, 0%, 93%, 0.25);
-    --containersolid: hsla(0, 0%, 93%);
-    --box: hsla(0, 0%, 95%, 0.25);
+    --containersolid: hsl(0deg 0% 92.16%);
+    --box: hsl(0deg 0% 92.16%);
     --border: #c0c0c0;
     --borderhover: #909090;
     --content: rgb(5, 3, 21, 1);
@@ -81,7 +81,7 @@ body:not(.dark-mode) {
 
 #mouse h5 {
     font-family: Inter;
-    font-size: 4pt;
+    font-size: 0.333rem;
     font-weight: 600;
     color: var(--containersolid);
     opacity: 100%;
@@ -220,7 +220,7 @@ a:active {
     overflow: hidden;
     padding-bottom: 16rem;
     font-family: Inter;
-    font-size: x-large;
+    font-size: 1.5rem;
     letter-spacing: -1px;
     font-weight: 400;
     color: var(--content);
@@ -254,7 +254,7 @@ a:active {
     display: inline-block;
     padding-bottom: 16rem;
     font-family: Inter;
-    font-size: x-large;
+    font-size: 1.5rem;
     letter-spacing: -1px;
     font-weight: 400;
     color: var(--content);
@@ -294,7 +294,8 @@ nav h3 {
     margin-top: 35px;
     margin-right: 2vw;
     font-family: Inter;
-    font-size: large;
+    font-size: 1.125rem;
+    line-height: 1.25;
     cursor: pointer;
     font-weight: 400;
     letter-spacing: -1px;
@@ -410,7 +411,7 @@ nav h3 {
     box-sizing: border-box;
     flex: 1;
     align-self: flex-start;
-    padding: 80px 48px 0 48px;
+    padding: 5vw 4vw 0 4vw;
 }
 
 .sidebar-structure-middle {
@@ -422,7 +423,7 @@ nav h3 {
     padding-bottom: 0;
     padding-right: 0;
     position: relative;
-    width: 1044px;
+    width: 100%;
 }
 
 .sidebar-content {
@@ -438,7 +439,7 @@ nav h3 {
     left: 0%;
     width: max-content;
     right: auto;
-    grid-row-gap: 12px;
+    grid-row-gap: 1.875rem;
     flex-direction: column;
     padding-left: 0;
     display: flex;
@@ -460,7 +461,7 @@ nav h3 {
     left: 0%;
     right: 0%;
     width: max-content;
-    grid-row-gap: 30px;
+    grid-row-gap: 1.875rem;
     flex-direction: column;
     padding-left: 0;
     display: flex;
@@ -477,7 +478,7 @@ nav h3 {
     color: var(--content);
     text-align: left;
     font-family: Inter;
-    font-size: smaller;
+    font-size: 1rem;
     font-weight: 500;
     letter-spacing: -1px;
     -webkit-font-smoothing: antialiased;
@@ -490,12 +491,11 @@ nav h3 {
 .sidebar-chapters-wrapper {
     -webkit-text-size-adjust: 100%;
     line-height: 20px;
-    color: var(--contenttransparent);
     pointer-events: auto;
     box-sizing: border-box;
     flex-direction: column;
     display: flex;
-    grid-row-gap: 12px;
+    grid-row-gap: 0.875rem;
     align-self: flex-start;
     align-items: flex-start;
     position: relative;
@@ -507,15 +507,14 @@ nav h3 {
     box-sizing: border-box;
     max-width: 100%;
     display: inline-block;
-    color: var(--contenttransparent);
+    color: var(--contenttransparent) !important;
     text-decoration: none;
-    opacity: .25;
     letter-spacing: .4px;
     align-self: stretch;
     padding-top: 4px;
     padding-bottom: 4px;
     font-family: Inter;
-    font-size: smaller;
+    font-size: 1rem;
     font-weight: 400;
     letter-spacing: -1px;
     -webkit-font-smoothing: antialiased;
@@ -527,7 +526,7 @@ nav h3 {
 
 .sidebar-nav h3 {
     font-family: Inter;
-    font-size: large;
+    font-size: 1.125rem;
     cursor: pointer;
     font-weight: 400;
     letter-spacing: -1px;
@@ -567,6 +566,26 @@ nav h3 {
         }
     }
 }
+
+@media screen and (max-width: 1280px) {
+    
+    .sidebar-structure {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 740px) {
+
+    
+
+}
+
+
+
+
+
+
 
 
 
@@ -609,7 +628,7 @@ footer {
 footer h3 {
     font-family: Inter;
     display: inline;
-    font-size: large;
+    font-size: 1.125rem;
     font-weight: 400;
     letter-spacing: -1px;
     color: var(--content);
@@ -621,7 +640,7 @@ footer h3 {
 footer h4 {
     font-family: Inter;
     display: inline;
-    font-size: large;
+    font-size: 1.125rem;
     font-weight: 400;
     letter-spacing: -1px;
     text-align: right;
@@ -662,7 +681,7 @@ footer #legal2 {
 
 footer h2 {
     font-family: Inter;
-    font-size: large;
+    font-size: 1.125rem;
     cursor: pointer;
     font-weight: 400;
     letter-spacing: -1px;
@@ -714,7 +733,7 @@ footer h2 {
     bottom: 5vw;
     transform: translate(-50%, 0%);
     font-family: Inter;
-    font-size: smaller;
+    font-size: 0.875rem;
     font-weight: 400;
     letter-spacing: -1px;
     -webkit-font-smoothing: antialiased;
@@ -739,6 +758,7 @@ footer h2 {
 
     footer #legal2 {
         padding-top: 0vw;
+        text-align: end;
     }
 
     footer h2 {
@@ -1143,8 +1163,8 @@ footer h2 {
 }
 
 #pp {
-    width: 100px;
-    height: 100px;
+    width: 13vh;
+    height: 13vh;
     border-radius: 100%;
     border: solid;
     border-color: var(--border);
@@ -1164,7 +1184,7 @@ footer h2 {
 
 #header h1 {
     font-family: Inter;
-    font-size: x-large;
+    font-size: 1.5rem;
     letter-spacing: -1px;
     font-weight: 400;
     color: var(--content);
@@ -1176,7 +1196,7 @@ footer h2 {
 
 #header h5 {
     font-family: Inter;
-    font-size: medium;
+    font-size: 1.125rem;
     font-weight: 400;
     letter-spacing: -1px;
     color: var(--content);
@@ -1189,7 +1209,7 @@ footer h2 {
 
 #description h2 {
     font-family: Inter;
-    font-size: large;
+    font-size: 1.125rem;
     font-weight: 400;
     letter-spacing: -1px;
     color: var(--content);
@@ -1203,10 +1223,10 @@ footer h2 {
 
 #description h3 {
     font-family: Inter;
-    font-size: large;
+    font-size: 1.125rem;
     font-weight: 400;
     letter-spacing: -1px;
-    line-height: 1.5;
+    line-height: 1.25;
     margin-right: 11vw;
     color: var(--content);
     padding-top: 15px;
@@ -1220,7 +1240,7 @@ footer h2 {
 
 #description h4 {
     font-family: Inter;
-    font-size: large;
+    font-size: 1.125rem;
     font-weight: 400;
     letter-spacing: -1px;
     margin-right: 13vw;
@@ -1438,7 +1458,7 @@ footer h2 {
 
 #work h3 {
     font-family: Inter;
-    font-size: large;
+    font-size: 1.125rem;
     font-weight: 400;
     letter-spacing: -1px;
     color: var(--content);
@@ -1451,7 +1471,7 @@ footer h2 {
 
 #work .box h5 {
     font-family: Inter;
-    font-size: medium;
+    font-size: 1rem;
     font-weight: 400;
     letter-spacing: -1px;
     color: var(--contenttransparent);
@@ -1462,7 +1482,7 @@ footer h2 {
 
 #work .box h6 {
     font-family: Inter;
-    font-size: medium;
+    font-size: 1rem;
     font-weight: 400;
     letter-spacing: -1px;
     text-align: right;
@@ -1539,69 +1559,6 @@ footer h2 {
 
 
 
-/* Index testimonials */
-
-#testimonials {
-    height: auto;
-    display: flex;
-    padding: 2vw;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: var(--box);
-    border: solid;
-    border-color: var(--border);
-    border-width: 1px;
-    border-radius: 12px;
-    transition: background-color, border-color ease 0.4s;
-    margin: 2vw 0vw;
-}
-
-#quote {
-    height: 100%;
-    width: calc(33.33% - 2vw);
-    position: relative;
-    transition: all ease 0.4s;
-}
-
-#quote h5 {
-    font-family: Inter;
-    font-size: medium;
-    font-weight: 400;
-    letter-spacing: -1px;
-    color: var(--contenttransparent);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: all ease 0.4s;
-    text-align: center;
-}
-
-#quote h5 span {
-    color: var(--content);
-    transition: all ease 0.4s;
-}
-
-#highlight {
-    padding-bottom: 1vw;
-}
-
-#profile {
-    display: flex;
-    justify-content: center;
-}
-
-#testiprofile {
-    height: 18px;
-    width: 18px;
-    border-radius: 100%;
-    margin-right: 9px;
-}
-
-.emoji {
-    height: 14px;
-    width: 14px;
-    align-self: center;
-}
-
 
 
 
@@ -1609,11 +1566,16 @@ footer h2 {
 
 /* About */
 
+
+#aboutheader {
+    display: flex;
+    justify-content: space-between;
+}
+
 #pageview {
     width: 100vw;
     height: 100%;
-    padding: 0 15vw;
-    padding-top: 1vw;
+    padding: 0 17.5vw;
 }
 
 #picleft {
@@ -1635,12 +1597,12 @@ canvas {
     align-items: center;
     border-radius: 10px;
     max-width: 100%;
-    filter: saturate(0);
+    filter: saturate(1);
     transition: all ease 0.5s;
 }
 
 #imageContainer:hover {
-    filter: saturate(100%);
+    filter: saturate(50%);
 }
 
 #imageContainer>* {
@@ -1652,14 +1614,13 @@ canvas {
 }
 
 #descright {
-    /*background-color: blue;*/
     width: calc(50% - 2.5vw);
     padding-top: 5vw;
 }
 
-#descright h5 {
+#descright h4 {
     font-family: Inter;
-    font-size: medium;
+    font-size: 1.125rem;
     font-weight: 400;
     letter-spacing: -1px;
     color: var(--contenttransparent);
@@ -1669,32 +1630,76 @@ canvas {
     opacity: 100%;
 }
 
-#descright h5 span {
+#descright h4 span {
     color: var(--content);
     transition: all ease 0.4s;
 }
 
 #story {
+    display: block;
+}
+
+#rightcolumnstory img {
+    height: 35vh;
+    object-fit: cover;
+    border-radius: 10px;
+    max-width: 100%;
+    transition: all ease 0.5s;
+}
+
+#contentcolumnstory img {
+    height: 35vh;
+    object-fit: cover;
+    border-radius: 10px;
+    max-width: 100%;
+    transition: all ease 0.5s;
+}
+
+.storycontent {
+    width: 100%;
+    padding-top: 10vw;
     display: flex;
     justify-content: space-between;
 }
 
-#leftcolumnstory {
-    height: 50vh;
-    width: calc(50% - 2.5vw);
-    margin-top: 10vw;
-}
-
-#rightcolumnstory {
-    background-color: blue;
-    height: 50vh;
-    width: calc(50% - 2.5vw);
-    margin-top: 10vw;
-}
-
-#leftcolumnstory h6 {
+.storycontent h5 {
     font-family: Inter;
-    font-size: medium;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    opacity: 100%;
+    padding-bottom: 20px;
+}
+
+#storytitle {
+    padding-top: 5vw;
+}
+
+#storytext {
+    height: auto;
+    width: calc(50% - 2.5vw);
+}
+
+#storytext h5 br {
+    display: none;
+}
+
+#righttext {
+    height: auto;
+    width: calc(50% - 2.5vw);
+}
+
+#contentcolumnstory {
+    height: auto;
+}
+
+#contentcolumnstory h6 {
+    font-family: Inter;
+    font-size: 1.125rem;
     font-weight: 400;
     letter-spacing: -1px;
     color: var(--contenttransparent);
@@ -1704,7 +1709,182 @@ canvas {
     opacity: 100%;
 }
 
-#leftcolumnstory h6 span {
+#contentcolumnstory h6 span {
     color: var(--content);
     transition: all ease 0.4s;
+}
+
+#imghover {
+    cursor: pointer;
+}
+
+#rightcolumnstory {
+    height: auto;
+    width: calc(50% - 2.5vw);
+}
+
+#rightcolumnstory h6 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    opacity: 100%;
+}
+
+
+#rightcolumnstory h6 span {
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+#imgbehind {
+    position: absolute;
+    width: 150px;
+    height: 192px;
+    top: -96px;
+    left: 45px;
+    transform: scale(0) translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: none;
+    z-index: 99;
+}
+
+#webglpixeleffect {
+    opacity: 0;
+}
+
+.schoolcontent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.schoolintro {
+    padding-top: 5vw;
+    padding-bottom: 40px;
+}
+
+.schoolcontent h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    opacity: 100%;
+    padding-bottom: 20px;
+}
+
+.school {
+    padding-bottom: 20px;
+}
+
+#schooltitle {
+    padding-top: 5vw;
+}
+
+.xpcontent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+
+.xpintro {
+    padding-top: 5vw;
+}
+
+.xpcontent h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    opacity: 100%;
+    padding-bottom: 20px;
+}
+
+.xp {
+    padding-bottom: 20px;
+}
+
+#xptitle {
+    padding-top: 5vw;
+}
+
+@media screen and (max-width: 1280px) {
+    
+    #pageview {
+        padding: 0 10vw;
+    }
+
+}
+
+@media screen and (max-width: 740px) {
+
+    .storycontent {
+        display: grid;
+    }
+
+    #storytext {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+    #rightcolumnstory {
+        width: 100%;
+    }
+
+    #aboutheader {
+        display: grid;
+    }
+
+    #picleft {
+        width: 100%;
+        height: 35vh;
+    }
+
+    #descright {
+        width: 100%;
+    }
+
+    .schoolcontent {
+        display: grid;
+    }
+
+    .xpintro {
+        padding-top: 20vw;
+    }
+
+    .xpcontent {
+        display: grid;
+    }
+
+    #storytext h5 br {
+        display: block;
+    }
+
+    #webglpixeleffect {
+        opacity: 1;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    #imageContainer canvas {
+        display: none;
+    }
+
+    #imageContainer:hover {
+        filter: none;
+    }
+
 }

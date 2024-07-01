@@ -1,11 +1,11 @@
 import { showPage, hidePage } from '/temp/assets/barba/transition.js';
 
 barba.init({
-  debug: true,
+  debug: false,
   transitions: [
     {
       name: 'page-transition',
-      once() {},
+      once() { },
 
       async leave(data) {
         await showPage(data);
@@ -25,15 +25,31 @@ barba.hooks.once((data) => {
 
 barba.hooks.enter((data) => {
   updateHeader(data.next.namespace);
+  if (data.next.namespace === 'about') {
+    loadScripts().then(() => {
+      webglpixeleffect();
+      imgOnHover();
+    });
+  }
+});
+
+barba.hooks.afterLeave((data) => {
+  data.current.container.remove();
+  if (data.current.namespace === 'about') {
+    cleanupWebGL();
+  }
+});
+
+barba.hooks.beforeEnter((data) => {
+  resetCursor(); // Réinitialiser le curseur avant d'entrer dans la nouvelle page
 });
 
 barba.hooks.after((data) => {
   pageentrance();
   popupvimeo();
-  growOnHover();
+  growOnHover(); // Réinitialiser les écouteurs d'événements après chaque transition
   initializeLenis(); // Réinitialiser Lenis après chaque transition
   safariEdit();
-  webglpixeleffect();
 });
 
 const updateHeader = (data) => {

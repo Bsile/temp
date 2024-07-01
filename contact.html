@@ -42,34 +42,42 @@
         <div id="marge"></div>
 
         <div id="pageview">
-            <div id="header">
+            <video playsinline autoplay loop preload=metadata muted src="/assets/videos/oldprojectspreview.webm" id="imgbehind"></video>
+            <div id="header" class="intro1">
                 <div id="picleft">
                     <div id="imageContainer">
-                        <img id="webglpixeleffect" src="assets/images/photodeprofil.webp" alt="">
+                        <img id="webglpixeleffect" src="assets/images/grass-cover.webp" alt="">
                     </div>
                 </div>
                 <div id="descright">
-                    <h5><span>Je m'appelle Basile, artiste et designer de 19 ans basé à
+                    <h4><span>Je m'appelle Basile, artiste et designer de 19 ans basé à
                             Montpellier.</span><br><br><br>Je conçoit des
                         images et animations digitales depuis 2019, et propose depuis 2023 mes services en tant que
                         professionnel indépendant.<br><br>La curiosité et l'expression de mes plus jeunes idées ont été
                         la source de mon intérêt pour la création numérique. Au fil des expériences, mes motivations se
                         centrent désormais autour du motion design afin d'apporter de nouvelles dimensions uniques à
                         chaque projet.
-                    </h5>
+                    </h4>
                 </div>
             </div>
-            <div id="story">
+            <div id="story" class="intro2">
+                <div id="storytitle">
+                    <h5>Un peu de contexte...</h5>
+                </div>
+                <div id="storycontent">
                 <div id="leftcolumnstory">
-                    <h6><span>L’histoire commence</span> dans la chambre d’un jeune garçon, comme la plupart de ce type
-                        d’histoires.
-                        J’ai toujours cherché à exprimer ma créativité, des poèmes de maternelle aux constructions en
-                        kapla... Mais ce qui a le plus marqué ma liberté créative, ça a été l’ouverture au monde du
-                        numérique.</h6>
+                    <h6>Mes premières créations graphiques débutent durant mes années collège. À l’origine d’une volonté
+                        d’expression, commencer à partager visuellement ma créativité me parut naturellement, comme le
+                        meilleur
+                        chemin à emprunter.</h6>
                 </div>
                 <div id="rightcolumnstory">
-
+                    <h6>Muni de vieilles versions de Photoshop, Vegas Pro et After Effects, j’ai progressivement
+                        commencé à expérimenter le monde de l’image et la vidéo. <span id="imghover">Au début c’était pas ouf...</span> Mais c’était
+                        un début.</h6>
+                        
                 </div>
+            </div>
             </div>
         </div>
 
@@ -84,7 +92,8 @@
                                     <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
                                 </g>
                             </svg> Work</a></h3>
-                    <h3 id="textlink"><a href="about.html" onclick="changeText('about')"><svg class="arrowicontop"
+                    <h3 id="textlink"><a href="#main" onmouseenter="textOnHover('btn')"
+                        onclick="lenis.scrollTo('#main')"><svg class="arrowicontop"
                                 version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
                                 style="enable-background:new 0 0 20 20;" xml:space="preserve">
@@ -108,15 +117,17 @@
             <div class="sidebar-structure-sides">
                 <div class="sidebar-content" style="opacity: 1;">
                     <div class="text-projectpage-overline sidebar">- À propos</div>
-                    <div class="sidebar-chapters-wrapper"><a id="textlink" href="#stadiabt-overview"
+                    <div class="sidebar-chapters-wrapper"><a id="textlink" href="#main" onmouseenter="textOnHover('btn')"
+                        onclick="lenis.scrollTo('#main')"
                             class="chapter w-inline-block">
-                            <div>Overview</div>
-                        </a><a id="textlink" href="#stadiabt-highlights" class="chapter w-inline-block">
-                            <div>Highlights</div>
+                            <div>Résumé</div>
+                        </a><a id="textlink" href="#story" onmouseenter="textOnHover('btn')"
+                        onclick="lenis.scrollTo('#story')" class="chapter w-inline-block">
+                            <div>Contexte</div>
                         </a><a id="textlink" href="#stadiabt-context" class="chapter w-inline-block">
-                            <div>Context</div>
+                            <div>Formation</div>
                         </a><a id="textlink" href="#stadiabt-problem" class="chapter w-inline-block">
-                            <div>The Problem</div>
+                            <div>Expériences</div>
                         </a><a id="textlink" href="#stadiabt-flow" class="chapter w-inline-block">
                             <div>Update Flow</div>
                         </a><a id="textlink" href="#stadiabt-layout" class="chapter w-inline-block">
@@ -319,7 +330,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -26,8 +26,9 @@
             <h3>;)</h3>
         </div>
     </div>
-    <div class="bg"></div>
-    <div id="mouse"></div>
+    <div id="mouse">
+        <h5 id="hoverinteraction"></h5>
+    </div>
 
     <div class="pt">
         <div class="pt_wrapper">
@@ -37,180 +38,488 @@
         </div>
     </div>
 
-    <div id="main">
+    <div id="main" data-barba="container" data-barba-namespace="about">
         <div id="marge"></div>
+        <div class="bggrid"></div>
 
-        <div id="container" data-barba="container" data-barba-namespace="home">
-            <div id="header">
-                <div id="content">
-                    <nav class="mobile">
-                        <h3 id="link"><a href="index.html" onclick="changeText('work')">Work <svg class="arrowicontop"
-                                    version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                    <g>
-                                        <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
-                                    </g>
-                                </svg></a></h3>
-                        <h3 id="link"><a href="about.html" onclick="changeText('about')">À propos <svg
-                                    class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                    <g>
-                                        <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
-                                    </g>
-                                </svg></a></h3>
-                        <h3 id="link"><a href="contact.html" onclick="changeText('contact')">Contact
-                                <svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                    <g>
-                                        <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
-                                    </g>
-                                </svg>
-                            </a></h3>
-                    </nav>
-                    <div id="profil">
-                        <div id="avatar">
-                            <a id="link" class="popup-vimeo" href="http://vimeo.com/898815441?autoplay=1&loop=1&">
-                                <div id="avatarcenter">
+        
 
-                                    <img id="pp" src="assets/images/photodeprofil.webp" alt="photo de profil">
-                                    <div id="storie" class="mobile">
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div id="nickname">
-                            <div>
-                                <h1>Basile. R</h1>
-                            </div>
-                            <div class="available">
-                                <span class="pulse"></span>
-                                <h5>Disponible</h5>
-                            </div>
-                        </div>
+        <div id="pageview">
+
+            <nav class="mobile">
+                <h3 id="link"><a href="index.html" onclick="changeText('work')">Work <svg class="arrowicontop"
+                            version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                            style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
+                            </g>
+                        </svg></a></h3>
+                <h3 id="link"><a href="#pageview" onclick="changeText('about')">À propos <svg
+                            class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                            style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
+                            </g>
+                        </svg></a></h3>
+                <h3 id="link"><a href="contact.html" onclick="changeText('contact')">Contact
+                        <svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                            style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
+                            </g>
+                        </svg>
+                    </a></h3>
+            </nav>
+            <video playsinline autoplay loop preload=metadata muted src="/assets/videos/oldprojectspreview.webm"
+                id="imgbehind"></video>
+                
+            <div id="aboutheader" class="intro1">
+                <div id="picleft">
+                    <div id="imageContainer">
+                        <img id="webglpixeleffect" src="assets/images/photodeprofil.webp" alt="">
                     </div>
-                    <div id="description">
-                        <h2>
-                            Freelance & étudiant motion designer
-                        </h2>
-                        <h3>
-                            Créateur passionné d’expériences motion innovantes, <br>je façonne avec le cœur un avenir
-                            aux
-                            pixels uniques.
-                        </h3>
-                        <h4>
-                            France / Montpellier
-                        </h4>
-                    </div>
-                    <nav class="desk">
-                        <h3 id="link"><a href="index.html" onclick="changeText('work')">Work <svg class="arrowicontop"
-                                    version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                    <g>
-                                        <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
-                                    </g>
-                                </svg></a></h3>
-                        <h3 id="link"><a href="about.html" onclick="changeText('about')">À propos <svg
-                                    class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                    <g>
-                                        <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
-                                    </g>
-                                </svg></a></h3>
-                        <h3 id="link"><a href="contact.html" onclick="changeText('contact')">Contact <svg
-                                    class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                    <g>
-                                        <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
-                                    </g>
-                                </svg></a></h3>
-                    </nav>
                 </div>
-                <div id="reel" class="desk">
-                    <a id="link" class="popup-vimeo" href="http://vimeo.com/898815441?autoplay=1&loop=1&"><video
-                            id="video" autoplay loop preload=metadata muted>
-                            <source src="assets/videos/makebetterthumb.webm" type="video/mp4">
-                        </video></a>
+                <div id="descright">
+                    <h4><span>Je m'appelle Basile, artiste et designer de 19 ans basé à
+                            Montpellier.</span><br><br><br>Je conçois des
+                        images et animations digitales depuis 2019, et propose depuis 2023 mes services en tant que
+                        professionnel indépendant.<br><br>La curiosité et l'expression de mes plus jeunes idées ont été
+                        la source de mon intérêt pour la création numérique. Au fil des expériences, mes motivations se
+                        centrent désormais autour du motion design afin d'apporter de nouvelles dimensions uniques à
+                        chaque projet.
+                    </h4>
                 </div>
             </div>
-            <div id="work">
-                <div class="box" id="link" href="makebetter.html">
-                    <div id="cover">
-                        <video loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()">
-                            <source src="assets/videos/makebetterthumb.webm" type="video/mp4">
-                        </video>
+            <div class="intro2">
+                <div id="context" class="storycontent">
+                    <div id="storytext">
+                        <div id="storytitle">
+                            <h5>Un peu de contexte...</h5>
+                        </div>
+
+                        <div id="storycontent">
+                            <div id="contentcolumnstory">
+                                <h6>Mes premières vraies créations graphiques remontent à mon adolescence. Muni de
+                                    vieilles
+                                    versions
+                                    de Photoshop, Vegas Pro et After Effects, j'ai progressivement commencé à explorer
+                                    l'image
+                                    et la vidéo.<br><span id="imghover">Au début, c'était pas fameux...</span> mais
+                                    c'était
+                                    un
+                                    début.</h6>
+                            </div>
+                        </div>
                     </div>
-                    <div id="desc">
-                        <h3>MakeBetter</h3>
-                        <div id="details">
-                            <h5>Animation d'interface</h5>
-                            <h6>2024 - Projet client</h6>
+                    <div id="rightcolumnstory">
+                        <img src="assets/images/grass-cover.webp">
+                    </div>
+                </div>
+            </div>
+            <div id="school">
+                <div class="schoolcontent schoolintro">
+                    <div id="schooltitle">
+                        <h5>Diplômes et formation :</h5>
+                    </div>
+                </div>
+                <div class="schoolcontent">
+                    <div id="storytext">
+                        <div>
+                            <h5><svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <g>
+                                        <path
+                                            d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
+                                    </g>
+                                </svg> Bac pro <br>communication visuelle et pluri-média</h5>
+                        </div>
+
+                        <div id="storycontent">
+                            <div id="contentcolumnstory" class="school">
+                                <h6>J’ai quitté le foyer familial à 14 ans pour <span>explorer plus en profondeur le
+                                        graphisme</span>. Cette formation m’a enrichi en expériences professionnelles,
+                                    mais m’a
+                                    aussi fait comprendre que je voulais faire plus que du graphisme.</h6>
+                            </div>
+                            <div id="contentcolumnstory">
+                                <h6>2019 - 2022 | <span>Diplômé avec félicitations</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rightcolumnstory">
+                        <div id="lefttext">
+                            <div>
+                                <h5><svg class="arrowicontop" version="1.1" id="Calque_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                        xml:space="preserve">
+                                        <g>
+                                            <path
+                                                d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
+                                        </g>
+                                    </svg> DNMADe Numérique, <br>narration et motion design</h5>
+                            </div>
+
+                            <div id="storycontent">
+                                <div id="contentcolumnstory" class="school">
+                                    <h6>J'ai toujours eu un meilleur feeling avec l'animation, le motion étant pour moi
+                                        <span>une sorte d’évolution du design statique</span>. J'ai donc opté pour un
+                                        DNMADe pour
+                                        valoriser mes compétences dans ce domaine.
+                                    </h6>
+                                </div>
+                                <div id="contentcolumnstory">
+                                    <h6>2022 - 2025 | <span>En cours d’obtention</span></h6>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="box" id="link" href="latavernedudesign.html">
-                    <div id="cover">
-                        <video loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()">
-                            <source src="assets/videos/ltddthumb.webm" type="video/mp4">
-                        </video>
+            </div>
+
+
+
+
+            <div id="xp">
+                <div class="xpcontent xpintro">
+                    <div id="xptitle">
+                        <h5>Expériences professionnelles :</h5>
                     </div>
-                    <div id="desc">
-                        <h3>La Taverne Du Design</h3>
-                        <div id="details">
-                            <h5>Vidéo promotionnelle</h5>
-                            <h6>2023 - Projet client</h6>
+                </div>
+                <div class="xpcontent">
+                    <div id="storytext">
+                        <div>
+                            <h5><svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <g>
+                                        <path
+                                            d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
+                                    </g>
+                                </svg> Freelance motion designer</h5>
+                        </div>
+
+                        <div id="xpcontent">
+                            <div id="contentcolumnstory" class="xp">
+                                <h6>Je propose mes services dans l’accompagnement et la réalisation de projets motion
+                                    sur-mesure. </h6>
+                            </div>
+                            <div id="contentcolumnstory">
+                                <h6>2023 - 20XX</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rightcolumnstory">
+                        <div id="lefttext">
+                            <div>
+                                <h5><svg class="arrowicontop" version="1.1" id="Calque_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                        xml:space="preserve">
+                                        <g>
+                                            <path
+                                                d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
+                                        </g>
+                                    </svg> Stagiaire motion designer</h5>
+                            </div>
+
+                            <div id="xpcontent">
+                                <div id="contentcolumnstory" class="xp">
+                                    <h6>Créations animées pour l'agence et ses clients. Vidéo promotionnelle et réseaux
+                                        sociaux.
+                                    </h6>
+                                </div>
+                                <div id="contentcolumnstory">
+                                    <h6>2024 - Agence Paloha</h6>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="box" id="link" href="ring.html">
-                    <div id="cover">
-                        <img src="assets/images/ninecover.webp" alt="MakeBetter">
-                        <video loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()"
-                            onmouseleave="this.pause();this.currentTime=0;">
-                            <source src="assets/videos/ninethumb.webm" type="video/mp4">
-                        </video>
-                    </div>
-                    <div id="desc">
-                        <h3>Ring</h3>
-                        <div id="details">
-                            <h5>Essai à la fake 3D</h5>
-                            <h6>2023 - Projet personnel</h6>
+                <div class="xpcontent">
+                    <div id="storytext">
+                        <div>
+                            <h5><svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <g>
+                                        <path
+                                            d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
+                                    </g>
+                                </svg> Régisseur image son et lumières</h5>
+                        </div>
+
+                        <div id="xpcontent">
+                            <div id="contentcolumnstory" class="xp">
+                                <h6>Gestion de projections cinématographiques, spectacles, conférences et vernissages
+                                    d'expositions en amphithéâtre.</h6>
+                            </div>
+                            <div id="contentcolumnstory">
+                                <h6>2023 - Conseil départemental de l’Hérault</h6>
+                            </div>
                         </div>
                     </div>
+                    <div id="rightcolumnstory">
+                        <div id="lefttext">
+                            <div>
+                                <h5><svg class="arrowicontop" version="1.1" id="Calque_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                        xml:space="preserve">
+                                        <g>
+                                            <path
+                                                d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
+                                        </g>
+                                    </svg> Stagiaire motion designer junior</h5>
+                            </div>
+
+                            <div id="xpcontent">
+                                <div id="contentcolumnstory" class="xp">
+                                    <h6>Projet d’animation identitaire et de campagne de communication numérique.
+                                    </h6>
+                                </div>
+                                <div id="contentcolumnstory">
+                                    <h6>2023 - Agence Les 2 Autres</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="xpcontent">
+                    <div id="storytext">
+                        <div>
+                            <h5><svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <g>
+                                        <path
+                                            d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
+                                    </g>
+                                </svg> Stagiaire motion designer junior</h5>
+                        </div>
+
+                        <div id="xpcontent">
+                            <div id="contentcolumnstory" class="xp">
+                                <h6>Projet d’animation narratif et promotionnel. Première conception d’un projet animé
+                                    professionnel de A à Z.</h6>
+                            </div>
+                            <div id="contentcolumnstory">
+                                <h6>2022 - Agence Com On Cloud</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rightcolumnstory">
+                        <div id="lefttext">
+                            <div>
+                                <h5><svg class="arrowicontop" version="1.1" id="Calque_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                        xml:space="preserve">
+                                        <g>
+                                            <path
+                                                d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
+                                        </g>
+                                    </svg> Stagiaire graphiste junior</h5>
+                            </div>
+
+                            <div id="xpcontent">
+                                <div id="contentcolumnstory" class="xp">
+                                    <h6>Créations graphiques centrées sur le marketing digital et la communication sur
+                                        les réseaux sociaux.
+                                    </h6>
+                                </div>
+                                <div id="contentcolumnstory">
+                                    <h6>2021 - Agence Ekela Marketing & Digital</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="xpcontent">
+                    <div id="storytext">
+                        <div>
+                            <h5><svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <g>
+                                        <path
+                                            d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
+                                    </g>
+                                </svg> Stagiaire graphiste junior</h5>
+                        </div>
+
+                        <div id="xpcontent">
+                            <div id="contentcolumnstory" class="xp">
+                                <h6>Réalisation d’identités graphiques et collaborations graphiques avec le service
+                                    audiovisuel.</h6>
+                            </div>
+                            <div id="contentcolumnstory">
+                                <h6>2021 - Agence Forces Motrices</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rightcolumnstory">
+                        <div id="lefttext">
+                            <div>
+                                <h5><svg class="arrowicontop" version="1.1" id="Calque_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                        xml:space="preserve">
+                                        <g>
+                                            <path
+                                                d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
+                                        </g>
+                                    </svg> Stagiaire graphiste junior</h5>
+                            </div>
+
+                            <div id="xpcontent">
+                                <div id="contentcolumnstory" class="xp">
+                                    <h6>Suivi de gestion de projet, créations graphiques spécialisées dans
+                                        l’agroalimentaire et l’impression.
+                                    </h6>
+                                </div>
+                                <div id="contentcolumnstory">
+                                    <h6>2021 - Agence Ekela Marketing & Digital</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div id="context" class="storycontent">
+                <div id="rightcolumnstory">
+                    <img src="assets/images/grass-cover.webp">
+                </div>
+                <div id="rightcolumnstory">
+                    <div id="lefttext">
+                        <div id="storytitle">
+                            <h5>Un peu de contexte...</h5>
+                        </div>
+
+                        <div id="storycontent">
+                            <div id="contentcolumnstory">
+                                <h6>Mes premières vraies créations graphiques remontent à mon adolescence. Muni de
+                                    vieilles
+                                    versions
+                                    de Photoshop, Vegas Pro et After Effects, j'ai progressivement commencé à
+                                    explorer
+                                    l'image
+                                    et la vidéo.<br><span id="imghover">Au début, c'était pas fameux...</span> Mais
+                                    c'était
+                                    un
+                                    début.</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="sidebar-structure">
+            <div class="sidebar-structure-sides intro1">
+                <div class="sidebar-nav" style="opacity: 1;">
+                    <h3 id="textlink"><a href="index.html" onclick="changeText('work')"><svg class="arrowicontop"
+                                version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                <g>
+                                    <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
+                                </g>
+                            </svg> Work</a></h3>
+                    <h3 id="textlink"><a href="#main" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#main')"><svg class="arrowicontop" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
+                                </g>
+                            </svg> À propos</a></h3>
+                    <h3 id="textlink"><a href="contact.html" onclick="changeText('contact')"><svg class="arrowicontop"
+                                version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                <g>
+                                    <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
+                                </g>
+                            </svg> Contact
+
+                        </a></h3>
+                    </div>
+            </div>
+            <div class="sidebar-structure-middle"></div>
+            <div class="sidebar-structure-sides intro1">
+                <div class="sidebar-content" style="opacity: 1;">
+                    <div class="text-projectpage-overline sidebar"><a id="textlink" href="#main"
+                            onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">- À propos</a></div>
+                    <div class="sidebar-chapters-wrapper"><a id="textlink" href="#main"
+                            onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')"
+                            class="chapter w-inline-block">
+                            <div>Résumé</div>
+                        </a><a id="textlink" href="#context" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#context')" class="chapter w-inline-block">
+                            <div>Contexte</div>
+                        </a><a id="textlink" href="#school" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#premierspas')" class="chapter w-inline-block">
+                            <div>Scolarité</div>
+                        </a><a id="textlink" href="#xp" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#more')" class="chapter w-inline-block">
+                            <div>Expériences</div>
+                        </a><a id="textlink" href="#stadiabt-flow" class="chapter w-inline-block">
+                            <div>Temp</div>
+                        </a><a id="textlink" href="#stadiabt-layout" class="chapter w-inline-block">
+                            <div>Temp</div>
+                        </a><a id="textlink" href="#stadiabt-interactions" class="chapter w-inline-block">
+                            <div>Temp</div>
+                        </a><a id="textlink" href="#stadiabt-visd" class="chapter w-inline-block">
+                            <div>Temp</div>
+                        </a><a id="textlink" href="#stadiabt-finaldesigns" class="chapter w-inline-block">
+                            <div>Temp</div>
+                        </a></div>
                 </div>
             </div>
         </div>
+
         <footer class="desk">
 
             <div id="line1">
                 <div id="email">
-                    <a id="link" href="mailto:basiler.contact@gmail.com">
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="mailto:basiler.contact@gmail.com">
                         <h3>basiler.contact@gmail.com</h3>
                     </a>
                 </div>
                 <div id="darkmode">
-                    <a id="link" onclick="darkmode()"><span class="darkcircle"></span></a>
+                    <a id="textlink" onmouseenter="textOnHover('dark')" onclick="darkmode()"><span
+                            class="darkcircle"></span></a>
                 </div>
                 <div id="legal1">
-                    <a id="link" href="mentions-legales">
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="mentions-legales">
                         <h4>Mentions légales</h4>
                     </a>
-                    <a id="link" href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
+                    <a id="textlink" onmouseenter="textOnHover('btn')"
+                        href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
                         <h4>CGU</h4>
                     </a>
-                    <a id="link" href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
+                    <a id="textlink" onmouseenter="textOnHover('btn')"
+                        href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
                         <h4>CGV</h4>
                     </a>
                 </div>
             </div>
             <div id="line2">
                 <div id="socials">
-                    <a id="link"
+                    <a id="textlink" onmouseenter="textOnHover('btn')"
                         href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
                         target="_blank">
                         <h2>WhatsApp <svg class="arrowiconbot" version="1.1" id="Calque_1"
@@ -223,7 +532,8 @@
                                 </g>
                             </svg></h2>
                     </a>
-                    <a id="link" href="https://www.linkedin.com/in/basile-r/" target="_blank">
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://www.linkedin.com/in/basile-r/"
+                        target="_blank">
                         <h2>LinkedIn <svg class="arrowiconbot" version="1.1" id="Calque_1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                 y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
@@ -234,7 +544,8 @@
                                 </g>
                             </svg></h2>
                     </a><br>
-                    <a id="link" href="https://www.instagram.com/Bsile_R/" target="_blank">
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://www.instagram.com/Bsile_R/"
+                        target="_blank">
                         <h2>Instagram <svg class="arrowiconbot" version="1.1" id="Calque_1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                 y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
@@ -245,7 +556,8 @@
                                 </g>
                             </svg></h2>
                     </a>
-                    <a id="link" href="https://twitter.com/Bsile_R" target="_blank">
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://twitter.com/Bsile_R"
+                        target="_blank">
                         <h2>X <svg class="arrowiconbot" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
                                 style="enable-background:new 0 0 20 20;" xml:space="preserve">
@@ -257,13 +569,14 @@
                     </a>
                 </div>
                 <div id="extra">
-                    <a id="link" href="sandbox.html">
-                        <p>Extra pixels</p>
+                    <a id="textlink" href="#main" onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">
+                        <p>Back to top</p>
                     </a>
                 </div>
                 <div id="legal2">
-                    <a id="link" href="https://github.com/Bsile/portfolio" target="_blank">
-                        <h4>Code source</h4>
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://github.com/Bsile/portfolio"
+                        target="_blank">
+                        <h4>Code repo</h4>
                     </a>
                     <br>
                     <h4>© 2024 legal</h4>
@@ -274,7 +587,9 @@
 
             <div id="line1">
                 <div id="extra">
-                    <p>Extra pixels</p>
+                    <a id="textlink" href="#main" onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">
+                        <p>Back to top</p>
+                    </a>
                 </div>
                 <div id="darkmode">
                     <a class="footerdarkmode" onclick="darkmode()"><span class="darkcircle"></span></a>
@@ -363,6 +678,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
