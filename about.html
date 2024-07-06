@@ -42,7 +42,7 @@
         <div id="marge"></div>
         <div class="bggrid"></div>
 
-        
+
 
         <div id="pageview">
 
@@ -55,8 +55,8 @@
                                 <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
                             </g>
                         </svg></a></h3>
-                <h3 id="link"><a href="#pageview" onclick="changeText('about')">À propos <svg
-                            class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                <h3 id="link"><a href="#pageview" onclick="changeText('about')">À propos <svg class="arrowicontop"
+                            version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
                             style="enable-background:new 0 0 20 20;" xml:space="preserve">
                             <g>
@@ -75,7 +75,7 @@
             </nav>
             <video playsinline autoplay loop preload=metadata muted src="/assets/videos/oldprojectspreview.webm"
                 id="imgbehind"></video>
-                
+
             <div id="aboutheader" class="intro1">
                 <div id="picleft">
                     <div id="imageContainer">
@@ -83,6 +83,35 @@
                     </div>
                 </div>
                 <div id="descright">
+                    <div class="tablet tabletnav">
+                        <h3 id="textlink"><a href="index.html" onmouseenter="textOnHover('btn')"
+                                onclick="changeText('work')">Work <svg class="arrowicontop" version="1.1" id="Calque_1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                    xml:space="preserve">
+                                    <g>
+                                        <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
+                                    </g>
+                                </svg></a></h3>
+                        <h3 id="textlink"><a href="#pageview" onmouseenter="textOnHover('btn')"
+                                onclick="changeText('about')" onclick="lenis.scrollTo('#pageview')">À propos <svg
+                                    class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <g>
+                                        <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
+                                    </g>
+                                </svg></a></h3>
+                        <h3 id="textlink"><a href="contact.html" onmouseenter="textOnHover('btn')"
+                                onclick="changeText('contact')">Contact <svg class="arrowicontop" version="1.1"
+                                    id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <g>
+                                        <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
+                                    </g>
+                                </svg></a></h3>
+                    </div>
                     <h4><span>Je m'appelle Basile, artiste et designer de 19 ans basé à
                             Montpellier.</span><br><br><br>Je conçois des
                         images et animations digitales depuis 2019, et propose depuis 2023 mes services en tant que
@@ -125,57 +154,64 @@
                         <h5>Diplômes et formation :</h5>
                     </div>
                 </div>
-                <div class="schoolcontent">
-                    <div id="storytext">
+                <div class="schoolcontent accordion">
+                    <div id="storytext" class="accordion-item">
                         <div>
                             <h5><svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
                                     style="enable-background:new 0 0 20 20;" xml:space="preserve">
                                     <g>
                                         <path
-                                            d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
+                                            d="M11.3,1.3L20,10l-8.7,8.7l-1.5-1.5l6.1-6.1H0V8.9h16L9.8,2.8L11.3,1.3L11.3,1.3z">
+                                        </path>
                                     </g>
                                 </svg> Bac pro <br>communication visuelle et pluri-média</h5>
                         </div>
 
-                        <div id="storycontent">
+                        <div id="storycontent" class="accordion-item-content">
                             <div id="contentcolumnstory" class="school">
                                 <h6>J’ai quitté le foyer familial à 14 ans pour <span>explorer plus en profondeur le
                                         graphisme</span>. Cette formation m’a enrichi en expériences professionnelles,
                                     mais m’a
                                     aussi fait comprendre que je voulais faire plus que du graphisme.</h6>
                             </div>
-                            <div id="contentcolumnstory">
-                                <h6>2019 - 2022 | <span>Diplômé avec félicitations</span></h6>
-                            </div>
+
+                        </div>
+                        <div id="contentcolumnstory">
+                            <h4>2019 - 2022 | <span>Diplômé avec félicitations</span></h4>
                         </div>
                     </div>
-                    <div id="rightcolumnstory">
-                        <div id="lefttext">
-                            <div>
-                                <h5><svg class="arrowicontop" version="1.1" id="Calque_1"
-                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
-                                        xml:space="preserve">
-                                        <g>
-                                            <path
-                                                d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
-                                        </g>
-                                    </svg> DNMADe Numérique, <br>narration et motion design</h5>
-                            </div>
+                    <div id="rightcolumnstory" class="accordion-item">
+                        <div>
+                            <h5><svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                    <g>
+                                        <path
+                                            d="M11.3,1.3L20,10l-8.7,8.7l-1.5-1.5l6.1-6.1H0V8.9h16L9.8,2.8L11.3,1.3L11.3,1.3z">
+                                        </path>
+                                    </g>
+                                </svg> DNMADe Numérique, narration et motion design</h5>
+                        </div>
+                        <div id="lefttext" class="accordion-item-content">
+
 
                             <div id="storycontent">
                                 <div id="contentcolumnstory" class="school">
-                                    <h6>J'ai toujours eu un meilleur feeling avec l'animation, le motion étant pour moi
-                                        <span>une sorte d’évolution du design statique</span>. J'ai donc opté pour un
+                                    <h6>J'ai toujours eu un meilleur feeling avec l'animation, le motion étant pour
+                                        moi
+                                        <span>une sorte d’évolution du design statique</span>. J'ai donc opté pour
+                                        un
                                         DNMADe pour
                                         valoriser mes compétences dans ce domaine.
                                     </h6>
                                 </div>
-                                <div id="contentcolumnstory">
-                                    <h6>2022 - 2025 | <span>En cours d’obtention</span></h6>
-                                </div>
+
                             </div>
+                        </div>
+                        <div id="contentcolumnstory">
+                            <h4>2022 - 2025 | <span>En cours d’obtention<span class="one">.</span><span
+                                        class="two">.</span><span class="three">.</span></span></h4>
                         </div>
                     </div>
                 </div>
@@ -184,490 +220,434 @@
 
 
 
-            <div id="xp">
-                <div class="xpcontent xpintro">
+
+
+            <section id="xp">
+                <div class="xpintro">
                     <div id="xptitle">
                         <h5>Expériences professionnelles :</h5>
                     </div>
                 </div>
-                <div class="xpcontent">
-                    <div id="storytext">
-                        <div>
-                            <h5><svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                    <g>
-                                        <path
-                                            d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
-                                    </g>
-                                </svg> Freelance motion designer</h5>
-                        </div>
 
-                        <div id="xpcontent">
-                            <div id="contentcolumnstory" class="xp">
-                                <h6>Je propose mes services dans l’accompagnement et la réalisation de projets motion
-                                    sur-mesure. </h6>
-                            </div>
-                            <div id="contentcolumnstory">
-                                <h6>2023 - 20XX</h6>
-                            </div>
+                <div class="xpgrid">
+                    <div class="xpcontent">
+                        <div class="xpcolumn" id="textlink" data-target=".freelance">
+                            <h5>Freelance motion designer</h5>
+                            <h6>2023 - 20XX</h6>
+                            <div class="xpdivider"></div>
+                        </div>
+                        <div class="xpcolumn" id="textlink" data-target=".paloha">
+                            <h5>Stagiaire motion designer</h5>
+                            <h6>2024 - Agence Paloha</h6>
+                            <div class="xpdivider"></div>
+                        </div>
+                        <div class="xpcolumn" id="textlink" data-target=".pierresvives">
+                            <h5>Régisseur image son et lumières</h5>
+                            <h6>2023 - Conseil départemental de l’Hérault</h6>
+                            <div class="xpdivider"></div>
+                        </div>
+                        <div class="xpcolumn" id="textlink" data-target=".les2autres">
+                            <h5>Stagiaire motion designer junior</h5>
+                            <h6>2023 - Agence Les 2 Autres</h6>
+                            <div class="xpdivider"></div>
+                        </div>
+                        <div class="xpcolumn" id="textlink" data-target=".comoncloud">
+                            <h5>Stagiaire motion designer junior</h5>
+                            <h6>2022 - Agence Com On Cloud</h6>
+                            <div class="xpdivider"></div>
+                        </div>
+                        <div class="xpcolumn" id="textlink" data-target=".ekela">
+                            <h5>Stagiaire graphiste junior</h5>
+                            <h6>2021 - Agence Ekela Marketing & Digital</h6>
+                            <div class="xpdivider"></div>
+                        </div>
+                        <div class="xpcolumn" id="textlink" data-target=".forcesmotrices">
+                            <h5>Stagiaire graphiste junior</h5>
+                            <h6>2021 - Agence Forces Motrices</h6>
+                            <div class="xpdivider"></div>
+                        </div>
+                        <div class="xpcolumn" id="textlink" data-target=".creaset">
+                            <h5>Stagiaire graphiste junior</h5>
+                            <h6>2021 - Agence Créaset</h6>
+                            <div class="xpdivider"></div>
                         </div>
                     </div>
-                    <div id="rightcolumnstory">
-                        <div id="lefttext">
-                            <div>
-                                <h5><svg class="arrowicontop" version="1.1" id="Calque_1"
-                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
-                                        xml:space="preserve">
-                                        <g>
-                                            <path
-                                                d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
-                                        </g>
-                                    </svg> Stagiaire motion designer</h5>
-                            </div>
 
-                            <div id="xpcontent">
-                                <div id="contentcolumnstory" class="xp">
-                                    <h6>Créations animées pour l'agence et ses clients. Vidéo promotionnelle et réseaux
-                                        sociaux.
-                                    </h6>
-                                </div>
-                                <div id="contentcolumnstory">
-                                    <h6>2024 - Agence Paloha</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="xpcontent">
-                    <div id="storytext">
-                        <div>
-                            <h5><svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                    <g>
-                                        <path
-                                            d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
-                                    </g>
-                                </svg> Régisseur image son et lumières</h5>
-                        </div>
 
-                        <div id="xpcontent">
-                            <div id="contentcolumnstory" class="xp">
-                                <h6>Gestion de projections cinématographiques, spectacles, conférences et vernissages
-                                    d'expositions en amphithéâtre.</h6>
-                            </div>
-                            <div id="contentcolumnstory">
-                                <h6>2023 - Conseil départemental de l’Hérault</h6>
-                            </div>
+                    <div class="xpdata">
+                        <div class="xpdatacenter">
+                        <div id="xpdatatitles">
+                            <h5>Rôle :</h5>
                         </div>
-                    </div>
-                    <div id="rightcolumnstory">
-                        <div id="lefttext">
-                            <div>
-                                <h5><svg class="arrowicontop" version="1.1" id="Calque_1"
-                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
-                                        xml:space="preserve">
-                                        <g>
-                                            <path
-                                                d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
-                                        </g>
-                                    </svg> Stagiaire motion designer junior</h5>
-                            </div>
+ 
+                        <ul class="xpcards">
+                            <li class="freelance les2autres comoncloud">
+                                <h2>Chargé de projet</h2>
+                            </li>
+                            <li class="pierresvives">
+                                <h2>Salarié</h2>
+                            </li>
+                            <li class="paloha les2autres comoncloud ekela forcesmotrices creaset">
+                                <h2>Stagiaire</h2>
+                            </li>
+                        </ul>
+                        <div id="xpdatatitles">
+                            <h5>Disciplines :</h5>
+                        </div>
+ 
+                        <ul class="xpcards">
+                            <li class="freelance paloha les2autres comoncloud">
+                                <h2>Motion design</h2>
+                            </li>
+                            <li class="freelance paloha les2autres comoncloud ekela forcesmotrices creaset">
+                                <h2>Illustration</h2>
+                            </li>
+                            <li class="freelance ekela forcesmotrices creaset">
+                                <h2>Graphisme</h2>
+                            </li>
+                            
+                             <li class="pierresvives">
+                                <h2>Arts culturels</h2>
+                
+                            </li>
+                            <li class="pierresvives">
+                                <h2>Cinématographie</h2>
+                
+                            </li>
+                            <li class="pierresvives">
+                                <h2>Ingénierie son</h2>
+                
+                            </li>
+                            <li class="pierresvives">
+                                <h2>Ingénierie lumière</h2>
+                
+                            </li>
+                        </ul>
 
-                            <div id="xpcontent">
-                                <div id="contentcolumnstory" class="xp">
-                                    <h6>Projet d’animation identitaire et de campagne de communication numérique.
-                                    </h6>
-                                </div>
-                                <div id="contentcolumnstory">
-                                    <h6>2023 - Agence Les 2 Autres</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="xpcontent">
-                    <div id="storytext">
-                        <div>
-                            <h5><svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                    <g>
-                                        <path
-                                            d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
-                                    </g>
-                                </svg> Stagiaire motion designer junior</h5>
-                        </div>
 
-                        <div id="xpcontent">
-                            <div id="contentcolumnstory" class="xp">
-                                <h6>Projet d’animation narratif et promotionnel. Première conception d’un projet animé
-                                    professionnel de A à Z.</h6>
-                            </div>
-                            <div id="contentcolumnstory">
-                                <h6>2022 - Agence Com On Cloud</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="rightcolumnstory">
-                        <div id="lefttext">
-                            <div>
-                                <h5><svg class="arrowicontop" version="1.1" id="Calque_1"
-                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
-                                        xml:space="preserve">
-                                        <g>
-                                            <path
-                                                d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
-                                        </g>
-                                    </svg> Stagiaire graphiste junior</h5>
-                            </div>
 
-                            <div id="xpcontent">
-                                <div id="contentcolumnstory" class="xp">
-                                    <h6>Créations graphiques centrées sur le marketing digital et la communication sur
-                                        les réseaux sociaux.
-                                    </h6>
-                                </div>
-                                <div id="contentcolumnstory">
-                                    <h6>2021 - Agence Ekela Marketing & Digital</h6>
-                                </div>
-                            </div>
+                        <div id="xpdatatitles">
+                            <h5>Clients :</h5>
                         </div>
-                    </div>
-                </div>
-                <div class="xpcontent">
-                    <div id="storytext">
-                        <div>
-                            <h5><svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                    style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                    <g>
-                                        <path
-                                            d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
-                                    </g>
-                                </svg> Stagiaire graphiste junior</h5>
-                        </div>
-
-                        <div id="xpcontent">
-                            <div id="contentcolumnstory" class="xp">
-                                <h6>Réalisation d’identités graphiques et collaborations graphiques avec le service
-                                    audiovisuel.</h6>
-                            </div>
-                            <div id="contentcolumnstory">
-                                <h6>2021 - Agence Forces Motrices</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="rightcolumnstory">
-                        <div id="lefttext">
-                            <div>
-                                <h5><svg class="arrowicontop" version="1.1" id="Calque_1"
-                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
-                                        xml:space="preserve">
-                                        <g>
-                                            <path
-                                                d="M18.7,11.3L10,20l-8.7-8.7l1.5-1.5L8.9,16L8.9,0h2.1v16l6.2-6.2L18.7,11.3z" />
-                                        </g>
-                                    </svg> Stagiaire graphiste junior</h5>
-                            </div>
-
-                            <div id="xpcontent">
-                                <div id="contentcolumnstory" class="xp">
-                                    <h6>Suivi de gestion de projet, créations graphiques spécialisées dans
-                                        l’agroalimentaire et l’impression.
-                                    </h6>
-                                </div>
-                                <div id="contentcolumnstory">
-                                    <h6>2021 - Agence Ekela Marketing & Digital</h6>
-                                </div>
-                            </div>
-                        </div>
+ 
+                        <ul class="xpcards">
+                            <ul class="xpcards">
+                                <li class="paloha pierresvives les2autres comoncloud ekela forcesmotrices creaset">
+                                    <h2>Interne</h2>
+                                </li>
+                                <li class="paloha">
+                                    <h2>Dieze Warehouse</h2>
+                                </li>
+                                <li class="freelance">
+                                    <h2>Drime Cloud</h2>
+                                </li>
+                                <li class="forcesmotrices">
+                                    <h2>Ville d'Orléans</h2>
+                                </li>
+                                <li class="pierresvives">
+                                    <h2>Hérault Sport</h2>
+                                </li>
+                                <li class="freelance">
+                                    <h2>MakeBetter SaaS</h2>
+                                </li>
+                                <li class="forcesmotrices">
+                                    <h2>Suez Eau France</h2>
+                                </li>
+                                <li class="creaset">
+                                    <h2>Lipton Ice-tea</h2>
+                                </li>
+                                <li class="creaset">
+                                    <h2>Lays apéritif</h2>
+                                </li>
+                                <li class="creaset">
+                                    <h2>Biscuits Saint-Michel</h2>
+                                </li>
+                                <li class="freelance">
+                                    <h2>La Taverne Du Design</h2>
+                                </li>
+                                <li class="freelance">
+                                    <h2>Nine Marketing & Digital</h2>
+                                </li>
+                                <li class="freelance">
+                                    <h2>Up Review SaaS</h2>
+                                </li>
+                                <li class="pierresvives">
+                                    <h2>PierresVives</h2>
+                                </li>
+                                <li class="freelance paloha pierresvives ekela forcesmotrices creaset">
+                                    <h2>Autres...</h2>
+                                </li>
+                            </ul>
+                            
+                        </ul>
                     </div>
                 </div>
+                    
+                </div>
+
+            </section>
+
+
+
+
+
+
+        <div id="context" class="storycontent">
+            <div id="rightcolumnstory">
+                <img src="assets/images/grass-cover.webp">
             </div>
+            <div id="rightcolumnstory">
+                <div id="lefttext">
+                    <div id="storytitle">
+                        <h5>Un peu de contexte...</h5>
+                    </div>
 
-
-
-
-
-            <div id="context" class="storycontent">
-                <div id="rightcolumnstory">
-                    <img src="assets/images/grass-cover.webp">
-                </div>
-                <div id="rightcolumnstory">
-                    <div id="lefttext">
-                        <div id="storytitle">
-                            <h5>Un peu de contexte...</h5>
-                        </div>
-
-                        <div id="storycontent">
-                            <div id="contentcolumnstory">
-                                <h6>Mes premières vraies créations graphiques remontent à mon adolescence. Muni de
-                                    vieilles
-                                    versions
-                                    de Photoshop, Vegas Pro et After Effects, j'ai progressivement commencé à
-                                    explorer
-                                    l'image
-                                    et la vidéo.<br><span id="imghover">Au début, c'était pas fameux...</span> Mais
-                                    c'était
-                                    un
-                                    début.</h6>
-                            </div>
+                    <div id="storycontent">
+                        <div id="contentcolumnstory">
+                            <h6>Mes premières vraies créations graphiques remontent à mon adolescence. Muni de
+                                vieilles
+                                versions
+                                de Photoshop, Vegas Pro et After Effects, j'ai progressivement commencé à
+                                explorer
+                                l'image
+                                et la vidéo.<br><span id="imghover">Au début, c'était pas fameux...</span> Mais
+                                c'était
+                                un
+                                début.</h6>
                         </div>
                     </div>
-                </div>
-            </div>
-
-
-        </div>
-
-        <div class="sidebar-structure">
-            <div class="sidebar-structure-sides intro1">
-                <div class="sidebar-nav" style="opacity: 1;">
-                    <h3 id="textlink"><a href="index.html" onclick="changeText('work')"><svg class="arrowicontop"
-                                version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                <g>
-                                    <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
-                                </g>
-                            </svg> Work</a></h3>
-                    <h3 id="textlink"><a href="#main" onmouseenter="textOnHover('btn')"
-                            onclick="lenis.scrollTo('#main')"><svg class="arrowicontop" version="1.1" id="Calque_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
-                                xml:space="preserve">
-                                <g>
-                                    <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
-                                </g>
-                            </svg> À propos</a></h3>
-                    <h3 id="textlink"><a href="contact.html" onclick="changeText('contact')"><svg class="arrowicontop"
-                                version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                <g>
-                                    <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
-                                </g>
-                            </svg> Contact
-
-                        </a></h3>
-                    </div>
-            </div>
-            <div class="sidebar-structure-middle"></div>
-            <div class="sidebar-structure-sides intro1">
-                <div class="sidebar-content" style="opacity: 1;">
-                    <div class="text-projectpage-overline sidebar"><a id="textlink" href="#main"
-                            onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">- À propos</a></div>
-                    <div class="sidebar-chapters-wrapper"><a id="textlink" href="#main"
-                            onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')"
-                            class="chapter w-inline-block">
-                            <div>Résumé</div>
-                        </a><a id="textlink" href="#context" onmouseenter="textOnHover('btn')"
-                            onclick="lenis.scrollTo('#context')" class="chapter w-inline-block">
-                            <div>Contexte</div>
-                        </a><a id="textlink" href="#school" onmouseenter="textOnHover('btn')"
-                            onclick="lenis.scrollTo('#premierspas')" class="chapter w-inline-block">
-                            <div>Scolarité</div>
-                        </a><a id="textlink" href="#xp" onmouseenter="textOnHover('btn')"
-                            onclick="lenis.scrollTo('#more')" class="chapter w-inline-block">
-                            <div>Expériences</div>
-                        </a><a id="textlink" href="#stadiabt-flow" class="chapter w-inline-block">
-                            <div>Temp</div>
-                        </a><a id="textlink" href="#stadiabt-layout" class="chapter w-inline-block">
-                            <div>Temp</div>
-                        </a><a id="textlink" href="#stadiabt-interactions" class="chapter w-inline-block">
-                            <div>Temp</div>
-                        </a><a id="textlink" href="#stadiabt-visd" class="chapter w-inline-block">
-                            <div>Temp</div>
-                        </a><a id="textlink" href="#stadiabt-finaldesigns" class="chapter w-inline-block">
-                            <div>Temp</div>
-                        </a></div>
                 </div>
             </div>
         </div>
 
-        <footer class="desk">
 
-            <div id="line1">
-                <div id="email">
-                    <a id="textlink" onmouseenter="textOnHover('btn')" href="mailto:basiler.contact@gmail.com">
-                        <h3>basiler.contact@gmail.com</h3>
-                    </a>
-                </div>
-                <div id="darkmode">
-                    <a id="textlink" onmouseenter="textOnHover('dark')" onclick="darkmode()"><span
-                            class="darkcircle"></span></a>
-                </div>
-                <div id="legal1">
-                    <a id="textlink" onmouseenter="textOnHover('btn')" href="mentions-legales">
-                        <h4>Mentions légales</h4>
-                    </a>
-                    <a id="textlink" onmouseenter="textOnHover('btn')"
-                        href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
-                        <h4>CGU</h4>
-                    </a>
-                    <a id="textlink" onmouseenter="textOnHover('btn')"
-                        href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
-                        <h4>CGV</h4>
-                    </a>
-                </div>
-            </div>
-            <div id="line2">
-                <div id="socials">
-                    <a id="textlink" onmouseenter="textOnHover('btn')"
-                        href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
-                        target="_blank">
-                        <h2>WhatsApp <svg class="arrowiconbot" version="1.1" id="Calque_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
-                                xml:space="preserve">
-                                <g>
-                                    <path fill="currentColor"
-                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
-                                </g>
-                            </svg></h2>
-                    </a>
-                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://www.linkedin.com/in/basile-r/"
-                        target="_blank">
-                        <h2>LinkedIn <svg class="arrowiconbot" version="1.1" id="Calque_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
-                                xml:space="preserve">
-                                <g>
-                                    <path fill="currentColor"
-                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
-                                </g>
-                            </svg></h2>
-                    </a><br>
-                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://www.instagram.com/Bsile_R/"
-                        target="_blank">
-                        <h2>Instagram <svg class="arrowiconbot" version="1.1" id="Calque_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
-                                xml:space="preserve">
-                                <g>
-                                    <path fill="currentColor"
-                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
-                                </g>
-                            </svg></h2>
-                    </a>
-                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://twitter.com/Bsile_R"
-                        target="_blank">
-                        <h2>X <svg class="arrowiconbot" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                <g>
-                                    <path fill="currentColor"
-                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
-                                </g>
-                            </svg></h2>
-                    </a>
-                </div>
-                <div id="extra">
-                    <a id="textlink" href="#main" onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">
-                        <p>Back to top</p>
-                    </a>
-                </div>
-                <div id="legal2">
-                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://github.com/Bsile/portfolio"
-                        target="_blank">
-                        <h4>Code repo</h4>
-                    </a>
-                    <br>
-                    <h4>© 2024 legal</h4>
-                </div>
-            </div>
-        </footer>
-        <footer class="mobilefooter">
+    </div>
 
-            <div id="line1">
-                <div id="extra">
-                    <a id="textlink" href="#main" onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">
-                        <p>Back to top</p>
-                    </a>
-                </div>
-                <div id="darkmode">
-                    <a class="footerdarkmode" onclick="darkmode()"><span class="darkcircle"></span></a>
-                </div>
-                <div id="socials">
-                    <a href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
-                        target="_blank">
-                        <h2>WhatsApp <svg class="arrowiconbot" version="1.1" id="Calque_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
-                                xml:space="preserve">
-                                <g>
-                                    <path fill="currentColor"
-                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
-                                </g>
-                            </svg></h2>
-                    </a>
-                    <a href="https://www.linkedin.com/in/basile-r/" target="_blank">
-                        <h2>LinkedIn <svg class="arrowiconbot" version="1.1" id="Calque_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
-                                xml:space="preserve">
-                                <g>
-                                    <path fill="currentColor"
-                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
-                                </g>
-                            </svg></h2>
-                    </a><br>
-                    <a href="https://www.instagram.com/Bsile_R/" target="_blank">
-                        <h2>Instagram <svg class="arrowiconbot" version="1.1" id="Calque_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
-                                xml:space="preserve">
-                                <g>
-                                    <path fill="currentColor"
-                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
-                                </g>
-                            </svg></h2>
-                    </a>
-                    <a href="https://twitter.com/Bsile_R">
-                        <h2>X <svg class="arrowiconbot" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
-                                <g>
-                                    <path fill="currentColor"
-                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
-                                </g>
-                            </svg></h2>
-                    </a>
-                </div>
-                <div id="email">
-                    <a href="mailto:basiler.contact@gmail.com">
-                        <h3>basiler.contact@gmail.com</h3>
-                    </a>
-                </div>
-            </div>
-            <div id="line2">
-                <div id="legal2">
-                    <a href="mentions-legales">
-                        <h4>Mentions légales</h4>
-                    </a><br>
-                    <a href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
-                        <h4>CGU</h4>
-                    </a>
-                    <a href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
-                        <h4>CGV</h4>
-                    </a>
-                </div>
-                <div id="legal1">
-                    <a id="link" href="https://github.com/Bsile/portfolio" target="_blank">
-                        <h4>Code source</h4>
-                    </a>
-                    <h4>© 2024 legal</h4>
-                </div>
+    <div class="sidebar-structure">
+        <div class="sidebar-structure-sides intro1">
+            <div class="sidebar-nav" style="opacity: 1;">
+                <h3 id="textlink"><a href="index.html" onclick="changeText('work')"><svg class="arrowicontop"
+                            version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                            style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
+                            </g>
+                        </svg> Work</a></h3>
+                <h3 id="textlink"><a href="#main" onmouseenter="textOnHover('btn')"
+                        onclick="lenis.scrollTo('#main')"><svg class="arrowicontop" version="1.1" id="Calque_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
+                            </g>
+                        </svg> À propos</a></h3>
+                <h3 id="textlink"><a href="contact.html" onclick="changeText('contact')"><svg class="arrowicontop"
+                            version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                            style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
+                            </g>
+                        </svg> Contact
 
+                    </a></h3>
             </div>
-        </footer>
-        <div id="marge"></div>
+        </div>
+        <div class="sidebar-structure-middle"></div>
+        <div class="sidebar-structure-sides intro1">
+            <div class="sidebar-content" style="opacity: 1;">
+                <div class="text-projectpage-overline sidebar"><a id="textlink" href="#main"
+                        onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">- À propos</a></div>
+                <div class="sidebar-chapters-wrapper"><a id="textlink" href="#main" onmouseenter="textOnHover('btn')"
+                        onclick="lenis.scrollTo('#main')" class="chapter w-inline-block">
+                        <div>Résumé</div>
+                    </a><a id="textlink" href="#context" onmouseenter="textOnHover('btn')"
+                        onclick="lenis.scrollTo('#context')" class="chapter w-inline-block">
+                        <div>Contexte</div>
+                    </a><a id="textlink" href="#school" onmouseenter="textOnHover('btn')"
+                        onclick="lenis.scrollTo('#premierspas')" class="chapter w-inline-block">
+                        <div>Scolarité</div>
+                    </a><a id="textlink" href="#xp" onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#more')"
+                        class="chapter w-inline-block">
+                        <div>Expériences</div>
+                    </a><a id="textlink" href="#stadiabt-flow" class="chapter w-inline-block">
+                        <div>Temp</div>
+                    </a><a id="textlink" href="#stadiabt-layout" class="chapter w-inline-block">
+                        <div>Temp</div>
+                    </a><a id="textlink" href="#stadiabt-interactions" class="chapter w-inline-block">
+                        <div>Temp</div>
+                    </a><a id="textlink" href="#stadiabt-visd" class="chapter w-inline-block">
+                        <div>Temp</div>
+                    </a><a id="textlink" href="#stadiabt-finaldesigns" class="chapter w-inline-block">
+                        <div>Temp</div>
+                    </a></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="desk">
+
+        <div id="line1">
+            <div id="email">
+                <a id="textlink" onmouseenter="textOnHover('btn')" href="mailto:basiler.contact@gmail.com">
+                    <h3>basiler.contact@gmail.com</h3>
+                </a>
+            </div>
+            <div id="darkmode">
+                <a id="textlink" onmouseenter="textOnHover('dark')" onclick="darkmode()"><span
+                        class="darkcircle"></span></a>
+            </div>
+            <div id="legal1">
+                <a id="textlink" onmouseenter="textOnHover('btn')" href="mentions-legales">
+                    <h4>Mentions légales</h4>
+                </a>
+                <a id="textlink" onmouseenter="textOnHover('btn')"
+                    href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
+                    <h4>CGU</h4>
+                </a>
+                <a id="textlink" onmouseenter="textOnHover('btn')" href="assets/files/Conditions_Generales_de_Vente.pdf"
+                    target="_blank">
+                    <h4>CGV</h4>
+                </a>
+            </div>
+        </div>
+        <div id="line2">
+            <div id="socials">
+                <a id="textlink" onmouseenter="textOnHover('btn')"
+                    href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
+                    target="_blank">
+                    <h2>WhatsApp <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path fill="currentColor" d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                            </g>
+                        </svg></h2>
+                </a>
+                <a id="textlink" onmouseenter="textOnHover('btn')" href="https://www.linkedin.com/in/basile-r/"
+                    target="_blank">
+                    <h2>LinkedIn <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path fill="currentColor" d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                            </g>
+                        </svg></h2>
+                </a><br>
+                <a id="textlink" onmouseenter="textOnHover('btn')" href="https://www.instagram.com/Bsile_R/"
+                    target="_blank">
+                    <h2>Instagram <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path fill="currentColor" d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                            </g>
+                        </svg></h2>
+                </a>
+                <a id="textlink" onmouseenter="textOnHover('btn')" href="https://twitter.com/Bsile_R" target="_blank">
+                    <h2>X <svg class="arrowiconbot" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                            style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path fill="currentColor" d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                            </g>
+                        </svg></h2>
+                </a>
+            </div>
+            <div id="extra">
+                <a id="textlink" href="#main" onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">
+                    <p>Back to top</p>
+                </a>
+            </div>
+            <div id="legal2">
+                <a id="textlink" onmouseenter="textOnHover('btn')" href="https://github.com/Bsile/portfolio"
+                    target="_blank">
+                    <h4>Code repo</h4>
+                </a>
+                <br>
+                <h4>© 2024 legal</h4>
+            </div>
+        </div>
+    </footer>
+    <footer class="mobilefooter">
+
+        <div id="line1">
+            <div id="extra">
+                <a id="textlink" href="#main" onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">
+                    <p>Back to top</p>
+                </a>
+            </div>
+            <div id="darkmode">
+                <a class="footerdarkmode" onclick="darkmode()"><span class="darkcircle"></span></a>
+            </div>
+            <div id="socials">
+                <a href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
+                    target="_blank">
+                    <h2>WhatsApp <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path fill="currentColor" d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                            </g>
+                        </svg></h2>
+                </a>
+                <a href="https://www.linkedin.com/in/basile-r/" target="_blank">
+                    <h2>LinkedIn <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path fill="currentColor" d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                            </g>
+                        </svg></h2>
+                </a><br>
+                <a href="https://www.instagram.com/Bsile_R/" target="_blank">
+                    <h2>Instagram <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path fill="currentColor" d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                            </g>
+                        </svg></h2>
+                </a>
+                <a href="https://twitter.com/Bsile_R">
+                    <h2>X <svg class="arrowiconbot" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                            style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path fill="currentColor" d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                            </g>
+                        </svg></h2>
+                </a>
+            </div>
+            <div id="email">
+                <a href="mailto:basiler.contact@gmail.com">
+                    <h3>basiler.contact@gmail.com</h3>
+                </a>
+            </div>
+        </div>
+        <div id="line2">
+            <div id="legal2">
+                <a href="mentions-legales">
+                    <h4>Mentions légales</h4>
+                </a><br>
+                <a href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
+                    <h4>CGU</h4>
+                </a>
+                <a href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
+                    <h4>CGV</h4>
+                </a>
+            </div>
+            <div id="legal1">
+                <a id="link" href="https://github.com/Bsile/portfolio" target="_blank">
+                    <h4>Code source</h4>
+                </a>
+                <h4>© 2024 legal</h4>
+            </div>
+
+        </div>
+    </footer>
+    <div id="marge"></div>
     </div>
 
 
@@ -684,7 +664,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="assets/script/script.js"></script>

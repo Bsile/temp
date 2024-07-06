@@ -1,4 +1,4 @@
-import { showPage, hidePage } from '/temp/assets/barba/transition.js';
+import { showPage, hidePage } from 'temp/assets/barba/transition.js';
 
 barba.init({
   debug: false,
@@ -26,12 +26,14 @@ barba.hooks.once((data) => {
 barba.hooks.enter((data) => {
   updateHeader(data.next.namespace);
   if (data.next.namespace === 'about') {
-    loadScripts().then(() => {
+    loadAboutScripts().then(() => {
       webglpixeleffect();
       imgOnHover();
+      setupXpHover
     });
   }
 });
+
 
 barba.hooks.afterLeave((data) => {
   data.current.container.remove();
@@ -50,6 +52,10 @@ barba.hooks.after((data) => {
   growOnHover(); // Réinitialiser les écouteurs d'événements après chaque transition
   initializeLenis(); // Réinitialiser Lenis après chaque transition
   safariEdit();
+});
+
+barba.hooks.afterEnter((data) => {
+  var vids = document.querySelectorAll("video"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => {}).catch(error => {}); }; });
 });
 
 const updateHeader = (data) => {

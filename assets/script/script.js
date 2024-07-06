@@ -53,6 +53,7 @@ initializeLenis();
 
 
 
+
 let mouseMoveListener;
 let hoverListeners = [];
 let textHoverListeners = [];
@@ -374,14 +375,15 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (isAboutPage()) {
-    loadScripts().then(() => {
+    loadAboutScripts().then(() => {
       webglpixeleffect();
       imgOnHover();
+      setupXpHover();
     });
   }
 });
 
-function loadScripts() {
+function loadAboutScripts() {
   return new Promise((resolve, reject) => {
     if (typeof THREE !== 'undefined') {
       console.log('Three.js is already loaded.');
@@ -410,6 +412,8 @@ function loadScripts() {
     }
   });
 }
+
+
 
 let renderer, scene, camera, planeMesh;
 let animationFrameId = null;
@@ -698,4 +702,43 @@ function imgOnHover() {
       scale: 0,
     });
   }
+}
+
+
+
+
+
+let xpHoverListeners = [];
+
+function setupXpHover() {
+  const columns = document.querySelectorAll('.xpcolumn');
+
+  // Clear previous listeners to avoid duplication
+  xpHoverListeners.forEach(listener => {
+    listener.element.removeEventListener('mouseenter', listener.mouseEnter);
+    listener.element.removeEventListener('mouseleave', listener.mouseLeave);
+  });
+  xpHoverListeners = [];
+
+  columns.forEach(column => {
+    const targetClass = column.getAttribute('data-target');
+    const targetElements = document.querySelectorAll(targetClass);
+
+    const mouseEnter = () => {
+      targetElements.forEach(element => element.classList.add('hovered'));
+    };
+
+    const mouseLeave = () => {
+      targetElements.forEach(element => element.classList.remove('hovered'));
+    };
+
+    xpHoverListeners.push({
+      element: column,
+      mouseEnter: mouseEnter,
+      mouseLeave: mouseLeave
+    });
+
+    column.addEventListener('mouseenter', mouseEnter);
+    column.addEventListener('mouseleave', mouseLeave);
+  });
 }
