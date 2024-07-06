@@ -29,7 +29,7 @@ barba.hooks.enter((data) => {
     loadAboutScripts().then(() => {
       webglpixeleffect();
       imgOnHover();
-      setupXpHover
+      setupXpHover();
     });
   }
 });
