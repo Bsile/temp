@@ -1,3 +1,9 @@
+$('img').attr('draggable', false);
+
+
+
+
+
 // Vérifiez si lenis n'est pas déjà déclaré globalement
 if (typeof window.lenis === 'undefined') {
   window.lenis = null;
@@ -207,10 +213,10 @@ function popupvimeo() {
 
     console.log('Adding new event listeners for .popup-vimeo...');
     // Ajouter les nouveaux écouteurs d'événements
-    $('.popup-vimeo').magnificPopup({ 
-      type: 'iframe', 
-      removalDelay: 300, 
-      mainClass: 'mfp-fade' 
+    $('.popup-vimeo').magnificPopup({
+      type: 'iframe',
+      removalDelay: 300,
+      mainClass: 'mfp-fade'
     });
   });
 }
@@ -261,6 +267,9 @@ function textOnHover(text) {
       break;
     case 'dark':
       divTexte.textContent = ' ';
+      break;
+    case 'swiper':
+      divTexte.textContent = '< >';
       break;
     default:
       break;
@@ -379,9 +388,15 @@ document.addEventListener('DOMContentLoaded', function () {
       webglpixeleffect();
       imgOnHover();
       setupXpHover();
+      swiperAnimation();
+      initParallax();
     });
   }
 });
+
+
+
+
 
 function loadAboutScripts() {
   return new Promise((resolve, reject) => {
@@ -742,3 +757,143 @@ function setupXpHover() {
     column.addEventListener('mouseleave', mouseLeave);
   });
 }
+
+
+
+
+
+
+
+
+let swiperInstance;
+
+function loadSwiperScripts() {
+  return new Promise((resolve, reject) => {
+    if (typeof Swiper !== 'undefined') {
+      console.log('Swiper.js is already loaded.');
+      resolve();
+    } else {
+      // Check if the script is already being loaded
+      const existingScript = document.querySelector('script[src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"]');
+      if (existingScript) {
+        console.log('Swiper.js script is already being loaded.');
+        existingScript.addEventListener('load', resolve);
+        existingScript.addEventListener('error', reject);
+      } else {
+        console.log('Loading Swiper.js script...');
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+        script.onload = () => {
+          console.log('Swiper.js script loaded successfully.');
+          resolve();
+        };
+        script.onerror = () => {
+          console.error('Failed to load Swiper.js script.');
+          reject();
+        };
+        document.head.appendChild(script);
+
+        // Load Swiper CSS
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
+        document.head.appendChild(link);
+      }
+    }
+  });
+}
+
+function swiperAnimation() {
+  if (swiperInstance) {
+    console.log('Swiper instance already exists.');
+    return;
+  }
+
+  swiperInstance = new Swiper(".mySwiper", {
+    autoHeight: true,
+    grabCursor: true,
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      draggable: false,
+    },
+    speed: 400,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    // Responsive breakpoints
+    breakpoints: {
+      900: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1280: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+      },
+    },
+  });
+}
+
+function destroySwiper() {
+  if (swiperInstance) {
+    swiperInstance.destroy(true, true);
+    swiperInstance = null;
+    console.log('Swiper instance destroyed.');
+  }
+}
+
+function initSwiper() {
+  loadSwiperScripts().then(() => {
+    swiperAnimation();
+  }).catch((error) => {
+    console.error('Error loading Swiper scripts:', error);
+  });
+}
+
+
+
+
+
+
+function initParallax() {
+  gsap.utils.toArray(".parallax").forEach((section, i) => {
+      const heightDiff = 50; // Valeur fixe, ajustez selon vos besoins
+      const scaleAmount = 1.3; // Agrandissement initial de l'image
+
+      gsap.fromTo(section, {
+          y: -heightDiff,
+          scale: scaleAmount,
+      }, {
+          scrollTrigger: {
+              trigger: section,
+              scrub: true
+          },
+          y: 100, // Valeur finale de déplacement Y lors du scroll
+          scale: scaleAmount, // Maintient l'agrandissement initial
+          ease: "none"
+      });
+  });
+}
+
+function cleanupParallax() {
+  console.log('Nettoyage du parallaxe en cours...');
+  
+  gsap.utils.toArray(".parallax-container .parallax").forEach((section, i) => {
+      const tweens = gsap.getTweensOf(section);
+
+      if (tweens.length > 0) {
+          console.log(`Arrêt des animations pour l'élément ${section}`);
+          tweens.forEach(tween => {
+              tween.kill(); // Arrête toutes les animations associées à la section
+          });
+      } else {
+          console.log(`Aucune animation trouvée pour l'élément ${section}`);
+      }
+  });
+
+  console.log('Nettoyage du parallaxe terminé.');
+}
+
+
+
+
+

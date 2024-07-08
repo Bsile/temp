@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
@@ -38,51 +39,67 @@
         </div>
     </div>
 
-    <div id="main" data-barba="container" data-barba-namespace="about">
+    <div id="main" data-barba="container" data-barba-namespace="contact">
         <div id="marge"></div>
+        <div class="bggrid"></div>
+
+
 
         <div id="pageview">
-            <video playsinline autoplay loop preload=metadata muted src="/assets/videos/oldprojectspreview.webm" id="imgbehind"></video>
-            <div id="header" class="intro1">
-                <div id="picleft">
-                    <div id="imageContainer">
-                        <img id="webglpixeleffect" src="assets/images/grass-cover.webp" alt="">
-                    </div>
-                </div>
-                <div id="descright">
-                    <h4><span>Je m'appelle Basile, artiste et designer de 19 ans basé à
-                            Montpellier.</span><br><br><br>Je conçoit des
-                        images et animations digitales depuis 2019, et propose depuis 2023 mes services en tant que
-                        professionnel indépendant.<br><br>La curiosité et l'expression de mes plus jeunes idées ont été
-                        la source de mon intérêt pour la création numérique. Au fil des expériences, mes motivations se
-                        centrent désormais autour du motion design afin d'apporter de nouvelles dimensions uniques à
-                        chaque projet.
-                    </h4>
-                </div>
+
+            <nav class="mobile">
+                <h3 id="link"><a href="index.html" onclick="changeText('work')">Work <svg class="arrowicontop"
+                            version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                            style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
+                            </g>
+                        </svg></a></h3>
+                <h3 id="link"><a href="#pageview" onclick="changeText('about')">À propos <svg class="arrowicontop"
+                            version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                            style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
+                            </g>
+                        </svg></a></h3>
+                <h3 id="link"><a href="contact.html" onclick="changeText('contact')">Contact
+                        <svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                            style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            <g>
+                                <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
+                            </g>
+                        </svg>
+                    </a></h3>
+            </nav>
+
+            <div id="contactheader" class="intro1">
+                <!-- Cal inline embed code begins -->
+                <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline"></div>
+                <script type="text/javascript">
+                    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                    Cal("init", { origin: "https://cal.com" });
+
+                    Cal("inline", {
+                        elementOrSelector: "#my-cal-inline",
+                        calLink: "basiler/30min",
+                        layout: "month_view"
+                    });
+
+                    Cal("ui", { "styles": { "branding": { "brandColor": "#000000" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+                </script>
+                <!-- Cal inline embed code ends -->
             </div>
-            <div id="story" class="intro2">
-                <div id="storytitle">
-                    <h5>Un peu de contexte...</h5>
-                </div>
-                <div id="storycontent">
-                <div id="leftcolumnstory">
-                    <h6>Mes premières créations graphiques débutent durant mes années collège. À l’origine d’une volonté
-                        d’expression, commencer à partager visuellement ma créativité me parut naturellement, comme le
-                        meilleur
-                        chemin à emprunter.</h6>
-                </div>
-                <div id="rightcolumnstory">
-                    <h6>Muni de vieilles versions de Photoshop, Vegas Pro et After Effects, j’ai progressivement
-                        commencé à expérimenter le monde de l’image et la vidéo. <span id="imghover">Au début c’était pas ouf...</span> Mais c’était
-                        un début.</h6>
-                        
-                </div>
-            </div>
-            </div>
+
+
+
+
         </div>
 
         <div class="sidebar-structure">
-            <div class="sidebar-structure-sides">
+            <div class="sidebar-structure-sides intro1">
                 <div class="sidebar-nav" style="opacity: 1;">
                     <h3 id="textlink"><a href="index.html" onclick="changeText('work')"><svg class="arrowicontop"
                                 version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
@@ -93,10 +110,10 @@
                                 </g>
                             </svg> Work</a></h3>
                     <h3 id="textlink"><a href="#main" onmouseenter="textOnHover('btn')"
-                        onclick="lenis.scrollTo('#main')"><svg class="arrowicontop"
-                                version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
-                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                            onclick="lenis.scrollTo('#main')"><svg class="arrowicontop" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
                                 <g>
                                     <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
                                 </g>
@@ -116,31 +133,6 @@
             <div class="sidebar-structure-middle"></div>
             <div class="sidebar-structure-sides">
                 <div class="sidebar-content" style="opacity: 1;">
-                    <div class="text-projectpage-overline sidebar">- À propos</div>
-                    <div class="sidebar-chapters-wrapper"><a id="textlink" href="#main" onmouseenter="textOnHover('btn')"
-                        onclick="lenis.scrollTo('#main')"
-                            class="chapter w-inline-block">
-                            <div>Résumé</div>
-                        </a><a id="textlink" href="#story" onmouseenter="textOnHover('btn')"
-                        onclick="lenis.scrollTo('#story')" class="chapter w-inline-block">
-                            <div>Contexte</div>
-                        </a><a id="textlink" href="#stadiabt-context" class="chapter w-inline-block">
-                            <div>Formation</div>
-                        </a><a id="textlink" href="#stadiabt-problem" class="chapter w-inline-block">
-                            <div>Expériences</div>
-                        </a><a id="textlink" href="#stadiabt-flow" class="chapter w-inline-block">
-                            <div>Update Flow</div>
-                        </a><a id="textlink" href="#stadiabt-layout" class="chapter w-inline-block">
-                            <div>Layout</div>
-                        </a><a id="textlink" href="#stadiabt-interactions" class="chapter w-inline-block">
-                            <div>Interactions</div>
-                        </a><a id="textlink" href="#stadiabt-visd" class="chapter w-inline-block">
-                            <div>Visual Design</div>
-                        </a><a id="textlink" href="#stadiabt-finaldesigns" class="chapter w-inline-block">
-                            <div>Final Designs</div>
-                        </a><a id="textlink" href="#stadiabt-retro" class="chapter w-inline-block">
-                            <div>Retrospective</div>
-                        </a></div>
                 </div>
             </div>
         </div>
@@ -222,11 +214,6 @@
                             </svg></h2>
                     </a>
                 </div>
-                <div id="extra">
-                    <a id="textlink" onmouseenter="textOnHover('btn')" href="sandbox.html">
-                        <p>Extra pixels</p>
-                    </a>
-                </div>
                 <div id="legal2">
                     <a id="textlink" onmouseenter="textOnHover('btn')" href="https://github.com/Bsile/portfolio"
                         target="_blank">
@@ -240,9 +227,6 @@
         <footer class="mobilefooter">
 
             <div id="line1">
-                <div id="extra">
-                    <p>Extra pixels</p>
-                </div>
                 <div id="darkmode">
                     <a class="footerdarkmode" onclick="darkmode()"><span class="darkcircle"></span></a>
                 </div>
@@ -330,13 +314,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="assets/script/script.js"></script>

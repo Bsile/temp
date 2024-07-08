@@ -9,10 +9,14 @@ barba.init({
 
       async leave(data) {
         await showPage(data);
+        data.current.container.remove();
       },
 
       enter() {
         hidePage();
+      },
+      async beforeEnter(data) {
+        ScrollTrigger.getAll().forEach(t => t.kill());
       },
     },
   ],
@@ -24,13 +28,20 @@ barba.hooks.once((data) => {
 });
 
 barba.hooks.enter((data) => {
+  window.scrollTo(0, 0);
   updateHeader(data.next.namespace);
   if (data.next.namespace === 'about') {
+    loadSwiperScripts();
     loadAboutScripts().then(() => {
       webglpixeleffect();
       imgOnHover();
       setupXpHover();
+      initParallax();
+      swiperAnimation();
     });
+  }
+  if (data.next.namespace === 'home') {
+    popupvimeo();
   }
 });
 
@@ -39,16 +50,18 @@ barba.hooks.afterLeave((data) => {
   data.current.container.remove();
   if (data.current.namespace === 'about') {
     cleanupWebGL();
+    destroySwiper();
+    cleanupParallax();
   }
 });
 
 barba.hooks.beforeEnter((data) => {
+  $(data.next.container).find('img').attr('draggable', false);
   resetCursor(); // Réinitialiser le curseur avant d'entrer dans la nouvelle page
 });
 
 barba.hooks.after((data) => {
   pageentrance();
-  popupvimeo();
   growOnHover(); // Réinitialiser les écouteurs d'événements après chaque transition
   initializeLenis(); // Réinitialiser Lenis après chaque transition
   safariEdit();
@@ -56,6 +69,7 @@ barba.hooks.after((data) => {
 
 barba.hooks.afterEnter((data) => {
   var vids = document.querySelectorAll("video"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => {}).catch(error => {}); }; });
+  ScrollTrigger.refresh();
 });
 
 const updateHeader = (data) => {
