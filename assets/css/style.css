@@ -38,7 +38,6 @@ body:not(.dark-mode) {
     --line: hsl(0 0% 95% / 0.1);
     transition: all ease 0.4s;
     display: table-row-group;
-    overflow: hidden; /* Hide scrollbars */
 }
 
 .dark-mode {
@@ -180,6 +179,7 @@ a:active {
     .tablet {
         display: block;
     }
+
 }
 
 @media screen and (max-width: 740px) {
