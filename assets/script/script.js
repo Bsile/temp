@@ -935,7 +935,10 @@ class DragScroll {
 
   calculate() {
     this.progress = 0;
-    this.wrapWidth = this.items[0] ? this.items[0].clientHeight * this.items.length : 0; // Use height for calculation
+    // Utiliser la largeur des éléments pour calculer la largeur totale du contenu
+    this.wrapWidth = Array.from(this.items).reduce((totalWidth, item) => {
+      return totalWidth + item.clientWidth;
+    }, 0);
     this.wrap.style.width = `${this.wrapWidth}px`;
     this.maxScroll = this.wrapWidth - this.el.clientWidth;
   }
@@ -1046,6 +1049,7 @@ const initScroll = () => {
   animateScroll();
 };
 
+
 const cleanupScroll = () => {
   if (scroll) {
     scroll.removeEvents();
@@ -1069,6 +1073,9 @@ var {
 
 const osInstance = OverlayScrollbars(document.querySelector('body'), {
   paddingAbsolute: false,
+  cancel: {
+    nativeScrollbarsOverlaid: true,
+  },  
   overflow: {
     x: 'hidden',
   },
