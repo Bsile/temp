@@ -2729,6 +2729,10 @@ span .three {
         padding-bottom: 10vh;
         margin: 0 10vw;
     }
+
+    #mentionslegales h3 {
+        padding-top: 3vh;
+    }
 }
 
 @media screen and (max-width: 740px) {
