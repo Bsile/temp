@@ -4,7 +4,42 @@ $('img').attr('draggable', false);
 
 
 
-// Vérifiez si lenis n'est pas déjà déclaré globalement
+
+document.addEventListener('DOMContentLoaded', function () {
+  function isAboutPage() {
+    return window.location.pathname.endsWith('about.html');
+  }
+  function isSandboxPage() {
+    return window.location.pathname.endsWith('sandbox.html');
+  }
+  function isHomePage() {
+    return window.location.pathname.endsWith('index.html');
+  }
+
+  if (isHomePage()) {
+    popupvimeo();
+  }
+
+  if (isAboutPage()) {
+    loadAboutScripts().then(() => {
+      webglpixeleffect();
+      imgOnHover();
+      setupXpHover();
+      swiperAnimation();
+      initParallax();
+    });
+  }
+
+  if (isSandboxPage()) {
+    initScroll();
+  }
+});
+
+
+
+
+
+
 if (typeof window.lenis === 'undefined') {
   window.lenis = null;
 }
@@ -171,27 +206,6 @@ function resetCursor() {
 
 
 
-function isSafari() {
-  return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-}
-
-function safariEdit() {
-  const elements = document.getElementsByClassName("bg");
-  if (isSafari()) {
-    for (let i = 0; i < elements.length; i++) {
-      elements[i].style.visibility = 'hidden';
-    }
-  } else {
-    for (let i = 0; i < elements.length; i++) {
-      elements[i].style.visibility = 'visible';
-    }
-  }
-}
-safariEdit();
-
-
-
-
 function darkmode() {
   const wasDarkmode = localStorage.getItem('darkmode') === 'true';
   localStorage.setItem('darkmode', !wasDarkmode);
@@ -220,8 +234,6 @@ function popupvimeo() {
     });
   });
 }
-
-popupvimeo();
 
 
 
@@ -292,6 +304,12 @@ function changeText(text) {
       break;
     case 'contact':
       divTexte.textContent = 'Contact';
+      break;
+    case 'legal':
+      divTexte.textContent = 'Mentions légales';
+      break;
+      case 'sandbox':
+      divTexte.textContent = 'Extra-pixels';
       break;
     default:
       break;
@@ -374,25 +392,6 @@ function pageentrance() {
   tl.delay(0.1);
 }
 
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  function isAboutPage() {
-    return window.location.pathname.endsWith('about.html');
-  }
-
-  if (isAboutPage()) {
-    loadAboutScripts().then(() => {
-      webglpixeleffect();
-      imgOnHover();
-      setupXpHover();
-      swiperAnimation();
-      initParallax();
-    });
-  }
-});
 
 
 
@@ -856,38 +855,38 @@ function initSwiper() {
 
 function initParallax() {
   gsap.utils.toArray(".parallax").forEach((section, i) => {
-      const heightDiff = 50; // Valeur fixe, ajustez selon vos besoins
-      const scaleAmount = 1.3; // Agrandissement initial de l'image
+    const heightDiff = 50; // Valeur fixe, ajustez selon vos besoins
+    const scaleAmount = 1.2; // Agrandissement initial de l'image
 
-      gsap.fromTo(section, {
-          y: -heightDiff,
-          scale: scaleAmount,
-      }, {
-          scrollTrigger: {
-              trigger: section,
-              scrub: true
-          },
-          y: 100, // Valeur finale de déplacement Y lors du scroll
-          scale: scaleAmount, // Maintient l'agrandissement initial
-          ease: "none"
-      });
+    gsap.fromTo(section, {
+      y: heightDiff,
+      scale: scaleAmount,
+    }, {
+      scrollTrigger: {
+        trigger: section,
+        scrub: true
+      },
+      y: -1, // Valeur finale de déplacement Y lors du scroll
+      scale: scaleAmount, // Maintient l'agrandissement initial
+      ease: "none"
+    });
   });
 }
 
 function cleanupParallax() {
   console.log('Nettoyage du parallaxe en cours...');
-  
-  gsap.utils.toArray(".parallax-container .parallax").forEach((section, i) => {
-      const tweens = gsap.getTweensOf(section);
 
-      if (tweens.length > 0) {
-          console.log(`Arrêt des animations pour l'élément ${section}`);
-          tweens.forEach(tween => {
-              tween.kill(); // Arrête toutes les animations associées à la section
-          });
-      } else {
-          console.log(`Aucune animation trouvée pour l'élément ${section}`);
-      }
+  gsap.utils.toArray(".parallax-container .parallax").forEach((section, i) => {
+    const tweens = gsap.getTweensOf(section);
+
+    if (tweens.length > 0) {
+      console.log(`Arrêt des animations pour l'élément ${section}`);
+      tweens.forEach(tween => {
+        tween.kill(); // Arrête toutes les animations associées à la section
+      });
+    } else {
+      console.log(`Aucune animation trouvée pour l'élément ${section}`);
+    }
   });
 
   console.log('Nettoyage du parallaxe terminé.');
@@ -895,5 +894,187 @@ function cleanupParallax() {
 
 
 
+const lerp = (f0, f1, t) => (1 - t) * f0 + t * f1;
+const clamp = (val, min, max) => Math.max(min, Math.min(val, max));
+
+class DragScroll {
+  constructor(obj) {
+    this.el = document.querySelector(obj.el);
+    this.wrap = document.querySelector(obj.wrap);
+    this.items = document.querySelectorAll(obj.item);
+    this.bar = document.querySelector(obj.bar);
+    this.init();
+  }
+
+  init() {
+    this.progress = 0;
+    this.speed = 0;
+    this.oldX = 0;
+    this.x = 0;
+    this.playrate = 0;
+
+    this.bindings();
+    this.events();
+    this.calculate();
+  }
+
+  bindings() {
+    [
+      "events",
+      "calculate",
+      "raf",
+      "handleWheel",
+      "move",
+      "handleTouchStart",
+      "handleTouchMove",
+      "handleTouchEnd",
+    ].forEach((method) => {
+      this[method] = this[method].bind(this);
+    });
+  }
+
+  calculate() {
+    this.progress = 0;
+    this.wrapWidth = this.items[0] ? this.items[0].clientHeight * this.items.length : 0; // Use height for calculation
+    this.wrap.style.width = `${this.wrapWidth}px`;
+    this.maxScroll = this.wrapWidth - this.el.clientWidth;
+  }
+
+  handleWheel(e) {
+    this.progress += e.deltaY;
+    this.move();
+  }
+
+  handleTouchStart(e) {
+    e.preventDefault();
+    this.dragging = true;
+    this.startX = e.clientX || (e.touches && e.touches[0] && e.touches[0].clientX);
+  }
+
+  handleTouchMove(e) {
+    if (!this.dragging) return false;
+    const x = e.clientX || (e.touches && e.touches[0] && e.touches[0].clientX);
+    if (x !== undefined) {
+      this.progress += (this.startX - x) * 2.5;
+      this.startX = x;
+      this.move();
+    }
+  }
+
+  handleTouchEnd() {
+    this.dragging = false;
+  }
+
+  move() {
+    this.progress = clamp(this.progress, 0, this.maxScroll);
+  }
+
+  events() {
+    window.addEventListener("resize", this.calculate);
+    window.addEventListener("wheel", this.handleWheel);
+
+    this.el.addEventListener("touchstart", this.handleTouchStart);
+    window.addEventListener("touchmove", this.handleTouchMove);
+    window.addEventListener("touchend", this.handleTouchEnd);
+
+    window.addEventListener("mousedown", this.handleTouchStart);
+    window.addEventListener("mousemove", this.handleTouchMove);
+    window.addEventListener("mouseup", this.handleTouchEnd);
+    document.body.addEventListener("mouseleave", this.handleTouchEnd);
+  }
+
+  removeEvents() {
+    window.removeEventListener("resize", this.calculate);
+    window.removeEventListener("wheel", this.handleWheel);
+
+    this.el.removeEventListener("touchstart", this.handleTouchStart);
+    window.removeEventListener("touchmove", this.handleTouchMove);
+    window.removeEventListener("touchend", this.handleTouchEnd);
+
+    window.removeEventListener("mousedown", this.handleTouchStart);
+    window.removeEventListener("mousemove", this.handleTouchMove);
+    window.removeEventListener("mouseup", this.handleTouchEnd);
+    document.body.removeEventListener("mouseleave", this.handleTouchEnd);
+  }
+
+  raf() {
+    this.x = lerp(this.x, this.progress, 0.1);
+    this.playrate = this.x / this.maxScroll;
+  
+    this.wrap.style.transform = `translatex(${-this.x}px)`;
+  
+    this.bar.style.transform = `scaleX(${0.18 + this.playrate * 0.82})`;
+  
+    this.speed = Math.min(100, this.oldX - this.x);
+    this.oldX = this.x;
+  
+    this.scale = lerp(this.scale, this.speed, 0.1);
+    
+    this.items.forEach((item) => {
+      item.style.transform = `scale(${1 - Math.abs(this.speed) * 0.005})`;
+      
+      const img = item.querySelector("img");
+      if (img) {
+        img.style.transform = `scaleX(${1 + Math.abs(this.speed) * 0.004})`;
+      }
+  
+      const video = item.querySelector("video");
+      if (video) {
+        video.style.transform = `scaleX(${1 + Math.abs(this.speed) * 0.004})`;
+      }
+    });
+  }
+}
+
+let scroll = null;
+
+const initScroll = () => {
+  scroll = new DragScroll({
+    el: ".sandboxslider",
+    wrap: ".sandboxslider-wrapper",
+    item: ".sandboxslider-item",
+    bar: ".sandboxslider-progress-bar",
+  });
+  
+  const animateScroll = () => {
+    if (scroll) {
+      requestAnimationFrame(animateScroll);
+      scroll.raf();
+    }
+  }
+
+  animateScroll();
+};
+
+const cleanupScroll = () => {
+  if (scroll) {
+    scroll.removeEvents();
+    scroll = null;
+    console.log("Listeners and scroll instance removed");
+  }
+};
 
 
+
+
+
+
+
+var { 
+  OverlayScrollbars, 
+  ScrollbarsHidingPlugin, 
+  SizeObserverPlugin, 
+  ClickScrollPlugin  
+} = OverlayScrollbarsGlobal;
+
+const osInstance = OverlayScrollbars(document.querySelector('body'), {
+  paddingAbsolute: false,
+  overflow: {
+    x: 'hidden',
+  },
+  scrollbars: {
+    theme: 'scrollbar',
+    autoHide: 'never',
+    autoHideSuspend: true,
+  },
+});

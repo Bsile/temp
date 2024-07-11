@@ -15,6 +15,8 @@
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.9.2/styles/overlayscrollbars.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -38,6 +40,21 @@
             </div>
         </div>
     </div>
+
+    <!-- Cal element-click embed code begins -->
+    <script type="text/javascript">
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", { origin: "https://cal.com" });
+
+
+        // Important: Please add the following attributes to the element that should trigger the calendar to open upon clicking.
+        // `data-cal-link="basiler/30min"`
+        // data-cal-namespace=""
+        // `data-cal-config='{"layout":"month_view"}'`
+
+        Cal("ui", { "theme": "dark", "styles": { "branding": { "brandColor": "#000000" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+    </script>
+    <!-- Cal element-click embed code ends -->
 
     <div id="main" data-barba="container" data-barba-namespace="about">
         <div id="marge"></div>
@@ -64,7 +81,8 @@
                                 <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
                             </g>
                         </svg></a></h3>
-                <h3 id="link"><a href="contact.html" onclick="changeText('contact')">Contact
+                <h3 id="link"><a data-cal-link="basiler/30min" data-cal-namespace=""
+                        data-cal-config='{"layout":"month_view"}' onclick="changeText('contact')">Contact
                         <svg class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
                             style="enable-background:new 0 0 20 20;" xml:space="preserve">
@@ -103,7 +121,8 @@
                                         <path d="M20,3.5V20H3.5l0-2.8h11.7L0,2l2-2l15.1,15.2l0-11.7H20z" />
                                     </g>
                                 </svg></a></h3>
-                        <h3 id="textlink"><a href="contact.html" onmouseenter="textOnHover('btn')"
+                        <h3 id="textlink"><a data-cal-link="basiler/30min" data-cal-namespace=""
+                                data-cal-config='{"layout":"month_view"}' onmouseenter="textOnHover('btn')"
                                 onclick="changeText('contact')">Contact <svg class="arrowicontop" version="1.1"
                                     id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
@@ -477,14 +496,17 @@
                 <div id="rightcolumnstory">
                     <div id="lefttext">
                         <div id="storytitle">
-                            <h5>Des objectifs pixel-perfect...</h5>
+                            <h5>Vision et ambitions</h5>
                         </div>
 
                         <div id="storycontent">
                             <div id="contentcolumnstory">
-                                <h6>Guidé par ma <span>casquette de grand rêveur</span>, mes ambitions futures sont de
-                                    participer aux innovations techniques et artistiques de demain. C’est pourquoi je
-                                    propose aujourd’hui <span>un accompagnement sur-mesure dans les projets
+                                <h6>Guidé par ma <span>casquette de grand rêveur</span>, je mène en autodidacte
+                                    une routine créative quotidienne, dans l'objectif de constamment enrichir et faire
+                                    évoluer
+                                    mes compétences. J'aime aussi travailler avec des gens qui se sentent
+                                    concernés dans leurs projets, c’est pourquoi je
+                                    propose aujourd’hui <span>un accompagnement sur-mesure dans des projets
                                         motion</span> aux profils variés.</h6>
                             </div>
                         </div>
@@ -497,7 +519,7 @@
 
             <div id="testimonial">
                 <div id="storytitle">
-                    <h5>Couvre-chef Meetup :</h5>
+                    <h5>On a travaillé ensemble :</h5>
                 </div>
                 <div class="swiper mySwiper" id="link" onmouseenter="textOnHover('swiper')">
                     <div class="swiper-wrapper">
@@ -621,8 +643,9 @@
                                     <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
                                 </g>
                             </svg> À propos</a></h3>
-                    <h3 id="textlink"><a href="contact.html" onclick="changeText('contact')"><svg class="arrowicontop"
-                                version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                    <h3 id="textlink"><a data-cal-link="basiler/30min" data-cal-namespace=""
+                            data-cal-config='{"layout":"month_view"}' onclick="changeText('contact')"><svg
+                                class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
                                 style="enable-background:new 0 0 20 20;" xml:space="preserve">
                                 <g>
@@ -653,16 +676,10 @@
                             <div>Expériences</div>
                         </a><a id="textlink" href="#objectifs" onmouseenter="textOnHover('btn')"
                             onclick="lenis.scrollTo('#objectifs')" class="chapter w-inline-block">
-                            <div>Objectifs</div>
+                            <div>Ambitions</div>
                         </a><a id="textlink" href="#testimonial" onmouseenter="textOnHover('btn')"
                             onclick="lenis.scrollTo('#testimonial')" class="chapter w-inline-block">
                             <div>Témoignages</div>
-                        </a><a id="textlink" href="#stadiabt-interactions" class="chapter w-inline-block">
-                            <div>Temp</div>
-                        </a><a id="textlink" href="#stadiabt-visd" class="chapter w-inline-block">
-                            <div>Temp</div>
-                        </a><a id="textlink" href="#stadiabt-finaldesigns" class="chapter w-inline-block">
-                            <div>Temp</div>
                         </a></div>
                 </div>
             </div>
@@ -681,7 +698,8 @@
                             class="darkcircle"></span></a>
                 </div>
                 <div id="legal1">
-                    <a id="textlink" onmouseenter="textOnHover('btn')" href="mentions-legales">
+                    <a id="textlink" href="mentions-legales.html" onmouseenter="textOnHover('btn')"
+                        onclick="changeText('legal')">
                         <h4>Mentions légales</h4>
                     </a>
                     <a id="textlink" onmouseenter="textOnHover('btn')"
@@ -825,7 +843,7 @@
             </div>
             <div id="line2">
                 <div id="legal2">
-                    <a href="mentions-legales">
+                    <a id="textlink" href="mentions-legales.html" onclick="changeText('legal')">
                         <h4>Mentions légales</h4>
                     </a><br>
                     <a href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
@@ -862,6 +880,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.9.2/browser/overlayscrollbars.browser.es6.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/@barba/core"></script>

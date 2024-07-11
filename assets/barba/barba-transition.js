@@ -12,9 +12,10 @@ barba.init({
         data.current.container.remove();
       },
 
-      enter() {
+      enter(data) {
         hidePage();
       },
+
       async beforeEnter(data) {
         ScrollTrigger.getAll().forEach(t => t.kill());
       },
@@ -23,25 +24,27 @@ barba.init({
 });
 
 barba.hooks.once((data) => {
-  updateHeader(data.next.namespace);
   initializeLenis(); // Initialiser Lenis lors du chargement initial
 });
 
 barba.hooks.enter((data) => {
   window.scrollTo(0, 0);
-  updateHeader(data.next.namespace);
   if (data.next.namespace === 'about') {
-    loadSwiperScripts();
+    setupXpHover();
+    initParallax();
+    imgOnHover();
+    loadSwiperScripts().then(() => {
+      swiperAnimation();
+    });
     loadAboutScripts().then(() => {
       webglpixeleffect();
-      imgOnHover();
-      setupXpHover();
-      initParallax();
-      swiperAnimation();
     });
   }
   if (data.next.namespace === 'home') {
     popupvimeo();
+  }
+  if (data.next.namespace === 'extrapixels') {
+    initScroll();
   }
 });
 
@@ -52,6 +55,9 @@ barba.hooks.afterLeave((data) => {
     cleanupWebGL();
     destroySwiper();
     cleanupParallax();
+  }
+  if (data.next.namespace === 'extrapixels') {
+    cleanupScroll();
   }
 });
 
@@ -64,24 +70,12 @@ barba.hooks.after((data) => {
   pageentrance();
   growOnHover(); // Réinitialiser les écouteurs d'événements après chaque transition
   initializeLenis(); // Réinitialiser Lenis après chaque transition
-  safariEdit();
 });
 
 barba.hooks.afterEnter((data) => {
   var vids = document.querySelectorAll("video"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => {}).catch(error => {}); }; });
   ScrollTrigger.refresh();
 });
-
-const updateHeader = (data) => {
-  const navPages = document.querySelectorAll('nav > a');
-
-  navPages.forEach((item) => {
-    const getData = item.textContent.toLowerCase().includes(data);
-
-    item.classList.remove('--active');
-    getData && item.classList.add('--active');
-  });
-};
 
 function leaveAnimation(container) {
   return new Promise(async resolve => {
