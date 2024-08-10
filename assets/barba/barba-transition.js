@@ -1,4 +1,4 @@
-import { showPage, hidePage } from '/temp/assets/barba/transition.js';
+import { showPage, hidePage } from 'temp//assets/barba/transition.js';
 
 barba.init({
   debug: false,
@@ -46,6 +46,10 @@ barba.hooks.enter((data) => {
   if (data.next.namespace === 'extrapixels') {
     initScroll();
   }
+  if (data.next.namespace === 'makebetter') {
+    loadPlayerScripts();
+    initParallax();
+  }
 });
 
 
@@ -56,13 +60,16 @@ barba.hooks.afterLeave((data) => {
     destroySwiper();
     cleanupParallax();
   }
-  if (data.next.namespace === 'extrapixels') {
+  if (data.current.namespace === 'makebetter') {
+    cleanupParallax();
+  }
+  if (data.current.namespace === 'extrapixels') {
     cleanupScroll();
   }
 });
 
 barba.hooks.beforeEnter((data) => {
-  $(data.next.container).find('img').attr('draggable', false);
+  $(data.next.container).find('picture').attr('draggable', false);
   resetCursor(); // Réinitialiser le curseur avant d'entrer dans la nouvelle page
 });
 
@@ -70,10 +77,17 @@ barba.hooks.after((data) => {
   pageentrance();
   growOnHover(); // Réinitialiser les écouteurs d'événements après chaque transition
   initializeLenis(); // Réinitialiser Lenis après chaque transition
+  if (data.next.namespace === 'makebetter') {
+    loadMakeBetterPlayerScript().then(() => {
+      // The script is loaded, you can now use makeBetterPlayer
+    }).catch((error) => {
+      console.error('Error loading makebetterplayer.js:', error);
+    });
+  }
 });
 
 barba.hooks.afterEnter((data) => {
-  var vids = document.querySelectorAll("video"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => {}).catch(error => {}); }; });
+  var vids = document.querySelectorAll(".vid"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => {}).catch(error => {}); }; });
   ScrollTrigger.refresh();
 });
 

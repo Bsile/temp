@@ -38,6 +38,8 @@ body:not(.dark-mode) {
     --line: hsl(0 0% 95% / 0.1);
     transition: all ease 0.4s;
     display: table-row-group;
+
+    --media-button-hover-bg : #ffffff00 !important;
 }
 
 .dark-mode {
@@ -131,7 +133,7 @@ a:active {
 }
 
 .desk {
-    display: yes;
+    display: responsive related;
 }
 
 .tablet {
@@ -261,6 +263,7 @@ a:active {
     visibility: hidden;
     opacity: 0;
     z-index: 99999;
+    cursor: progress;
 }
 
 .pt_wrapper {
@@ -303,6 +306,7 @@ a:active {
     justify-content: center;
     color: var(--content);
     gap: 5px;
+    cursor: progress;
 }
 
 #loader h3 {
@@ -429,6 +433,7 @@ nav h3 {
     align-items: center;
     justify-content: center;
     gap: 4px;
+    cursor: pointer;
 }
 
 .floatnaviconselected {
@@ -458,7 +463,7 @@ nav h3 {
     pointer-events: none;
 }
 
-.floatnavsection h6 span{
+.floatnavsection h6 span {
     color: var(--contenttransparent);
     transition: all ease 0.4s;
 }
@@ -2475,6 +2480,7 @@ span .three {
         width: 100%;
         padding-top: 10vw;
     }
+
     #descright h5 {
         margin-top: 0vh;
     }
@@ -2533,6 +2539,1076 @@ span .three {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MakeBetter */
+
+#makebetterheader {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+html, body {
+    --track-height: 2px !important;
+    --track-focus-height: 2px !important;
+}
+
+:where(.vds-slider .vds-slider-track) {
+    height: 2px !important;
+}
+
+[data-media-player][data-layout=video]:not([data-fullscreen]) {
+    border-radius: 10px !important;
+    border: none !important;
+}
+
+.vds-video-layout .vds-controls-group:nth-last-child(2) {
+    display: none;
+}
+
+.vds-time-group {
+    display: none;
+}
+
+.vds-chapter-title {
+    visibility: hidden;
+
+}
+
+.vds-settings-menu {
+    display: none !important;
+}
+
+.vds-google-cast-tooltip {
+    display: none !important;
+}
+
+.vds-pip-tooltip {
+    display: none !important;
+}
+
+.vds-volume {
+    display: none !important;
+}
+
+.vds-video-layout .vds-controls {
+    border-radius: 10px !important;
+    background-image: none !important
+}
+
+.vds-slider-chapter {
+    margin: 5vw;
+}
+
+.vds-poster :where(img) {
+    height: unset;
+}
+
+[data-media-player]:not([data-view-type=audio]) [data-media-provider], [data-media-player][data-fullscreen] [data-media-provider] {
+    height: unset;
+}
+
+media-tooltip-content {
+    display: none !important;
+}
+
+#makebetteroverviewsection {
+    width: 100%;
+    height: 100%;
+    padding: 5vw 2.5vw;
+}
+
+.makebettercolumnwrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.makebetterrole {
+    height: 100%;
+    width: calc(50% - 2.5vw);
+}
+
+.makebetteroverview {
+    height: 100%;
+    width: calc(50% - 2.5vw);
+}
+
+#makebetteroverviewsection h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebetteroverviewsection h4 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 15px;
+}
+
+#makebetteroverviewsection h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+.makebetterrolewrapper {
+    padding-bottom: 40px;
+}
+
+#makebetteroverviewsection h5 span{
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+.makebetterfullimage {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.makebetterfullimage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.makebetterfullimage video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+#makebettercontextsection {
+    width: 100%;
+    height: 100%;
+    padding: 5vw 2.5vw;
+}
+
+.makebetterendcolumnwrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-bottom: 5vw;
+}
+
+.makebettercontextleft {
+    width: calc(50% - 2.5vw);
+    height: 100%;
+}
+
+.makebettercontextright{
+    width: calc(50% - 2.5vw);
+    height: 100%;
+    padding-top: 2.5vw;
+    align-items: end;
+}
+
+#makebettercontextsection h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebettercontextsection h4 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebettercontextsection h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#makebettercontextsection h5 span{
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+.makebettermidimage {
+    width: calc(50% - 2.5vw);
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.makebettermidimage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.makebettermidimage video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.makebettercontextright{
+    width: calc(50% - 2.5vw);
+    height: 100%;
+}
+
+.makebettercentercolumnwrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5vw;
+}
+
+#makebetterproblemsection {
+    width: 100%;
+    height: 100%;
+    padding: 5vw 2.5vw 0vw 2.5vw;
+}
+
+#makebetterproblemsection h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebetterproblemsection h4 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebetterproblemsection h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#makebetterproblemsection h5 span{
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+.makebetterproblemcontent{
+    width: calc(50% - 2.5vw);
+    height: 100%;
+}
+
+#makebettersolutionsection {
+    width: 100%;
+    height: 100%;
+    padding: 5vw 2.5vw;
+}
+
+#makebettersolutionsection h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebettersolutionsection h4 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebettersolutionsection h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#makebettersolutionsection h5 span{
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+.makebettersolutionicons {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    justify-content: end;
+}
+
+.makebettersolutionicons img{
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+}
+
+#makebettersolutionsection h5{
+    width: calc(50% - 2.5vw);
+    height: 100%;
+    padding-bottom: 40px;
+}
+
+#makebetterfeaturesection {
+    width: 100%;
+    height: 100%;
+    padding: 10vw 2.5vw 5vw 2.5vw;
+}
+
+#makebetterfeaturesection h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebetterfeaturesection h4 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebetterfeaturesection h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#makebetterfeaturesection h5 span{
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+.makebetterfeaturecontent{
+    width: calc(50% - 2.5vw);
+    height: 100%;
+    padding-bottom: 60px;
+}
+
+#makebetterconceptionsection {
+    width: 100%;
+    height: 100%;
+    padding: 10vw 2.5vw 5vw 2.5vw;
+}
+
+#makebetterconceptionsection h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 40px;
+}
+
+#makebetterconceptionsection h4 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebetterconceptionsection h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#makebetterconceptionsection h5 span{
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+#makebetterstoryboardsection {
+    width: 100%;
+    height: 100%;
+    padding: 10vw 2.5vw 5vw 2.5vw;
+}
+
+#makebetterstoryboardsection h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 40px;
+}
+
+#makebetterstoryboardsection h4 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebetterstoryboardsection h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#makebetterstoryboardsection h5 span{
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+#makebetterstoryboardfinal {
+    width: 100%;
+    height: 100%;
+    padding: 5vw 2.5vw 2.5vw 2.5vw;
+}
+
+#makebetterstoryboardfinal h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#makebetterstoryboardfinal h5 span{
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+.storyboardgallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2vw;
+}
+
+.storyboardgallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+#makebettertimelinesection {
+    width: 100%;
+    height: 100%;
+    padding: 10vw 2.5vw 2.5vw 2.5vw;
+}
+
+#makebettertimelinesection h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 40px;
+}
+
+#makebettertimelinesection h4 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebettertimelinesection h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#makebettertimelinesection h5 span{
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+#makebetterstatisticssection {
+    width: 100%;
+    height: 100%;
+    padding: 2.5vw 2.5vw 2.5vw 2.5vw;
+}
+
+#makebetterstatisticssection h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#makebetterstatisticssection h5 span{
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+#makebetterbtssection {
+    width: 100%;
+    height: 100%;
+    padding: 10vw 2.5vw 5vw 2.5vw;
+}
+
+#makebetterbtssection h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 40px;
+}
+
+#makebetterbtssection h4 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebetterbtssection h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#makebetterbtssection h5 span{
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+.btsgallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vw;
+}
+
+.btsgallery video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+#makebettertraductionsection {
+    width: 100%;
+    height: 100%;
+    padding: 10vw 2.5vw 2.5vw 2.5vw;
+}
+
+#makebettertraductionsection h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 40px;
+}
+
+#makebettertraductionsection h4 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#makebettertraductionsection h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#makebettertraductionsection h5 span{
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1280px) {
+    .storyboardgallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 740px) {
+
+    .storyboardgallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .btsgallery {
+        grid-template-columns: 1fr;
+    }
+
+
+    #makebetterheader {
+        padding-top: 2.5vh;
+    }
+
+    #makebetteroverviewsection {
+        padding: 5vh 2.5vw;
+    }
+
+    .makebettercolumnwrapper {
+        display: grid;
+    }
+
+    .makebetterrole {
+        width: 100%;
+    }
+
+    .makebetteroverview {
+        width: 100%;
+        padding-top: 10vh;
+    }
+
+    #makebettercontextsection {
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+    }
+
+    .makebetterendcolumnwrapper {
+        display: grid;
+        align-items: start;
+        padding-bottom: 5vh;
+    }
+
+    .makebettercontextleft {
+        width: 100%;
+    }
+
+    .makebettercontextright {
+        width: 100%;
+        padding-top: 5vh;
+    }
+
+    .makebettermidimage {
+        width: 100%;
+        padding-bottom: 5vh;
+    }
+
+    .makebetterproblemcontent {
+        width: 100%;
+    }
+
+    .makebetterfullimage {
+        width: 100%;
+        padding-bottom: 5vh;
+    }
+
+    #makebettersolutionsection h3 {
+        padding-bottom: 10vh;
+        padding-top: 5vh;
+    }
+
+    .makebettersolutionicons {
+        justify-content: start;
+        padding-bottom: 2.5vh;
+    }
+
+    #makebettersolutionsection h5 {
+        width: 100%;
+        padding-bottom: 5vh;
+    }
+
+    .makebetterfeaturecontent {
+        width: 100%;
+    }
+
+    #makebetterconceptionsection h3 {
+        padding-bottom: 5vh;
+        padding-top: 5vh;
+    }
+
+    #makebetterconceptionsection {
+        padding-bottom: 5vh;
+    }
+
+    #makebetterstoryboardsection h5 {
+        padding-bottom: 5vh;
+    }
+
+    #makebetterstoryboardfinal {
+        padding-bottom: 2.5vh
+    }
+
+    #makebettertimelinesection {
+        padding-top: 10vh;
+        padding-bottom: 5vh;
+    }
+
+    #makebetterstatisticssection {
+        padding-top: 2.5vh;
+    }
+
+    #makebettertraductionsection {
+        padding-top: 10vh;
+        padding-bottom: 5vh;
+    }
+
+    #nextprojecttitle {
+        display: grid !important;
+        padding-top: 15vh !important;
+    }
+
+    #nextprojectwrapper {
+        display: grid !important;
+        padding-top: 5vh !important;
+        padding-bottom: 10vh !important;
+        gap: 5vh;
+    }
+
+    #nextprojectwrapper .nextprojectbox {
+        width: 100% !important;
+        margin-bottom: 0.8vh !important;
+    }
+
+    #nextprojectwrapper h3 {
+        padding-top: 0.8vh !important;
+        padding-left: 1.2vh !important;
+    }
+
+    #nextprojectdetails {
+        padding: 1vh 1.2vh 1.2vh 1.2vh !important;
+        display: grid;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#nextprojecttitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 10vw 2.5vw 0vw 2.5vw;
+}
+
+#nextprojecttitle h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#nextprojectwrapper {
+    height: auto;
+    /* Hauteur automatique */
+    display: flex;
+    padding-top: 2.5vw;
+    padding-bottom: 5vw;
+    flex-wrap: wrap;
+    /* Permet aux éléments de passer à la ligne */
+    justify-content: space-between;
+}
+
+#nextprojectwrapper .nextprojectbox {
+    height: 100%;
+    /* Hauteur fixe pour les boîtes */
+    width: calc(50% - 2vw);
+    /* Largeur calculée pour prendre environ un tiers de l'espace, moins un espace de marge */
+    margin-bottom: 2vw;
+    /* Espacement entre les boîtes */
+    position: relative;
+    background-color: var(--box);
+    border: solid;
+    border-color: var(--border);
+    border-width: 1px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+    -webkit-tap-highlight-color: transparent;
+    /* backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);*/
+}
+
+#nextprojectwrapper .nextprojectbox:hover {
+    translate: 0 -0.8vw;
+    transition: all ease 0.4s;
+    border-color: var(--borderhover);
+}
+
+#nextprojectcover {
+    width: 100%;
+    object-position: center;
+}
+
+.nextprojectbox video {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    transition: all ease 0.4s;
+}
+
+.nextprojectbox img {
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    object-fit: contain;
+    pointer-events: none;
+    transition: all ease 0.5s;
+    border-radius: 12px;
+}
+
+#nextprojectwrapper .nextprojectbox:hover img {
+    opacity: 0;
+}
+
+#nextprojectwrapper .nextprojectbox .project {
+    position: absolute;
+    margin: 2vw;
+    transition: all ease-out 0.3s;
+}
+
+#nextprojectwrapper h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    padding-top: 0.8vw;
+    padding-left: 1.2vw;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#nextprojectwrapper .nextprojectbox h5 {
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#nextprojectwrapper .nextprojectbox h6 {
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    text-align: right;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#nextprojectdetails {
+    padding: 0.3vw 1.2vw 1.2vw 1.2vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 740px) {
+    #nextprojectwrapper .nextprojectbox h6 {
+        display: none;
+    }
+}
 
 
 

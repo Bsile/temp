@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function isHomePage() {
     return window.location.pathname.endsWith('index.html');
   }
+  function isMakebetterPage() {
+    return window.location.pathname.endsWith('makebetter.html');
+  }
 
   if (isHomePage()) {
     popupvimeo();
@@ -32,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (isSandboxPage()) {
     initScroll();
+  }
+
+  if (isMakebetterPage()) {
+    initParallax();
   }
 });
 
@@ -283,6 +290,9 @@ function textOnHover(text) {
     case 'swiper':
       divTexte.textContent = '< >';
       break;
+    case 'loading':
+      divTexte.textContent = ' ';
+      break;
     default:
       break;
   }
@@ -302,14 +312,14 @@ function changeText(text) {
     case 'about':
       divTexte.textContent = 'About';
       break;
-    case 'contact':
-      divTexte.textContent = 'Contact';
+    case 'makebetter':
+      divTexte.textContent = 'MakeBetter.app';
+      break;
+    case 'sandbox':
+      divTexte.textContent = 'Extra-pixels';
       break;
     case 'legal':
       divTexte.textContent = 'Mentions légales';
-      break;
-      case 'sandbox':
-      divTexte.textContent = 'Extra-pixels';
       break;
     default:
       break;
@@ -856,7 +866,7 @@ function initSwiper() {
 function initParallax() {
   gsap.utils.toArray(".parallax").forEach((section, i) => {
     const heightDiff = 50; // Valeur fixe, ajustez selon vos besoins
-    const scaleAmount = 1.2; // Agrandissement initial de l'image
+    const scaleAmount = 1; // Agrandissement initial de l'image
 
     gsap.fromTo(section, {
       y: heightDiff,
@@ -1003,24 +1013,24 @@ class DragScroll {
   raf() {
     this.x = lerp(this.x, this.progress, 0.1);
     this.playrate = this.x / this.maxScroll;
-  
+
     this.wrap.style.transform = `translatex(${-this.x}px)`;
-  
+
     this.bar.style.transform = `scaleX(${0.18 + this.playrate * 0.82})`;
-  
+
     this.speed = Math.min(100, this.oldX - this.x);
     this.oldX = this.x;
-  
+
     this.scale = lerp(this.scale, this.speed, 0.1);
-    
+
     this.items.forEach((item) => {
       item.style.transform = `scale(${1 - Math.abs(this.speed) * 0.005})`;
-      
+
       const img = item.querySelector("img");
       if (img) {
         img.style.transform = `scaleX(${1 + Math.abs(this.speed) * 0.004})`;
       }
-  
+
       const video = item.querySelector("video");
       if (video) {
         video.style.transform = `scaleX(${1 + Math.abs(this.speed) * 0.004})`;
@@ -1038,7 +1048,7 @@ const initScroll = () => {
     item: ".sandboxslider-item",
     bar: ".sandboxslider-progress-bar",
   });
-  
+
   const animateScroll = () => {
     if (scroll) {
       requestAnimationFrame(animateScroll);
@@ -1064,18 +1074,18 @@ const cleanupScroll = () => {
 
 
 
-var { 
-  OverlayScrollbars, 
-  ScrollbarsHidingPlugin, 
-  SizeObserverPlugin, 
-  ClickScrollPlugin  
+var {
+  OverlayScrollbars,
+  ScrollbarsHidingPlugin,
+  SizeObserverPlugin,
+  ClickScrollPlugin
 } = OverlayScrollbarsGlobal;
 
 const osInstance = OverlayScrollbars(document.querySelector('body'), {
   paddingAbsolute: false,
   cancel: {
     nativeScrollbarsOverlaid: true,
-  },  
+  },
   overflow: {
     x: 'hidden',
   },
@@ -1085,3 +1095,93 @@ const osInstance = OverlayScrollbars(document.querySelector('body'), {
     autoHideSuspend: true,
   },
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function loadPlayerScripts() {
+  return new Promise((resolve, reject) => {
+    // Check if the player script is already loaded
+    const existingScript = document.querySelector('script[src="https://cdn.vidstack.io/player"]');
+    const existingThemeCSS = document.querySelector('link[href="https://cdn.vidstack.io/player/theme.css"]');
+    const existingVideoCSS = document.querySelector('link[href="https://cdn.vidstack.io/player/video.css"]');
+
+    if (existingScript && existingThemeCSS && existingVideoCSS) {
+      console.log('Player.js and CSS are already loaded.');
+      resolve();
+    } else {
+      // Create an array to hold promises for loading scripts and styles
+      const loadPromises = [];
+
+      // Load player.js script if not already loaded
+      if (!existingScript) {
+        console.log('Loading Player.js script...');
+        const script = document.createElement('script');
+        script.src = 'https://cdn.vidstack.io/player';
+        script.type = 'module';
+        script.onload = () => {
+          console.log('Player.js script loaded successfully.');
+        };
+        script.onerror = () => {
+          console.error('Failed to load Player.js script.');
+          reject();
+        };
+        document.head.appendChild(script);
+        loadPromises.push(new Promise((res, rej) => {
+          script.onload = res;
+          script.onerror = rej;
+        }));
+      }
+
+      // Load player theme CSS if not already loaded
+      if (!existingThemeCSS) {
+        console.log('Loading Player.js theme CSS...');
+        const themeLink = document.createElement('link');
+        themeLink.rel = 'stylesheet';
+        themeLink.href = 'https://cdn.vidstack.io/player/theme.css';
+        document.head.appendChild(themeLink);
+        loadPromises.push(new Promise((res, rej) => {
+          themeLink.onload = res;
+          themeLink.onerror = rej;
+        }));
+      }
+
+      // Load player video CSS if not already loaded
+      if (!existingVideoCSS) {
+        console.log('Loading Player.js video CSS...');
+        const videoLink = document.createElement('link');
+        videoLink.rel = 'stylesheet';
+        videoLink.href = 'https://cdn.vidstack.io/player/video.css';
+        document.head.appendChild(videoLink);
+        loadPromises.push(new Promise((res, rej) => {
+          videoLink.onload = res;
+          videoLink.onerror = rej;
+        }));
+      }
+
+      // Resolve the main promise when all scripts and styles are loaded
+      Promise.all(loadPromises)
+        .then(() => {
+          console.log('All Player.js resources loaded successfully.');
+          resolve();
+        })
+        .catch((err) => {
+          console.error('Failed to load Player.js resources:', err);
+          reject(err);
+        });
+    }
+  });
+}

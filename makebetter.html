@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basile. R - Motion Designer</title>
+    <link rel="shortcut icon" href="favicon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.9.2/styles/overlayscrollbars.min.css" />
+    <link rel="stylesheet" href="https://cdn.vidstack.io/player/theme.css" />
+    <link rel="stylesheet" href="https://cdn.vidstack.io/player/video.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body onload="onload()" data-barba="wrapper">
+
+    <div id="loader">
+        <div class="transiline">
+            <h3>Bienvenue</h3>
+            <h3>ici</h3>
+            <h3>;)</h3>
+        </div>
+    </div>
+    <div id="mouse">
+        <h5 id="hoverinteraction"></h5>
+    </div>
+
+    <div class="pt" onmouseenter="textOnHover('loading')">
+        <div class="pt_wrapper">
+            <div class="pt_text">
+                <h2 id="pagename">pageName</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cal element-click embed code begins -->
+    <script type="text/javascript">
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", { origin: "https://cal.com" });
+
+
+        // Important: Please add the following attributes to the element that should trigger the calendar to open upon clicking.
+        // `data-cal-link="basiler/30min"`
+        // data-cal-namespace=""
+        // `data-cal-config='{"layout":"month_view"}'`
+
+        Cal("ui", { "theme": "dark", "styles": { "branding": { "brandColor": "#000000" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+    </script>
+    <!-- Cal element-click embed code ends -->
+
+    <div id="main" data-barba="container" data-barba-namespace="makebetter">
+        <div id="marge"></div>
+        <div class="bggrid"></div>
+
+
+
+        <div id="pageview">
+
+
+            <div id="makebetterheader" class="intro1">
+                <media-player id="link" playsinline loop="true" preload="metadata" title="Créateur d'Embeds MakeBetter"
+                    src="assets/videos/Créateur d'embeds MakeBetter.mp4">
+                    <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
+                        :placement="tooltipPlacement"></n-tooltip>
+                    <media-toggle-button disabled="true" aria-label="false">
+                        <!-- ... -->
+                    </media-toggle-button>
+                    <media-provider>
+                        <media-poster class="vds-poster" src="assets/images/makebettercover.webp"
+                            alt="MakeBetter cover"></media-poster>
+                    </media-provider>
+                    <media-video-layout thumbnails="assets/images/makebettercover.webp"></media-video-layout>
+                </media-player>
+            </div>
+            <div id="makebetteroverviewsection" class="intro2">
+                <h3>MakeBetter, fais grandir et évoluer ta communauté à l'aide d'outils modernes et intuitifs.</h3>
+                <div class="makebettercolumnwrapper">
+                    <div class="makebetterrole">
+                        <div class="makebetterrolewrapper">
+                            <h4>Rôle</h4>
+                            <h5><span>Motion designer</span> -- Animation d'interface, Parcours utilisateur,
+                                Interactivité
+                            </h5>
+                        </div>
+                        <div class="makebetterrolewrapper">
+                            <h4>Logiciels utilisés</h4>
+                            <h5>After Effects<br>Illustrator</h5>
+                        </div>
+                        <h4>Chronologie & Statut</h4>
+                        <h5>2 mois de réalisation, <span>Lancé en avril 2024</span></h5>
+                    </div>
+                    <div class="makebetteroverview">
+                        <h4>Aperçu</h4>
+                        <h5>MakeBetter est une plateforme développant des outils numériques (SaaS) pour créateurs de
+                            contenu dans l'objectif de créer, améliorer et personnaliser sa communauté sur les réseaux
+                            sociaux.<br><br>
+
+                            Suite à la refonte de la plateforme, j’ai été chargé à la conception de l’animation de mise
+                            en avant de l’outil principal de la plateforme, le créateur d’embeds.<br><br>
+
+                            L’objectif est de valoriser de manière dynamique les différents points clef de l’outil.</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="makebetterfullimage parallax">
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/makebettersequence01.webm" type="video/mp4">
+                    <source src="assets/videos/makebettersequence01.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="makebettercontextsection">
+                <div class="makebetterendcolumnwrapper">
+                    <div class="makebettercontextleft">
+                        <h3>Il était une fois...</h3>
+
+                        <h5><span>Diose est un collectif de passionnés</span> qui met en oeuvre différents projets
+                            numériques afin de
+                            répondre à des besoins tels que <span>la gestion, la personnalisation d’identité,
+                                l'amélioration
+                                de performances</span> et autres...<br><br>
+
+                            <span>En janvier 2023 né le projet MakeBetter.</span><br>
+                            D’une volonté partagée de faciliter et valoriser les <span>interactions entre créateurs de
+                                contenu
+                                et communauté</span>, la plateforme propose progressivement des outils spécialisés.
+                        </h5>
+                    </div>
+                    <div class="makebettercontextright">
+                        <h5>
+                            <span>C’est en octobre 2023 qu’est annoncée la version 2.0</span> de MakeBetter, cette
+                            <span>refonte complète
+                                de la plateforme</span> promet des améliorations aussi bien au niveau de ses outils, de
+                            ses
+                            fonctionnalités et de son expérience utilisateur.
+                        </h5>
+                    </div>
+                </div>
+                <div class="makebettercolumnwrapper">
+                    <div class="makebettermidimage parallax">
+                        <img src="assets/images/makebetterembed.webp">
+                    </div>
+                    <div class="makebettercontextright">
+                        <h4>
+                            Des intégrations sur Discord ?
+                        </h4>
+                        <h5>
+                            Un embed est un élément intégré à l’application Discord, utilisé afin de proposer <span>des
+                                messages plus riches en informations et en contenu.</span> Ce format améliore et
+                            facilite les
+                            interactions entre les utilisateurs, par exemple en <span>automatisant l’organisation d’un
+                                serveur</span>, ou en permettant de <span>partager efficacement des informations.</span>
+
+                            Le créateur d’embeds est un outil mis au point afin de <span>faciliter la création et la
+                                personnalisation</span> de ces embeds.
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="makebetterproblemsection">
+                <h3>L'interface complexe du créateur d'embeds fait peau neuve.</h3>
+                <div class="makebetterendcolumnwrapper">
+                    <div class="makebetterproblemcontent">
+                        <h5>
+                            L’ensemble des plateformes de Diose sont pensées afin de donner les clés en main pour créer
+                            les meilleurs projets <span>selon tout type de communauté.</span><br><br>
+
+                            L’infinité de personnalisation proposées par le créateur d'embeds font de sa nouvelle
+                            interface avancée <span>un concentré de fonctionnalités connectées difficiles à
+                                représenter.</span>
+                        </h5>
+                    </div>
+                    <div class="makebetterproblemcontent">
+
+                        <h5>
+                            Le plus gros challenge derrière cette animation fut donc le suivant :<br><br>
+
+                            <span>Mettre en scène un fil conducteur intuitif pour promouvoir la richesse et la pluralité
+                                de fonctionnalités du créateur d’embeds.</span>
+                        </h5>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="makebetterfullimage parallax">
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/makebettersequence02.webm" type="video/mp4">
+                    <source src="assets/videos/makebettersequence02.mp4" type="video/mp4">
+                </video>
+            </div>
+
+
+            <div id="makebettersolutionsection">
+                <h3>
+                    Pour maintenir une cohérence avec la charte de MakeBetter et garantir au spectateur une narration
+                    intuitive dans l’UI du créateur d’embeds, nous avons choisi d’adopter plusieurs aspects techniques
+                    au sein de l’animation :
+                </h3>
+                <div class="makebettercolumnwrapper">
+                    <div class="makebettersolutionicons">
+                        <img src="assets/images/makebetterbackground.webp">
+                    </div>
+                    <h5>
+                        <span>L’univers visuel et interactif</span> sélectionné est volontairement similaire à celui du
+                        créateur
+                        d’embeds. La vidéo, présentée directement sur la page de présentation de l’outil, permet alors
+                        d’introduire au spectateur <span>la manière dont celui-ci doit naviguer</span> pour utiliser le
+                        créateur
+                        d’embeds.
+                    </h5>
+                </div>
+                <div class="makebettercolumnwrapper">
+                    <div class="makebettersolutionicons">
+                        <img src="assets/images/makebettercursor.webp">
+                    </div>
+                    <h5>
+                        L’animation met en place un <span>point d’accroche principal</span> chez le spectateur, que
+                        celui-ci va
+                        suivre tout du long de l’animation. De cette sorte, on parcourt l’ensemble de l’interface en
+                        <span>guidant avec fidélité</span> l’oeil vers les éléments mis en avants.
+                    </h5>
+                </div>
+                <div class="makebettercolumnwrapper">
+                    <div class="makebettersolutionicons">
+                        <img src="assets/images/makebettermenu.webp">
+                    </div>
+                    <h5>
+                        <span>La navigation se retrouve simplifiée</span> avec une continuité dans les interactions de
+                        la souris.
+                        Cela rend l’animation <span>plus linéaire et intuitive</span> vis à vis des évènements qui
+                        rentrent en jeu
+                        tel que les sous-menus, pop-ups...
+                    </h5>
+                </div>
+            </div>
+
+            <div class="makebettercolumnwrapper">
+                <div class="makebettermidimage">
+                    <img src="assets/images/makebetterzoom1.webp">
+                </div>
+                <div class="makebettermidimage">
+                    <img src="assets/images/makebetterzoom2.webp">
+                </div>
+            </div>
+
+            <div id="makebetterfeaturesection">
+                <h3>Une expérience innovante au goût du jour.</h3>
+                <div class="makebetterfeaturecontent">
+                    <h5>
+                        Le créateur d’embeds remis à neuf apporte son lot de nouveautés, l’objectif de l’animation
+                        est de mettre en avant ces fonctionnalités par le biais de mises en situation :
+                    </h5>
+                </div>
+                <div class="makebettercolumnwrapper">
+                    <div class="makebetterfeaturecontent">
+                        <h5>
+                            <span>L’enregistrement, le partage et l’utilisation de templates</span> permet de facilement
+                            créer et
+                            personnaliser chaque embed selon les besoins de l’utilisateur.<br><br>
+
+                            <span>Une intelligente artificielle</span> est intégrée afin d’améliorer la qualité
+                            rédactionnelle de son
+                            embed.
+                        </h5>
+                    </div>
+                    <div class="makebetterfeaturecontent">
+
+                        <h5>
+                            <span>L’édition collaborative</span> en équipe permet de modifier en temps réel ses propres
+                            embeds.
+                            Accompagné d’un système de permissions avancées.<br><br>
+
+                            <span>La possibilité d’envoyer ses messages au travers de webhook</span> permet de
+                            simplifier et
+                            automatiser l’envoi de certaines informations vers Discord.
+                        </h5>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="makebetterfullimage parallax">
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/makebettersequence03.webm" type="video/mp4">
+                    <source src="assets/videos/makebettersequence03.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="makebetterconceptionsection">
+                <h3>Donner vie au créateur d'embeds.</h3>
+                <h5>
+                    La première étape de conception fut la reproduction et l’adaptation de l’interface de l’outil.
+                    <span>L’objectif est d’individualiser chaque élément de l’interface afin de rendre celle-ci
+                        entièrement
+                        flexible.</span> Cela va permettre par la suite de faciliter les processus de création et
+                    d’animation.
+                </h5>
+
+            </div>
+
+            <div class="makebettercolumnwrapper">
+                <div class="makebettermidimage">
+                    <video class="vid" playsinline autoplay loop preload=metadata muted>
+                        <source src="assets/videos/makebetterbeforeafterui.webm" type="video/mp4">
+                        <source src="assets/videos/makebetterbeforeafterui.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="makebettermidimage">
+                    <video class="vid" playsinline autoplay loop preload=metadata muted>
+                        <source src="assets/videos/makebetterillustratorview.webm" type="video/mp4">
+                        <source src="assets/videos/makebetterillustratorview.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div id="makebetterstoryboardsection">
+                <h3>On commence par quoi ?</h3>
+                <h5>
+                    L’enjeu autour du storyboard est de planifier un parcours utilisateur intuitif et immersif. Avec les
+                    nombreuses fonctionnalités à montrer, nous avons donc réalisé un plan logique selon les étapes de
+                    conception nécessaires d’un embed MakeBetter ainsi que de leur disposition dans l’interface.
+                </h5>
+
+            </div>
+
+            <div class="makebettercolumnwrapper">
+                <div class="makebettermidimage">
+                    <img src="assets/images/makebetterbaduserflow.webp">
+                </div>
+                <div class="makebettermidimage">
+                    <img src="assets/images/makebettergooduserflow.webp">
+                </div>
+            </div>
+
+            <div id="makebetterstoryboardfinal">
+                <h5>
+                    <span>Storyboard final :</span>
+                </h5>
+            </div>
+
+            <div class="storyboardgallery">
+                <img src="assets/images/makebetterstoryboard0.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard1.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard2.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard3.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard4.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard5.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard6.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard7.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard8.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard9.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard10.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard11.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard12.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard13.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard14.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard15.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard16.jpg" alt="Image 1">
+                <img src="assets/images/makebetterstoryboard17.jpg" alt="Image 1">
+            </div>
+
+
+
+            <div id="makebettertimelinesection">
+                <h3>Les dessous de l'animation</h3>
+                <h5>
+                    Quelques extraits de ce qu'il se passe avec chaque calque derrière le visuel :
+                </h5>
+
+            </div>
+
+            <div class="btsgallery">
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/makebetterwireframe1.webm" type="video/mp4">
+                    <source src="assets/videos/makebetterwireframe1.mp4" type="video/mp4">
+                </video>
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/makebetterwireframe2.webm" type="video/mp4">
+                    <source src="assets/videos/makebetterwireframe2.mp4" type="video/mp4">
+                </video>
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/makebetterwireframe3.webm" type="video/mp4">
+                    <source src="assets/videos/makebetterwireframe3.mp4" type="video/mp4">
+                </video>
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/makebetterwireframe4.webm" type="video/mp4">
+                    <source src="assets/videos/makebetterwireframe4.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="makebetterstatisticssection">
+                <h5>
+                    Statistiques : 366 calques - 2071 images clés
+                </h5>
+
+            </div>
+
+
+
+            <div id="makebettertraductionsection">
+                <h3>MakeBetter, vraiment pour tout le monde.</h3>
+                <h5>
+                    Le créateur d'embeds se veut d'être un outil ouvert à l'international. Nous avons donc pour terminer
+                    réalisé une version déclinée traduite en anglais.
+                </h5>
+            </div>
+
+            <div class="makebetterfullimage parallax">
+                <img src="assets/images/makebetteren.webp">
+            </div>
+
+
+
+
+            <div id="nextprojecttitle">
+                <h3>Projects suivants :</h3>
+            </div>
+
+            <div id="nextprojectwrapper">
+                <a class="nextprojectbox" onmouseenter="textOnHover('project')" onclick="changeText('makebetter')"
+                    id="link" href="makebetter.html">
+                    <div id="nextprojectcover">
+                        <video class="vid" autoPlay muted loop playsInline preload=metadata>
+                            <source src="assets/videos/makebetterthumb.webm" type="video/mp4">
+                            <source src="assets/videos/Mixxmotion.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="desc">
+                        <h3>MakeBetter</h3>
+                        <div id="nextprojectdetails">
+                            <h5>Animation d'interface</h5>
+                            <h6>2024 - Projet client</h6>
+                        </div>
+                    </div>
+                </a>
+                <a class="nextprojectbox" onmouseenter="textOnHover('project')" onclick="changeText('makebetter')"
+                    id="link" href="makebetter.html">
+                    <div id="nextprojectcover">
+                        <video class="vid" autoPlay muted loop playsInline preload=metadata>
+                            <source src="assets/videos/makebetterthumb.webm" type="video/mp4">
+                            <source src="assets/videos/Mixxmotion.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="desc">
+                        <h3>MakeBetter</h3>
+                        <div id="nextprojectdetails">
+                            <h5>Animation d'interface</h5>
+                            <h6>2024 - Projet client</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <div class="sidebar-structure">
+            <div class="sidebar-structure-sides intro1">
+                <div class="sidebar-nav" style="opacity: 1;">
+                    <h3 id="textlink"><a href="index.html" onclick="changeText('work')"><svg class="arrowicontop"
+                                version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                <g>
+                                    <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
+                                </g>
+                            </svg> Work</a></h3>
+                    <h3 id="textlink"><a href="about.html" onclick="changeText('about')"><svg class="arrowicontop"
+                                version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                <g>
+                                    <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
+                                </g>
+                            </svg> À propos</a></h3>
+                    <h3 id="textlink"><a data-cal-link="basiler/30min" data-cal-namespace=""
+                            data-cal-config='{"layout":"month_view"}' onclick="changeText('contact')"><svg
+                                class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                <g>
+                                    <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
+                                </g>
+                            </svg> Contact
+
+                        </a></h3>
+                </div>
+            </div>
+            <div class="sidebar-structure-middle"></div>
+            <div class="sidebar-structure-sides intro1">
+                <div class="sidebar-content" style="opacity: 1;">
+                    <div class="text-projectpage-overline sidebar"><a id="textlink" href="#main"
+                            onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">- MakeBetter</a></div>
+                    <div class="sidebar-chapters-wrapper"><a id="textlink" href="#main"
+                            onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')"
+                            class="chapter w-inline-block">
+                            <div>Aperçu</div>
+                        </a><a id="textlink" href="#makebettercontextsection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#makebettercontextsection')" class="chapter w-inline-block">
+                            <div>Contexte</div>
+                        </a><a id="textlink" href="#makebetterproblemsection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#makebetterproblemsection')" class="chapter w-inline-block">
+                            <div>Problème</div>
+                        </a><a id="textlink" href="#makebetterfeaturesection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#makebetterfeaturesection')" class="chapter w-inline-block">
+                            <div>Features</div>
+                        </a><a id="textlink" href="#makebetterconceptionsection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#makebetterconceptionsection')" class="chapter w-inline-block">
+                            <div>Début de conception</div>
+                        </a><a id="textlink" href="#makebetterstoryboardsection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#makebetterstoryboardsection')" class="chapter w-inline-block">
+                            <div>Storyboard</div>
+                        </a><a id="textlink" href="#makebettertimelinesection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#makebettertimelinesection')" class="chapter w-inline-block">
+                            <div>Behind the scene</div>
+                        </a><a id="textlink" href="#makebettertraductionsection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#makebettertraductionsection')" class="chapter w-inline-block">
+                            <div>Traduction</div>
+                        </a></div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="desk">
+
+            <div id="line1">
+                <div id="email">
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="mailto:basiler.contact@gmail.com">
+                        <h3>basiler.contact@gmail.com</h3>
+                    </a>
+                </div>
+                <div id="darkmode">
+                    <a id="textlink" onmouseenter="textOnHover('dark')" onclick="darkmode()"><span
+                            class="darkcircle"></span></a>
+                </div>
+                <div id="legal1">
+                    <a id="textlink" href="mentions-legales.html" onmouseenter="textOnHover('btn')"
+                        onclick="changeText('legal')">
+                        <h4>Mentions légales</h4>
+                    </a>
+                    <a id="textlink" onmouseenter="textOnHover('btn')"
+                        href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
+                        <h4>CGU</h4>
+                    </a>
+                    <a id="textlink" onmouseenter="textOnHover('btn')"
+                        href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
+                        <h4>CGV</h4>
+                    </a>
+                </div>
+            </div>
+            <div id="line2">
+                <div id="socials">
+                    <a id="textlink" onmouseenter="textOnHover('btn')"
+                        href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
+                        target="_blank">
+                        <h2>WhatsApp <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a>
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://www.linkedin.com/in/basile-r/"
+                        target="_blank">
+                        <h2>LinkedIn <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a><br>
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://www.instagram.com/Bsile_R/"
+                        target="_blank">
+                        <h2>Instagram <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a>
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://twitter.com/Bsile_R"
+                        target="_blank">
+                        <h2>X <svg class="arrowiconbot" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a>
+                </div>
+                <div id="extra">
+                    <a id="textlink" href="#main" onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">
+                        <p>Back to top</p>
+                    </a>
+                </div>
+                <div id="legal2">
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://github.com/Bsile/portfolio"
+                        target="_blank">
+                        <h4>Code repo</h4>
+                    </a>
+                    <br>
+                    <h4>© 2024 legal</h4>
+                </div>
+            </div>
+        </footer>
+        <footer class="mobilefooter">
+
+            <div id="line1">
+                <div id="extra">
+                    <a id="textlink" href="#main" onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">
+                        <p>Back to top</p>
+                    </a>
+                </div>
+                <div id="darkmode">
+                    <a class="footerdarkmode" onclick="darkmode()"><span class="darkcircle"></span></a>
+                </div>
+                <div id="socials">
+                    <a href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
+                        target="_blank">
+                        <h2>WhatsApp <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a>
+                    <a href="https://www.linkedin.com/in/basile-r/" target="_blank">
+                        <h2>LinkedIn <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a><br>
+                    <a href="https://www.instagram.com/Bsile_R/" target="_blank">
+                        <h2>Instagram <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a>
+                    <a href="https://twitter.com/Bsile_R">
+                        <h2>X <svg class="arrowiconbot" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a>
+                </div>
+                <div id="email">
+                    <a href="mailto:basiler.contact@gmail.com">
+                        <h3>basiler.contact@gmail.com</h3>
+                    </a>
+                </div>
+            </div>
+            <div id="line2">
+                <div id="legal2">
+                    <a id="textlink" href="mentions-legales.html" onclick="changeText('legal')">
+                        <h4>Mentions légales</h4>
+                    </a><br>
+                    <a href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
+                        <h4>CGU</h4>
+                    </a>
+                    <a href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
+                        <h4>CGV</h4>
+                    </a>
+                </div>
+                <div id="legal1">
+                    <a id="link" href="https://github.com/Bsile/portfolio" target="_blank">
+                        <h4>Code source</h4>
+                    </a>
+                    <h4>© 2024 legal</h4>
+                </div>
+
+            </div>
+        </footer>
+        <div id="marge"></div>
+        <div id="floatnav">
+            <a href="index.html" onclick="changeText('work')" class="floatnavsection">
+                <svg class="floatnavicon" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 35"
+                    style="enable-background:new 0 0 35 35;" xml:space="preserve">
+                    <g>
+                        <path d="M29.4,34.7h-4.2c-2.2,0-4-1.8-4-4v-8.9c0-1.1-0.9-2-2-2h-3.3c-1.1,0-2,0.9-2,2v8.9c0,2.2-1.8,4-4,4H5.6c-2.2,0-4-1.8-4-4
+                        V16.3c0-1.1,0.4-2.1,1.2-2.8L14.7,1.5c1.6-1.6,4.1-1.6,5.7,0l11.9,11.9c0.8,0.8,1.2,1.8,1.2,2.8v14.4C33.4,32.9,31.6,34.7,29.4,34.7
+                        z M15.8,17.7h3.3c2.2,0,4,1.8,4,4v8.9c0,1.1,0.9,2,2,2h4.2c1.1,0,2-0.9,2-2V16.3c0-0.5-0.2-1-0.6-1.4L18.9,2.9
+                        c-0.8-0.8-2.1-0.8-2.9,0L4.1,14.8c-0.4,0.4-0.6,0.9-0.6,1.4v14.4c0,1.1,0.9,2,2,2h4.2c1.1,0,2-0.9,2-2v-8.9
+                        C11.8,19.5,13.6,17.7,15.8,17.7z" />
+                    </g>
+                </svg>
+                <h6><span>Work</span></h6>
+            </a>
+            <a href="about.html" onclick="changeText('about')" class="floatnavsection">
+                <svg class="floatnavicon" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 35"
+                    style="enable-background:new 0 0 35 35;" xml:space="preserve">
+                    <g>
+                        <path d="M17.5,17.6c-4.8,0-8.6-3.9-8.6-8.6s3.9-8.6,8.6-8.6s8.6,3.9,8.6,8.6S22.3,17.6,17.5,17.6z M17.5,2.4c-3.6,0-6.6,3-6.6,6.6
+		s3,6.6,6.6,6.6s6.6-3,6.6-6.6S21.1,2.4,17.5,2.4z" />
+                        <path
+                            d="M29.9,34.8H5.1c-1.6,0-2.9-1.3-2.9-2.9v-3.6c0-1.1,0.4-2.1,1.2-2.8L6.9,22c1.1-1.1,2.7-1.5,4.1-1l5.9,2
+		c0.4,0.1,0.9,0.1,1.3,0l5.9-2c1.5-0.5,3-0.1,4.1,1l3.5,3.5c0.8,0.8,1.2,1.8,1.2,2.8v3.6C32.8,33.5,31.5,34.8,29.9,34.8z M9.7,22.8
+		c-0.5,0-1,0.2-1.4,0.6l-3.5,3.5c-0.4,0.4-0.6,0.9-0.6,1.4v3.6c0,0.5,0.4,0.9,0.9,0.9h24.9c0.5,0,0.9-0.4,0.9-0.9v-3.6
+		c0-0.5-0.2-1-0.6-1.4l-3.5-3.5c-0.5-0.5-1.3-0.7-2.1-0.5l-5.9,2c-0.8,0.3-1.7,0.3-2.5,0l-5.9-2C10.2,22.8,10,22.8,9.7,22.8z" />
+                    </g>
+                </svg>
+                <h6><span>About</span></h6>
+            </a>
+            <a data-cal-link="basiler/30min" data-cal-namespace="" data-cal-config='{"layout":"month_view"}'
+                onclick="changeText('contact')" class="floatnavsection">
+                <svg class="floatnavicon" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 35"
+                    style="enable-background:new 0 0 35 35;" xml:space="preserve">
+                    <g>
+                        <path d="M29.6,34.8c-0.2,0-0.3,0-0.5,0C14.2,32.6,2.4,20.8,0.3,5.9C0.1,4.7,0.5,3.5,1.4,2.6l1.2-1.2c0.8-0.8,1.8-1.2,2.8-1.2h3.3
+                        c1.6,0,3.1,1,3.7,2.5l1.9,4.9c0.5,1.2,0.3,2.6-0.4,3.7l-1.2,1.8c-0.4,0.7-0.4,1.5,0,2.2c1.8,2.7,4.1,5,6.8,6.8
+                        c0.7,0.4,1.5,0.4,2.2,0l1.9-1.2c1.1-0.7,2.5-0.9,3.7-0.4l4.9,1.9c1.5,0.6,2.5,2.1,2.5,3.7v3.3c0,1.1-0.4,2.1-1.2,2.8l-1.2,1.2
+                        C31.6,34.3,30.6,34.8,29.6,34.8z M5.5,2.2c-0.5,0-1,0.2-1.4,0.6L2.8,4C2.4,4.5,2.2,5.1,2.2,5.7c2,14,13.1,25.1,27.1,27.1
+                        c0.6,0.1,1.2-0.1,1.6-0.6l1.2-1.2c0.4-0.4,0.6-0.9,0.6-1.4v-3.3c0-0.8-0.5-1.6-1.3-1.9l-4.9-1.9c-0.6-0.2-1.3-0.2-1.8,0.2l-1.8,1.2
+                        c-1.3,0.9-3.1,0.9-4.4,0c-2.9-2-5.4-4.4-7.4-7.4c-0.9-1.3-0.9-3.1,0-4.4l1.2-1.8c0.4-0.5,0.4-1.2,0.2-1.8l-1.9-4.9
+                        c-0.3-0.8-1-1.3-1.9-1.3H5.5z" />
+                    </g>
+                </svg>
+                <h6><span>Contact</span></h6>
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.9.2/browser/overlayscrollbars.browser.es6.min.js"></script>
+    <script src="https://cdn.vidstack.io/player" type="module"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="assets/script/script.js"></script>
+    <script src="assets/barba/barba-transition.js" type="module"></script>
+</body>
+
+</html>

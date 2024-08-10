@@ -32,7 +32,7 @@
         <h5 id="hoverinteraction"></h5>
     </div>
 
-    <div class="pt">
+    <div class="pt" onmouseenter="textOnHover('loading')">
         <div class="pt_wrapper">
             <div class="pt_text">
                 <h2 id="pagename">pageName</h2>
@@ -130,7 +130,7 @@
                 <div id="reel" onmouseenter="textOnHover('reel')" class="desk">
 
                     <a id="link" class="popup-vimeo" href="http://vimeo.com/898815441?autoplay=1&loop=1&">
-                        <video id="video" class="intro1" playsinline autoplay loop preload=metadata muted>
+                        <video id="video" class="vid intro1" playsinline autoplay loop preload=metadata muted>
                             <source src="assets/videos/makebetterthumb.webm" type="video/mp4">
                             <source src="assets/videos/Mixxmotion.mp4" type="video/mp4">
                         </video>
@@ -138,9 +138,9 @@
                 </div>
             </div>
             <div id="work" class="intro2">
-                <div class="box" onmouseenter="textOnHover('project')" id="link" href="makebetter.html">
+                <a class="box" onmouseenter="textOnHover('project')" onclick="changeText('makebetter')" id="link" href="makebetter.html">
                     <div id="cover">
-                        <video autoPlay muted loop playsInline preload=metadata>
+                        <video class="vid" autoPlay muted loop playsInline preload=metadata>
                             <source src="assets/videos/makebetterthumb.webm" type="video/mp4">
                             <source src="assets/videos/Mixxmotion.mp4" type="video/mp4">
                         </video>
@@ -152,10 +152,10 @@
                             <h6>2024 - Projet client</h6>
                         </div>
                     </div>
-                </div>
+                </a>
                 <div class="box" onmouseenter="textOnHover('project')" id="link" href="latavernedudesign.html">
                     <div id="cover">
-                        <video loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()">
+                        <video class="vid" loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()">
                             <source src="assets/videos/ltddthumb.webm" type="video/mp4">
                         </video>
                     </div>
@@ -170,7 +170,7 @@
                 <div class="box" onmouseenter="textOnHover('project')" id="link" href="ring.html">
                     <div id="cover">
                         <img src="assets/images/ninecover.webp" alt="MakeBetter">
-                        <video loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()"
+                        <video class="vid" loop preload=metadata muted onmouseover="this.play()" onmouseout="this.pause()"
                             onmouseleave="this.pause();this.currentTime=0;">
                             <source src="assets/videos/ninethumb.webm" type="video/mp4">
                         </video>
