@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basile. R - Motion Designer</title>
+    <link rel="shortcut icon" href="favicon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.9.2/styles/overlayscrollbars.min.css" />
+    <link rel="stylesheet" href="https://cdn.vidstack.io/player/theme.css" />
+    <link rel="stylesheet" href="https://cdn.vidstack.io/player/video.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body onload="onload()" data-barba="wrapper">
+
+    <div id="loader">
+        <div class="transiline">
+            <h3>Bienvenue</h3>
+            <h3>ici</h3>
+            <h3>;)</h3>
+        </div>
+    </div>
+    <div id="mouse">
+        <h5 id="hoverinteraction"></h5>
+    </div>
+
+    <div class="pt" onmouseenter="textOnHover('loading')">
+        <div class="pt_wrapper">
+            <div class="pt_text">
+                <h2 id="pagename">pageName</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cal element-click embed code begins -->
+    <script type="text/javascript">
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", { origin: "https://cal.com" });
+
+
+        // Important: Please add the following attributes to the element that should trigger the calendar to open upon clicking.
+        // `data-cal-link="basiler/30min"`
+        // data-cal-namespace=""
+        // `data-cal-config='{"layout":"month_view"}'`
+
+        Cal("ui", { "theme": "dark", "styles": { "branding": { "brandColor": "#000000" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+    </script>
+    <!-- Cal element-click embed code ends -->
+
+    <div id="main" data-barba="container" data-barba-namespace="drime">
+        <div id="marge"></div>
+        <div class="bggrid"></div>
+
+
+
+        <div id="pageview">
+
+
+            <div id="drimeheader" class="intro1">
+                <media-player id="link" loop="true" playsinline preload="auto" title="Drime" viewType="video"
+                    src="vimeo/998298032">
+                    <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
+                        :placement="tooltipPlacement"></n-tooltip>
+                    <media-toggle-button disabled="true" aria-label="false">
+                        <!-- ... -->
+                    </media-toggle-button>
+                    <media-provider>
+                        <media-poster class="vds-poster" src="assets/images/makebettercover.webp"
+                            alt="drime cover"></media-poster>
+                    </media-provider>
+                    <media-video-layout thumbnails="assets/images/makebettercover.webp"></media-video-layout>
+                </media-player>
+            </div>
+            <div id="drimeoverviewsection" class="intro2">
+                <h3>Drime, le stockage cloud collaboratif tout en un pour améliorer votre productivité</h3>
+                <div class="drimecolumnwrapper">
+                    <div class="drimerole">
+                        <div class="drimerolewrapper">
+                            <h4>Rôle</h4>
+                            <h5><span>Motion designer</span> -- Campagne de communication, animation d’interface,
+                                interactivité
+                            </h5>
+                        </div>
+                        <div class="drimerolewrapper">
+                            <h4>Logiciels utilisés</h4>
+                            <h5>After Effects<br>Illustrator<br>Premiere Pro</h5>
+                        </div>
+                        <h4>Chronologie & Statut</h4>
+                        <h5>5 semaines de réalisation, <span>Lancé en Aout 2024</span></h5>
+                    </div>
+                    <div class="drimeoverview">
+                        <h4>Aperçu</h4>
+                        <h5>Drime est une plateforme professionnelle centrée autour du stockage cloud offrant un accès à
+                            des outils simples, sécurisés, collaboratifs et centralisés.<br><br>
+
+                            À l’occasion du passage de la
+                            version bêta du service à sa sortie officielle, j’ai eu la chance d’être à la charge de la
+                            communication du service autour de la partie motion design.<br><br>
+
+                            Avec deux vidéos réalisées,
+                            l’objectif est d’introduire Drime de manière dynamique à son nouveau public, ce en
+                            présentant son offre principale ainsi que les différents outils liés au service.</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="drimefullimage parallax">
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/drimesequence01.webm" type="video/mp4">
+                    <source src="assets/videos/drimesequence01.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="drimecontextsection">
+                <div class="drimeendcolumnwrapper">
+                    <div class="drimecontextleft">
+                        <h3>Combiner les usages existants en une solution </h3>
+
+                        <h5>Drime ne se présente pas comme un simple service de stockage, mais comme une suite d’outils
+                            collaboratifs.Le projet naît à la suite de son prédécesseur, Driveo, dans l’objectif de
+                            fournir une nouvelle solution pour simplifier et améliorer l’expérience autour du partage et
+                            l’édition de fichiers.<br><br>
+
+                            Le service s’adresse aussi bien à une utilisation personnelle que professionnelle. Drime
+                            vise à concurrencer les GAFAM, en offrant une solution entièrement souveraine, efficace et
+                            sécurisée.
+                        </h5>
+                    </div>
+                    <div class="drimecontextright">
+                        <h5>
+                            La force de Drime est basée sur la fiabilité de son expertise dans le stockage en ligne, ses
+                            engagements autour de la sécurité et de la confidentialité, ainsi que la centralisation des
+                            différents outils liés au projet.
+                        </h5>
+                    </div>
+                </div>
+                <div class="drimecolumnwrapper">
+                    <div class="drimemidimage parallax">
+                        <img src="assets/images/drimeembed.webp">
+                    </div>
+                    <div class="drimecontextright">
+                        <h4>
+                            Des ambitions à la française
+                        </h4>
+                        <h5>
+                            Les priorités de l’équipe derrière le projet Drime sont de garantir le respect, la sécurité
+                            et la confidentialité des données des utilisateurs. C’est pourquoi la plateforme se montre
+                            transparente sur son fonctionnement 100% français, ses méthodes de chiffrement sécurisées,
+                            et son engagement écologique avec un objectif de fonctionner totalement à l’énergie
+                            renouvelable
+                            d’ici 2025.<br><br>
+
+                            Drime propose également des fonctionnalités liées à l’IA qui sont elles aussi, basées sur
+                            une IA française (Mistral) avec un chiffrement qui garantit la confidentialité des données
+                            utilisateurs.
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="drimeproblemsection">
+                <h3>L'interface complexe du créateur d'embeds fait peau neuve.</h3>
+                <div class="drimeendcolumnwrapper">
+                    <div class="drimeproblemcontent">
+                        <h5>
+                            L’ensemble des plateformes de Diose sont pensées afin de donner les clés en main pour créer
+                            les meilleurs projets <span>selon tout type de communauté.</span><br><br>
+
+                            L’infinité de personnalisation proposées par le créateur d'embeds font de sa nouvelle
+                            interface avancée <span>un concentré de fonctionnalités connectées difficiles à
+                                représenter.</span>
+                        </h5>
+                    </div>
+                    <div class="drimeproblemcontent">
+
+                        <h5>
+                            Le plus gros challenge derrière cette animation fut donc le suivant :<br><br>
+
+                            <span>Mettre en scène un fil conducteur intuitif pour promouvoir la richesse et la pluralité
+                                de fonctionnalités du créateur d’embeds.</span>
+                        </h5>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="drimefullimage parallax">
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/drimesequence02.webm" type="video/mp4">
+                    <source src="assets/videos/drimesequence02.mp4" type="video/mp4">
+                </video>
+            </div>
+
+
+            <div id="drimesolutionsection">
+                <h3>
+                    Pour maintenir une cohérence avec la charte de drime et garantir au spectateur une narration
+                    intuitive dans l’UI du créateur d’embeds, nous avons choisi d’adopter plusieurs aspects techniques
+                    au sein de l’animation :
+                </h3>
+                <div class="drimecolumnwrapper">
+                    <div class="drimesolutionicons">
+                        <img src="assets/images/drimebackground.webp">
+                    </div>
+                    <h5>
+                        <span>L’univers visuel et interactif</span> sélectionné est volontairement similaire à celui du
+                        créateur
+                        d’embeds. La vidéo, présentée directement sur la page de présentation de l’outil, permet alors
+                        d’introduire au spectateur <span>la manière dont celui-ci doit naviguer</span> pour utiliser le
+                        créateur
+                        d’embeds.
+                    </h5>
+                </div>
+                <div class="drimecolumnwrapper">
+                    <div class="drimesolutionicons">
+                        <img src="assets/images/drimecursor.webp">
+                    </div>
+                    <h5>
+                        L’animation met en place un <span>point d’accroche principal</span> chez le spectateur, que
+                        celui-ci va
+                        suivre tout du long de l’animation. De cette sorte, on parcourt l’ensemble de l’interface en
+                        <span>guidant avec fidélité</span> l’oeil vers les éléments mis en avants.
+                    </h5>
+                </div>
+                <div class="drimecolumnwrapper">
+                    <div class="drimesolutionicons">
+                        <img src="assets/images/drimemenu.webp">
+                    </div>
+                    <h5>
+                        <span>La navigation se retrouve simplifiée</span> avec une continuité dans les interactions de
+                        la souris.
+                        Cela rend l’animation <span>plus linéaire et intuitive</span> vis à vis des évènements qui
+                        rentrent en jeu
+                        tel que les sous-menus, pop-ups...
+                    </h5>
+                </div>
+            </div>
+
+            <div class="drimecolumnwrapper">
+                <div class="drimemidimage">
+                    <img src="assets/images/drimezoom1.webp">
+                </div>
+                <div class="drimemidimage">
+                    <img src="assets/images/drimezoom2.webp">
+                </div>
+            </div>
+
+            <div id="drimefeaturesection">
+                <h3>Une expérience innovante au goût du jour.</h3>
+                <div class="drimefeaturecontent">
+                    <h5>
+                        Le créateur d’embeds remis à neuf apporte son lot de nouveautés, l’objectif de l’animation
+                        est de mettre en avant ces fonctionnalités par le biais de mises en situation :
+                    </h5>
+                </div>
+                <div class="drimecolumnwrapper">
+                    <div class="drimefeaturecontent">
+                        <h5>
+                            <span>L’enregistrement, le partage et l’utilisation de templates</span> permet de facilement
+                            créer et
+                            personnaliser chaque embed selon les besoins de l’utilisateur.<br><br>
+
+                            <span>Une intelligente artificielle</span> est intégrée afin d’améliorer la qualité
+                            rédactionnelle de son
+                            embed.
+                        </h5>
+                    </div>
+                    <div class="drimefeaturecontent">
+
+                        <h5>
+                            <span>L’édition collaborative</span> en équipe permet de modifier en temps réel ses propres
+                            embeds.
+                            Accompagné d’un système de permissions avancées.<br><br>
+
+                            <span>La possibilité d’envoyer ses messages au travers de webhook</span> permet de
+                            simplifier et
+                            automatiser l’envoi de certaines informations vers Discord.
+                        </h5>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="drimefullimage parallax">
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/drimesequence03.webm" type="video/mp4">
+                    <source src="assets/videos/drimesequence03.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="drimeconceptionsection">
+                <h3>Donner vie au créateur d'embeds.</h3>
+                <h5>
+                    La première étape de conception fut la reproduction et l’adaptation de l’interface de l’outil.
+                    <span>L’objectif est d’individualiser chaque élément de l’interface afin de rendre celle-ci
+                        entièrement
+                        flexible.</span> Cela va permettre par la suite de faciliter les processus de création et
+                    d’animation.
+                </h5>
+
+            </div>
+
+            <div class="drimecolumnwrapper">
+                <div class="drimemidimage">
+                    <video class="vid" playsinline autoplay loop preload=metadata muted>
+                        <source src="assets/videos/drimebeforeafterui.webm" type="video/mp4">
+                        <source src="assets/videos/drimebeforeafterui.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="drimemidimage">
+                    <video class="vid" playsinline autoplay loop preload=metadata muted>
+                        <source src="assets/videos/drimeillustratorview.webm" type="video/mp4">
+                        <source src="assets/videos/drimeillustratorview.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div id="drimestoryboardsection">
+                <h3>On commence par quoi ?</h3>
+                <h5>
+                    L’enjeu autour du storyboard est de planifier un parcours utilisateur intuitif et immersif. Avec les
+                    nombreuses fonctionnalités à montrer, nous avons donc réalisé un plan logique selon les étapes de
+                    conception nécessaires d’un embed drime ainsi que de leur disposition dans l’interface.
+                </h5>
+
+            </div>
+
+            <div class="drimecolumnwrapper">
+                <div class="drimemidimage">
+                    <img src="assets/images/drimebaduserflow.webp">
+                </div>
+                <div class="drimemidimage">
+                    <img src="assets/images/drimegooduserflow.webp">
+                </div>
+            </div>
+
+            <div id="drimestoryboardfinal">
+                <h5>
+                    <span>Storyboard final :</span>
+                </h5>
+            </div>
+
+            <div class="storyboardgallery">
+                <img src="assets/images/drimestoryboard0.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard1.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard2.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard3.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard4.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard5.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard6.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard7.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard8.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard9.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard10.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard11.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard12.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard13.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard14.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard15.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard16.jpg" alt="Image 1">
+                <img src="assets/images/drimestoryboard17.jpg" alt="Image 1">
+            </div>
+
+
+
+            <div id="drimetimelinesection">
+                <h3>Les dessous de l'animation</h3>
+                <h5>
+                    Quelques extraits de ce qu'il se passe avec chaque calque derrière le visuel :
+                </h5>
+
+            </div>
+
+            <div class="btsgallery">
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/drimewireframe1.webm" type="video/mp4">
+                    <source src="assets/videos/drimewireframe1.mp4" type="video/mp4">
+                </video>
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/drimewireframe2.webm" type="video/mp4">
+                    <source src="assets/videos/drimewireframe2.mp4" type="video/mp4">
+                </video>
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/drimewireframe3.webm" type="video/mp4">
+                    <source src="assets/videos/drimewireframe3.mp4" type="video/mp4">
+                </video>
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/drimewireframe4.webm" type="video/mp4">
+                    <source src="assets/videos/drimewireframe4.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="drimestatisticssection">
+                <h5>
+                    Statistiques : 366 calques - 2071 images clés
+                </h5>
+
+            </div>
+
+
+
+            <div id="drimetraductionsection">
+                <h3>drime, vraiment pour tout le monde.</h3>
+                <h5>
+                    Le créateur d'embeds se veut d'être un outil ouvert à l'international. Nous avons donc pour terminer
+                    réalisé une version déclinée traduite en anglais.
+                </h5>
+            </div>
+
+            <div class="drimefullimage parallax">
+                <img src="assets/images/drimeen.webp">
+            </div>
+
+
+
+
+            <div id="nextprojecttitle">
+                <h3>Projects suivants :</h3>
+            </div>
+
+            <div id="nextprojectwrapper">
+                <a class="nextprojectbox" onmouseenter="textOnHover('project')" onclick="changeText('drime')" id="link"
+                    href="drime.html">
+                    <div id="nextprojectcover">
+                        <video class="vid" autoPlay muted loop playsInline preload=metadata>
+                            <source src="assets/videos/drimethumb.webm" type="video/mp4">
+                            <source src="assets/videos/Mixxmotion.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="desc">
+                        <h3>drime</h3>
+                        <div id="nextprojectdetails">
+                            <h5>Animation d'interface</h5>
+                            <h6>2024 - Projet client</h6>
+                        </div>
+                    </div>
+                </a>
+                <a class="nextprojectbox" onmouseenter="textOnHover('project')" onclick="changeText('drime')" id="link"
+                    href="drime.html">
+                    <div id="nextprojectcover">
+                        <video class="vid" autoPlay muted loop playsInline preload=metadata>
+                            <source src="assets/videos/drimethumb.webm" type="video/mp4">
+                            <source src="assets/videos/Mixxmotion.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id="desc">
+                        <h3>drime</h3>
+                        <div id="nextprojectdetails">
+                            <h5>Animation d'interface</h5>
+                            <h6>2024 - Projet client</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <div class="sidebar-structure">
+            <div class="sidebar-structure-sides intro1">
+                <div class="sidebar-nav" style="opacity: 1;">
+                    <h3 id="textlink"><a href="index.html" onclick="changeText('work')"><svg class="arrowicontop"
+                                version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                <g>
+                                    <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
+                                </g>
+                            </svg> Work</a></h3>
+                    <h3 id="textlink"><a href="about.html" onclick="changeText('about')"><svg class="arrowicontop"
+                                version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                <g>
+                                    <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
+                                </g>
+                            </svg> À propos</a></h3>
+                    <h3 id="textlink"><a data-cal-link="basiler/30min" data-cal-namespace=""
+                            data-cal-config='{"layout":"month_view"}' onclick="changeText('contact')"><svg
+                                class="arrowicontop" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                <g>
+                                    <path d="M16.5,20H0V3.5h2.8v11.6L18,0l2,2L4.8,17.2h11.7V20z" />
+                                </g>
+                            </svg> Contact
+
+                        </a></h3>
+                </div>
+            </div>
+            <div class="sidebar-structure-middle"></div>
+            <div class="sidebar-structure-sides intro1">
+                <div class="sidebar-content" style="opacity: 1;">
+                    <div class="text-projectpage-overline sidebar"><a id="textlink" href="#main"
+                            onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">- Drime</a></div>
+                    <div class="sidebar-chapters-wrapper"><a id="textlink" href="#main"
+                            onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')"
+                            class="chapter w-inline-block">
+                            <div>Aperçu</div>
+                        </a><a id="textlink" href="#drimecontextsection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#drimecontextsection')" class="chapter w-inline-block">
+                            <div>Contexte</div>
+                        </a><a id="textlink" href="#drimeproblemsection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#drimeproblemsection')" class="chapter w-inline-block">
+                            <div>Problème</div>
+                        </a><a id="textlink" href="#drimefeaturesection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#drimefeaturesection')" class="chapter w-inline-block">
+                            <div>Features</div>
+                        </a><a id="textlink" href="#drimeconceptionsection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#drimeconceptionsection')" class="chapter w-inline-block">
+                            <div>Début de conception</div>
+                        </a><a id="textlink" href="#drimestoryboardsection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#drimestoryboardsection')" class="chapter w-inline-block">
+                            <div>Storyboard</div>
+                        </a><a id="textlink" href="#drimetimelinesection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#drimetimelinesection')" class="chapter w-inline-block">
+                            <div>Behind the scene</div>
+                        </a><a id="textlink" href="#drimetraductionsection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#drimetraductionsection')" class="chapter w-inline-block">
+                            <div>Traduction</div>
+                        </a></div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="desk">
+
+            <div id="line1">
+                <div id="email">
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="mailto:basiler.contact@gmail.com">
+                        <h3>basiler.contact@gmail.com</h3>
+                    </a>
+                </div>
+                <div id="darkmode">
+                    <a id="textlink" onmouseenter="textOnHover('dark')" onclick="darkmode()"><span
+                            class="darkcircle"></span></a>
+                </div>
+                <div id="legal1">
+                    <a id="textlink" href="mentions-legales.html" onmouseenter="textOnHover('btn')"
+                        onclick="changeText('legal')">
+                        <h4>Mentions légales</h4>
+                    </a>
+                    <a id="textlink" onmouseenter="textOnHover('btn')"
+                        href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
+                        <h4>CGU</h4>
+                    </a>
+                    <a id="textlink" onmouseenter="textOnHover('btn')"
+                        href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
+                        <h4>CGV</h4>
+                    </a>
+                </div>
+            </div>
+            <div id="line2">
+                <div id="socials">
+                    <a id="textlink" onmouseenter="textOnHover('btn')"
+                        href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
+                        target="_blank">
+                        <h2>WhatsApp <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a>
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://www.linkedin.com/in/basile-r/"
+                        target="_blank">
+                        <h2>LinkedIn <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a><br>
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://www.instagram.com/Bsile_R/"
+                        target="_blank">
+                        <h2>Instagram <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a>
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://twitter.com/Bsile_R"
+                        target="_blank">
+                        <h2>X <svg class="arrowiconbot" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a>
+                </div>
+                <div id="extra">
+                    <a id="textlink" href="#main" onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">
+                        <p>Back to top</p>
+                    </a>
+                </div>
+                <div id="legal2">
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://github.com/Bsile/portfolio"
+                        target="_blank">
+                        <h4>Code repo</h4>
+                    </a>
+                    <br>
+                    <h4>© 2024 legal</h4>
+                </div>
+            </div>
+        </footer>
+        <footer class="mobilefooter">
+
+            <div id="line1">
+                <div id="extra">
+                    <a id="textlink" href="#main" onmouseenter="textOnHover('btn')" onclick="lenis.scrollTo('#main')">
+                        <p>Back to top</p>
+                    </a>
+                </div>
+                <div id="darkmode">
+                    <a class="footerdarkmode" onclick="darkmode()"><span class="darkcircle"></span></a>
+                </div>
+                <div id="socials">
+                    <a href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
+                        target="_blank">
+                        <h2>WhatsApp <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a>
+                    <a href="https://www.linkedin.com/in/basile-r/" target="_blank">
+                        <h2>LinkedIn <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a><br>
+                    <a href="https://www.instagram.com/Bsile_R/" target="_blank">
+                        <h2>Instagram <svg class="arrowiconbot" version="1.1" id="Calque_1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a>
+                    <a href="https://twitter.com/Bsile_R">
+                        <h2>X <svg class="arrowiconbot" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
+                                style="enable-background:new 0 0 20 20;" xml:space="preserve">
+                                <g>
+                                    <path fill="currentColor"
+                                        d="M3.5,0H20v16.5l-2.8,0V4.9L2,20l-2-2L15.2,2.8l-11.7,0V0z" />
+                                </g>
+                            </svg></h2>
+                    </a>
+                </div>
+                <div id="email">
+                    <a href="mailto:basiler.contact@gmail.com">
+                        <h3>basiler.contact@gmail.com</h3>
+                    </a>
+                </div>
+            </div>
+            <div id="line2">
+                <div id="legal2">
+                    <a id="textlink" href="mentions-legales.html" onclick="changeText('legal')">
+                        <h4>Mentions légales</h4>
+                    </a><br>
+                    <a href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
+                        <h4>CGU</h4>
+                    </a>
+                    <a href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
+                        <h4>CGV</h4>
+                    </a>
+                </div>
+                <div id="legal1">
+                    <a id="link" href="https://github.com/Bsile/portfolio" target="_blank">
+                        <h4>Code source</h4>
+                    </a>
+                    <h4>© 2024 legal</h4>
+                </div>
+
+            </div>
+        </footer>
+        <div id="marge"></div>
+        <div id="floatnav">
+            <a href="index.html" onclick="changeText('work')" class="floatnavsection">
+                <svg class="floatnavicon" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 35"
+                    style="enable-background:new 0 0 35 35;" xml:space="preserve">
+                    <g>
+                        <path d="M29.4,34.7h-4.2c-2.2,0-4-1.8-4-4v-8.9c0-1.1-0.9-2-2-2h-3.3c-1.1,0-2,0.9-2,2v8.9c0,2.2-1.8,4-4,4H5.6c-2.2,0-4-1.8-4-4
+                        V16.3c0-1.1,0.4-2.1,1.2-2.8L14.7,1.5c1.6-1.6,4.1-1.6,5.7,0l11.9,11.9c0.8,0.8,1.2,1.8,1.2,2.8v14.4C33.4,32.9,31.6,34.7,29.4,34.7
+                        z M15.8,17.7h3.3c2.2,0,4,1.8,4,4v8.9c0,1.1,0.9,2,2,2h4.2c1.1,0,2-0.9,2-2V16.3c0-0.5-0.2-1-0.6-1.4L18.9,2.9
+                        c-0.8-0.8-2.1-0.8-2.9,0L4.1,14.8c-0.4,0.4-0.6,0.9-0.6,1.4v14.4c0,1.1,0.9,2,2,2h4.2c1.1,0,2-0.9,2-2v-8.9
+                        C11.8,19.5,13.6,17.7,15.8,17.7z" />
+                    </g>
+                </svg>
+                <h6><span>Work</span></h6>
+            </a>
+            <a href="about.html" onclick="changeText('about')" class="floatnavsection">
+                <svg class="floatnavicon" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 35"
+                    style="enable-background:new 0 0 35 35;" xml:space="preserve">
+                    <g>
+                        <path d="M17.5,17.6c-4.8,0-8.6-3.9-8.6-8.6s3.9-8.6,8.6-8.6s8.6,3.9,8.6,8.6S22.3,17.6,17.5,17.6z M17.5,2.4c-3.6,0-6.6,3-6.6,6.6
+		s3,6.6,6.6,6.6s6.6-3,6.6-6.6S21.1,2.4,17.5,2.4z" />
+                        <path
+                            d="M29.9,34.8H5.1c-1.6,0-2.9-1.3-2.9-2.9v-3.6c0-1.1,0.4-2.1,1.2-2.8L6.9,22c1.1-1.1,2.7-1.5,4.1-1l5.9,2
+		c0.4,0.1,0.9,0.1,1.3,0l5.9-2c1.5-0.5,3-0.1,4.1,1l3.5,3.5c0.8,0.8,1.2,1.8,1.2,2.8v3.6C32.8,33.5,31.5,34.8,29.9,34.8z M9.7,22.8
+		c-0.5,0-1,0.2-1.4,0.6l-3.5,3.5c-0.4,0.4-0.6,0.9-0.6,1.4v3.6c0,0.5,0.4,0.9,0.9,0.9h24.9c0.5,0,0.9-0.4,0.9-0.9v-3.6
+		c0-0.5-0.2-1-0.6-1.4l-3.5-3.5c-0.5-0.5-1.3-0.7-2.1-0.5l-5.9,2c-0.8,0.3-1.7,0.3-2.5,0l-5.9-2C10.2,22.8,10,22.8,9.7,22.8z" />
+                    </g>
+                </svg>
+                <h6><span>About</span></h6>
+            </a>
+            <a data-cal-link="basiler/30min" data-cal-namespace="" data-cal-config='{"layout":"month_view"}'
+                onclick="changeText('contact')" class="floatnavsection">
+                <svg class="floatnavicon" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 35"
+                    style="enable-background:new 0 0 35 35;" xml:space="preserve">
+                    <g>
+                        <path d="M29.6,34.8c-0.2,0-0.3,0-0.5,0C14.2,32.6,2.4,20.8,0.3,5.9C0.1,4.7,0.5,3.5,1.4,2.6l1.2-1.2c0.8-0.8,1.8-1.2,2.8-1.2h3.3
+                        c1.6,0,3.1,1,3.7,2.5l1.9,4.9c0.5,1.2,0.3,2.6-0.4,3.7l-1.2,1.8c-0.4,0.7-0.4,1.5,0,2.2c1.8,2.7,4.1,5,6.8,6.8
+                        c0.7,0.4,1.5,0.4,2.2,0l1.9-1.2c1.1-0.7,2.5-0.9,3.7-0.4l4.9,1.9c1.5,0.6,2.5,2.1,2.5,3.7v3.3c0,1.1-0.4,2.1-1.2,2.8l-1.2,1.2
+                        C31.6,34.3,30.6,34.8,29.6,34.8z M5.5,2.2c-0.5,0-1,0.2-1.4,0.6L2.8,4C2.4,4.5,2.2,5.1,2.2,5.7c2,14,13.1,25.1,27.1,27.1
+                        c0.6,0.1,1.2-0.1,1.6-0.6l1.2-1.2c0.4-0.4,0.6-0.9,0.6-1.4v-3.3c0-0.8-0.5-1.6-1.3-1.9l-4.9-1.9c-0.6-0.2-1.3-0.2-1.8,0.2l-1.8,1.2
+                        c-1.3,0.9-3.1,0.9-4.4,0c-2.9-2-5.4-4.4-7.4-7.4c-0.9-1.3-0.9-3.1,0-4.4l1.2-1.8c0.4-0.5,0.4-1.2,0.2-1.8l-1.9-4.9
+                        c-0.3-0.8-1-1.3-1.9-1.3H5.5z" />
+                    </g>
+                </svg>
+                <h6><span>Contact</span></h6>
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.9.2/browser/overlayscrollbars.browser.es6.min.js"></script>
+    <script src="https://cdn.vidstack.io/player" type="module"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="assets/script/script.js"></script>
+    <script src="assets/barba/barba-transition.js" type="module"></script>
+</body>
+
+</html>

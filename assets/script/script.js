@@ -312,6 +312,9 @@ function changeText(text) {
     case 'about':
       divTexte.textContent = 'About';
       break;
+    case 'drime':
+      divTexte.textContent = 'Drime';
+      break;
     case 'makebetter':
       divTexte.textContent = 'MakeBetter.app';
       break;
@@ -1083,6 +1086,7 @@ var {
 
 const osInstance = OverlayScrollbars(document.querySelector('body'), {
   paddingAbsolute: false,
+  showNativeOverlaidScrollbars: true,
   cancel: {
     nativeScrollbarsOverlaid: true,
   },

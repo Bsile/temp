@@ -50,6 +50,10 @@ barba.hooks.enter((data) => {
     loadPlayerScripts();
     initParallax();
   }
+  if (data.next.namespace === 'drime') {
+    loadPlayerScripts();
+    initParallax();
+  }
 });
 
 
@@ -63,13 +67,21 @@ barba.hooks.afterLeave((data) => {
   if (data.current.namespace === 'makebetter') {
     cleanupParallax();
   }
+  if (data.current.namespace === 'drime') {
+    cleanupParallax();
+  }
   if (data.current.namespace === 'extrapixels') {
     cleanupScroll();
   }
 });
 
 barba.hooks.beforeEnter((data) => {
-  $(data.next.container).find('picture').attr('draggable', false);
+  $(data.next.container).find('img').attr('draggable', false);
+  resetCursor(); // Réinitialiser le curseur avant d'entrer dans la nouvelle page
+});
+
+barba.hooks.beforeLeave((data) => {
+  $(data.next.container).find('img').attr('draggable', false);
   resetCursor(); // Réinitialiser le curseur avant d'entrer dans la nouvelle page
 });
 
@@ -77,13 +89,6 @@ barba.hooks.after((data) => {
   pageentrance();
   growOnHover(); // Réinitialiser les écouteurs d'événements après chaque transition
   initializeLenis(); // Réinitialiser Lenis après chaque transition
-  if (data.next.namespace === 'makebetter') {
-    loadMakeBetterPlayerScript().then(() => {
-      // The script is loaded, you can now use makeBetterPlayer
-    }).catch((error) => {
-      console.error('Error loading makebetterplayer.js:', error);
-    });
-  }
 });
 
 barba.hooks.afterEnter((data) => {
