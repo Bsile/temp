@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basile. R - Motion Designer</title>
-    <link rel="shortcut icon" href="favicon" type="image/x-icon">
+
+    <link rel="shortcut icon" href="assets/favicon/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -64,9 +70,9 @@
 
         <div id="pageview">
 
-            
-            <video class="vid" playsinline autoplay loop preload=metadata muted src="assets/videos/oldprojectspreview.webm"
-                id="imgbehind"></video>
+
+            <video class="vid" playsinline autoplay loop preload=metadata muted
+                src="assets/videos/oldprojectspreview.webm" id="imgbehind"></video>
 
             <div id="aboutheader" class="intro1">
                 <div id="picleft">
@@ -109,8 +115,8 @@
                         </div>
                     </div>
                     <div id="rightcolumnstory">
-                        <div class="parallax-container">
-                            <img class="parallax" src="assets/images/oldtimeline.webp">
+                        <div class="parallax-container parallax">
+                            <img src="assets/images/oldtimeline.webp">
                         </div>
                     </div>
                 </div>
@@ -432,14 +438,13 @@
 
             <div id="objectifs" class="storycontent">
                 <div id="rightcolumnstory">
-                    <div class="parallax-container">
-                        <img class="parallax" src="assets/images/grass-cover.webp">
+                    <div class="parallax-container parallax">
+                        <img src="assets/images/grass-cover.webp">
                     </div>
                 </div>
                 <div id="rightcolumnstory">
                     <div id="lefttext">
                         <div id="storytitle">
-                            <h5>Vision et ambitions</h5>
                         </div>
 
                         <div id="storycontent">
@@ -448,7 +453,7 @@
                                     une routine créative quotidienne, dans l'objectif de constamment enrichir et faire
                                     évoluer
                                     mes compétences. J'aime aussi travailler avec des gens qui se sentent
-                                    concernés dans leurs projets, c’est pourquoi je
+                                    concernés dans leurs projets.<br><br>C’est pourquoi je
                                     propose aujourd’hui <span>un accompagnement sur-mesure dans des projets
                                         motion</span> aux profils variés.</h6>
                             </div>
@@ -462,14 +467,14 @@
 
             <div id="testimonial">
                 <div id="storytitle">
-                    <h5>Ce qu'ils en ont pensé :</h5>
+                    <h5>On a travaillé ensemble :</h5>
                 </div>
                 <div class="swiper mySwiper" id="link" onmouseenter="textOnHover('swiper')">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="testiprofile">
                                 <img src="assets/images/tibalt.webp">
-                                <h4>Tibalt <span>/ Administrateur Drime</span></h4>
+                                <h4>Tibalt <span>/ CEO Drime</span></h4>
                             </div>
                             <h6>Cherchant un motion designer pour mon entreprise, je suis tombé sur Basile. Après une
                                 rapide visite de son site internet, j'ai tout de suite été conquis par son style et les
@@ -491,6 +496,23 @@
                                 recommande fortement.
                             </h6>
                         </div>
+
+                        <div class="swiper-slide">
+                            <div class="testiprofile">
+                                <img src="assets/images/patrick.webp">
+                                <h4>Patrick Navarro <span>/ Co-fondateur Paloha</span></h4>
+                            </div>
+                            <h6>Nous avons eu le plaisir d'accueillir Basile pour un stage de 8 semaines au sein
+                                de notre agence digitale en tant que Motion Designer.<br><br>
+                                <span>Basile a réalisé un travail exceptionnel sur une vidéo de présentation de notre SaaS</span>,
+                                ainsi que sur plusieurs autres projets. Il a su faire preuve d'une grande créativité,
+                                d'une organisation sans faille, et d'une réelle capacité à proposer des idées
+                                innovantes. <span>Sa rigueur et son sens artistique ont largement dépassé nos attentes.</span><br><br>
+                                À la fin de son stage, nous avons été tellement satisfaits de son travail que nous lui
+                                avons proposé un contrat d'apprentissage pour poursuivre notre collaboration.<br><br>
+                                <span>Nous recommandons Basile sans hésitation pour tout projet de motion design.</span></h6>
+                        </div>
+
                         <div class="swiper-slide">
                             <div class="testiprofile">
                                 <img src="assets/images/louis.webp">
@@ -513,10 +535,11 @@
                                     côtés</span>, tout
                                 simplement <span>😉</span></h6>
                         </div>
+
                         <div class="swiper-slide">
                             <div class="testiprofile">
                                 <img src="assets/images/nathan.webp">
-                                <h4>Nathan <span>/ Administrateur MakeBetter</span></h4>
+                                <h4>Nathan <span>/ Co-fondateur MakeBetter</span></h4>
                             </div>
                             <h6>Hey ! Après avoir cherché longtemps un bon motion designer, nous avons fini par trouver
                                 Basile. Ses expériences étaient convaincantes et son portfolio original et cool
@@ -534,27 +557,6 @@
                                 accessible, autant sur les réseaux sociaux que par des moyens de contact plus
                                 professionnels. Bravo.
                             </h6>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testiprofile">
-                                <img src="assets/images/photodeprofil.webp">
-                                <h4>Patrick Navarro <span>/ Co-fondateur Paloha</span></h4>
-                            </div>
-                            <h6>Cherchant un motion designer pour mon entreprise, je suis tombé sur Basile. Après une
-                                rapide visite de son site internet, j'ai tout de suite été conquis par son style et les
-                                différentes vidéos qui étaient mises en avant. Je suis très satisfait du travail de
-                                Basile, que ça soit pour les étapes de réalisation qui étaient fluides, et agréables ou
-                                bien pour le storyboard, avec différentes propositions, afin de plaire à tous les coups
-                                !
-                                Basile fait également très attention aux détails et n'hésite pas à revenir sur certains
-                                défauts que je peux louper, n'étant pas professionnel dans le domaine, ce qui est très
-                                agréable. Étant qu'un simple client, je n'ai pas de connaissance dans le milieu de la
-                                vidéo et du design et Basile a su m'expliquer correctement dès le départ des notions et
-                                détails techniques. Rapport qualité/prix excellents, dépassant même nos exigences
-                                initiales.
-                                Le seuil conseil que je pourrais lui donner, c'est de rester tel quel et de continuer à
-                                proposer un service formidable ! Bravo pour ton travail. Je vous le recommande
-                                fortement.</h6>
                         </div>
                     </div>
                     <div class="swiper-scrollbar"></div>

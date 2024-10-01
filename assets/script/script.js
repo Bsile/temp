@@ -1086,7 +1086,7 @@ var {
 
 const osInstance = OverlayScrollbars(document.querySelector('body'), {
   paddingAbsolute: false,
-  showNativeOverlaidScrollbars: true,
+  showNativeOverlaidScrollbars: false,
   cancel: {
     nativeScrollbarsOverlaid: true,
   },

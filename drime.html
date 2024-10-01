@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basile. R - Motion Designer</title>
-    <link rel="shortcut icon" href="favicon" type="image/x-icon">
+
+    <link rel="shortcut icon" href="assets/favicon/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -68,7 +74,7 @@
 
 
             <div id="drimeheader" class="intro1">
-                <media-player id="link" loop="true" playsinline preload="auto" title="Drime" viewType="video"
+                <media-player id="link" loop="true" playsinline preload="metadata" title="Drime" viewType="video"
                     src="vimeo/998298032">
                     <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
                         :placement="tooltipPlacement"></n-tooltip>
@@ -76,10 +82,9 @@
                         <!-- ... -->
                     </media-toggle-button>
                     <media-provider>
-                        <media-poster class="vds-poster" src="assets/images/makebettercover.webp"
-                            alt="drime cover"></media-poster>
+                        <media-poster class="vds-poster" src="" alt="drime cover"></media-poster>
                     </media-provider>
-                    <media-video-layout thumbnails="assets/images/makebettercover.webp"></media-video-layout>
+                    <media-video-layout thumbnails=""></media-video-layout>
                 </media-player>
             </div>
             <div id="drimeoverviewsection" class="intro2">
@@ -97,7 +102,7 @@
                             <h5>After Effects<br>Illustrator<br>Premiere Pro</h5>
                         </div>
                         <h4>Chronologie & Statut</h4>
-                        <h5>5 semaines de réalisation, <span>Lancé en Aout 2024</span></h5>
+                        <h5>5 semaines de réalisation, <span>Lancé en Août 2024</span></h5>
                     </div>
                     <div class="drimeoverview">
                         <h4>Aperçu</h4>
@@ -115,11 +120,8 @@
                 </div>
             </div>
 
-            <div class="drimefullimage parallax">
-                <video class="vid" playsinline autoplay loop preload=metadata muted>
-                    <source src="assets/videos/drimesequence01.webm" type="video/mp4">
-                    <source src="assets/videos/drimesequence01.mp4" type="video/mp4">
-                </video>
+            <div class="makebetterfullimage parallax appeareffect">
+                <img src="assets/images/drimemockup.webp">
             </div>
 
             <div id="drimecontextsection">
@@ -127,14 +129,18 @@
                     <div class="drimecontextleft">
                         <h3>Combiner les usages existants en une solution </h3>
 
-                        <h5>Drime ne se présente pas comme un simple service de stockage, mais comme une suite d’outils
-                            collaboratifs.Le projet naît à la suite de son prédécesseur, Driveo, dans l’objectif de
-                            fournir une nouvelle solution pour simplifier et améliorer l’expérience autour du partage et
-                            l’édition de fichiers.<br><br>
+                        <h5>Drime ne se présente pas comme un simple service de stockage, mais comme une <span>suite
+                                d’outils
+                                collaboratifs.</span> Le projet naît à la suite de son prédécesseur, Driveo, dans
+                            l’objectif de
+                            fournir une nouvelle solution pour simplifier et améliorer <span>l’expérience autour du
+                                partage et
+                                l’édition de fichiers.</span><br><br>
 
                             Le service s’adresse aussi bien à une utilisation personnelle que professionnelle. Drime
-                            vise à concurrencer les GAFAM, en offrant une solution entièrement souveraine, efficace et
-                            sécurisée.
+                            vise à concurrencer les GAFAM, en offrant une solution entièrement <span>souveraine,
+                                efficace et
+                                sécurisée.</span>
                         </h5>
                     </div>
                     <div class="drimecontextright">
@@ -147,231 +153,244 @@
                 </div>
                 <div class="drimecolumnwrapper">
                     <div class="drimemidimage parallax">
-                        <img src="assets/images/drimeembed.webp">
+                        <video class="vid" playsinline autoplay loop preload=metadata muted>
+                            <source src="assets/videos/drimecards.webm" type="video/mp4">
+                            <source src="assets/videos/drimecards.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <div class="drimecontextright">
-                        <h4>
-                            Des ambitions à la française
-                        </h4>
                         <h5>
-                            Les priorités de l’équipe derrière le projet Drime sont de garantir le respect, la sécurité
-                            et la confidentialité des données des utilisateurs. C’est pourquoi la plateforme se montre
-                            transparente sur son fonctionnement 100% français, ses méthodes de chiffrement sécurisées,
-                            et son engagement écologique avec un objectif de fonctionner totalement à l’énergie
-                            renouvelable
+                            La plateforme se montre transparente sur son <span>fonctionnement 100% français</span>, ses
+                            méthodes de chiffrement
+                            sécurisées, et son engagement écologique avec un <span>objectif de fonctionner totalement à
+                                l’énergie renouvelable</span>
                             d’ici 2025.<br><br>
 
                             Drime propose également des fonctionnalités liées à l’IA qui sont elles aussi, basées sur
-                            une IA française (Mistral) avec un chiffrement qui garantit la confidentialité des données
-                            utilisateurs.
+                            une IA française avec un chiffrement qui <span>garantit la confidentialité des données
+                                utilisateurs.</span>
                         </h5>
                     </div>
                 </div>
+            </div>
+
+            <div class="drimefullimage parallax">
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/drimesequence1.webm" type="video/mp4">
+                    <source src="assets/videos/drimesequence1.mp4" type="video/mp4">
+                </video>
             </div>
 
 
 
             <div id="drimeproblemsection">
-                <h3>L'interface complexe du créateur d'embeds fait peau neuve.</h3>
-                <div class="drimeendcolumnwrapper">
+                <div class="drimecolumnwrapper">
                     <div class="drimeproblemcontent">
+                        <h3>Introduire Drime à son nouveau public.</h3>
                         <h5>
-                            L’ensemble des plateformes de Diose sont pensées afin de donner les clés en main pour créer
-                            les meilleurs projets <span>selon tout type de communauté.</span><br><br>
+                            Une partie de la campagne de communication de Drime se base sur <span>deux publicités en
+                                motion
+                                design</span>, dans l’objectif de faire valoir les valeurs et les différentes
+                            fonctionnalités
+                            qu’offre la plateforme.<br><br>
 
-                            L’infinité de personnalisation proposées par le créateur d'embeds font de sa nouvelle
-                            interface avancée <span>un concentré de fonctionnalités connectées difficiles à
-                                représenter.</span>
+                            Nous avons donc divisé cette communication autour de Drime en deux objectifs. <span>Une
+                                première vidéo de considération</span>, concentrée sur le large panel de features
+                            offerts par la
+                            plateforme. Puis <span>une seconde vidéo de conversion</span>, plus attractive et dans
+                            l’objectif de faire adhérer une audience au produit.
                         </h5>
                     </div>
                     <div class="drimeproblemcontent">
 
-                        <h5>
-                            Le plus gros challenge derrière cette animation fut donc le suivant :<br><br>
+                        <media-player id="link" loop="true" playsinline preload="auto" title="Drime" viewType="video"
+                            src="vimeo/999850389">
+                            <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
+                                :placement="tooltipPlacement"></n-tooltip>
+                            <media-toggle-button disabled="true" aria-label="false">
+                                <!-- ... -->
+                            </media-toggle-button>
+                            <media-provider>
+                                <media-poster class="vds-poster" src="" alt="drime cover"></media-poster>
+                            </media-provider>
+                            <media-video-layout thumbnails=""></media-video-layout>
+                        </media-player>
 
-                            <span>Mettre en scène un fil conducteur intuitif pour promouvoir la richesse et la pluralité
-                                de fonctionnalités du créateur d’embeds.</span>
+                        <h5><br>
+                            La première vidéo introduisant la diversité de fonctionnalités du service.
                         </h5>
 
                     </div>
                 </div>
             </div>
 
-            <div class="drimefullimage parallax">
-                <video class="vid" playsinline autoplay loop preload=metadata muted>
-                    <source src="assets/videos/drimesequence02.webm" type="video/mp4">
-                    <source src="assets/videos/drimesequence02.mp4" type="video/mp4">
-                </video>
-            </div>
 
-
-            <div id="drimesolutionsection">
-                <h3>
-                    Pour maintenir une cohérence avec la charte de drime et garantir au spectateur une narration
-                    intuitive dans l’UI du créateur d’embeds, nous avons choisi d’adopter plusieurs aspects techniques
-                    au sein de l’animation :
-                </h3>
-                <div class="drimecolumnwrapper">
-                    <div class="drimesolutionicons">
-                        <img src="assets/images/drimebackground.webp">
-                    </div>
-                    <h5>
-                        <span>L’univers visuel et interactif</span> sélectionné est volontairement similaire à celui du
-                        créateur
-                        d’embeds. La vidéo, présentée directement sur la page de présentation de l’outil, permet alors
-                        d’introduire au spectateur <span>la manière dont celui-ci doit naviguer</span> pour utiliser le
-                        créateur
-                        d’embeds.
-                    </h5>
-                </div>
-                <div class="drimecolumnwrapper">
-                    <div class="drimesolutionicons">
-                        <img src="assets/images/drimecursor.webp">
-                    </div>
-                    <h5>
-                        L’animation met en place un <span>point d’accroche principal</span> chez le spectateur, que
-                        celui-ci va
-                        suivre tout du long de l’animation. De cette sorte, on parcourt l’ensemble de l’interface en
-                        <span>guidant avec fidélité</span> l’oeil vers les éléments mis en avants.
-                    </h5>
-                </div>
-                <div class="drimecolumnwrapper">
-                    <div class="drimesolutionicons">
-                        <img src="assets/images/drimemenu.webp">
-                    </div>
-                    <h5>
-                        <span>La navigation se retrouve simplifiée</span> avec une continuité dans les interactions de
-                        la souris.
-                        Cela rend l’animation <span>plus linéaire et intuitive</span> vis à vis des évènements qui
-                        rentrent en jeu
-                        tel que les sous-menus, pop-ups...
-                    </h5>
-                </div>
-            </div>
-
-            <div class="drimecolumnwrapper">
-                <div class="drimemidimage">
-                    <img src="assets/images/drimezoom1.webp">
-                </div>
-                <div class="drimemidimage">
-                    <img src="assets/images/drimezoom2.webp">
-                </div>
-            </div>
 
             <div id="drimefeaturesection">
-                <h3>Une expérience innovante au goût du jour.</h3>
-                <div class="drimefeaturecontent">
-                    <h5>
-                        Le créateur d’embeds remis à neuf apporte son lot de nouveautés, l’objectif de l’animation
-                        est de mettre en avant ces fonctionnalités par le biais de mises en situation :
-                    </h5>
+                <h3>
+                    L’objectif de cette deuxième vidéo est de valoriser quatre fonctionnalités principales en mettant en
+                    avant le côté humain et dynamique de Drime. Ce en lui donnant un aspect engageant vis-à-vis du
+                    public ciblé.
+                </h3>
+                <div class="drimecolumnwrapper">
+                    <div class="drimefeaturescards drimefeaturescard1">
+                        <h4>Le service cloud collaboratif</h4>
+
+                        <h5>
+                            La première feature que présente Drime est son aspect collaboratif tout du long de la
+                            plateforme. Entre partage et éditions de fichiers en temps réel, cette fonctionnalité
+                            s’adresse à un public aussi professionnel que particulier.
+                        </h5>
+                    </div>
+
+
+
+                    <div class="drimefeaturescards drimefeaturescard2">
+                        <h4>Des notes boostées à l’IA</h4>
+
+                        <h5>
+                            Un espace de prise de notes accompagné de l’IA permet de propulser simplement le potentiel
+                            de travail des utilisateurs de Drime. Les données relatives à l’IA sont encryptées afin de
+                            garantir la confidentialité des données des utilisateurs.
+                        </h5>
+                    </div>
                 </div>
                 <div class="drimecolumnwrapper">
-                    <div class="drimefeaturecontent">
-                        <h5>
-                            <span>L’enregistrement, le partage et l’utilisation de templates</span> permet de facilement
-                            créer et
-                            personnaliser chaque embed selon les besoins de l’utilisateur.<br><br>
+                    <div class="drimefeaturescards drimefeaturescard3">
+                        <h4>Partage en illimité</h4>
 
-                            <span>Une intelligente artificielle</span> est intégrée afin d’améliorer la qualité
-                            rédactionnelle de son
-                            embed.
+                        <h5>
+                            Drime promet un contrôle total sur la sécurité et la confidentialité de ses fichiers. Chaque
+                            partage de fichier offre des options avancées afin de correspondre aux besoin de
+                            collaboration spécifiques de n’importe quel utilisateur.
                         </h5>
                     </div>
-                    <div class="drimefeaturecontent">
+
+
+
+                    <div class="drimefeaturescards drimefeaturescard4">
+                        <h4>Apposer facilement ses signatures</h4>
 
                         <h5>
-                            <span>L’édition collaborative</span> en équipe permet de modifier en temps réel ses propres
-                            embeds.
-                            Accompagné d’un système de permissions avancées.<br><br>
-
-                            <span>La possibilité d’envoyer ses messages au travers de webhook</span> permet de
-                            simplifier et
-                            automatiser l’envoi de certaines informations vers Discord.
+                            L’édition de fichiers avancée disponible dans la plateforme permet de signer facilement et
+                            sur mesure n’importe quel fichier. Drime centralise les besoins afin de gagner
+                            du temps sur chaque étape de traitements de fichiers.
                         </h5>
-
                     </div>
                 </div>
+
             </div>
+
 
             <div class="drimefullimage parallax">
                 <video class="vid" playsinline autoplay loop preload=metadata muted>
-                    <source src="assets/videos/drimesequence03.webm" type="video/mp4">
-                    <source src="assets/videos/drimesequence03.mp4" type="video/mp4">
+                    <source src="assets/videos/drimesequence2.webm" type="video/mp4">
+                    <source src="assets/videos/drimesequence2.mp4" type="video/mp4">
                 </video>
             </div>
 
             <div id="drimeconceptionsection">
-                <h3>Donner vie au créateur d'embeds.</h3>
+                <h3>Un service cloud à échelle humaine.</h3>
                 <h5>
-                    La première étape de conception fut la reproduction et l’adaptation de l’interface de l’outil.
-                    <span>L’objectif est d’individualiser chaque élément de l’interface afin de rendre celle-ci
-                        entièrement
-                        flexible.</span> Cela va permettre par la suite de faciliter les processus de création et
-                    d’animation.
+                    La premère étape de conception se base sur les objectifs de la vidéo avec la mise en place d'un plan
+                    en trois étapes :<br><br>
+                    - Une première partie impactante afin d'accorcher le spectateur.<br>
+                    - La présentation dynamique des features dans un ordre logique.<br>
+                    - Une fin engageante avec l'utilisation d'un call to action en lien avec l'offre gratuite de Drime,
+                    puis un lien vers sa landing page.<br><br><br>
+
+
+
+                    Derrière ce plan de la vidéo, nous avons également adopté une musique afin de prévoir en amont du
+                    storyboard la répartition des messages à afficher et mises en scènes :<br><br>
+                </h5>
+
+                <media-player id="link" loop="true" playsinline preload="none" title="Drime Audio" viewType="video"
+                    class="drimeaudio" src="assets/videos/drimeaudio.mp4">
+                    <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
+                        :placement="tooltipPlacement"></n-tooltip>
+                    <media-toggle-button disabled="false" aria-label="false">
+                        <!-- ... -->
+                    </media-toggle-button>
+                    <media-provider>
+                        <media-poster class="vds-poster" src="" alt="drime cover"></media-poster>
+                    </media-provider>
+                    <media-video-layout thumbnails=""></media-video-layout>
+                </media-player>
+
+                <h5>
+                    L'étape suivante de conception consiste à recréer et adapter l'interface de Drime afin de faciliter,
+                    par
+                    la suite, son animation. L’objectif est d’individualiser chaque élément de l’interface afin de
+                    rendre celle-ci
+                    entièrement flexible. Cela va permettre de faciliter les processus de création et
+                    d’animation. Nous avons également choisis de simplifier celle-ci avec l'utilisations d'éléments
+                    squelettes afin de centrer le regard du spectateur sur le sujet mis en avant.
                 </h5>
 
             </div>
 
             <div class="drimecolumnwrapper">
-                <div class="drimemidimage">
+                <div class="drimemidimage parallax">
                     <video class="vid" playsinline autoplay loop preload=metadata muted>
-                        <source src="assets/videos/drimebeforeafterui.webm" type="video/mp4">
-                        <source src="assets/videos/drimebeforeafterui.mp4" type="video/mp4">
+                        <source src="assets/videos/drimebaseui.webm" type="video/mp4">
+                        <source src="assets/videos/drimebaseui.mp4" type="video/mp4">
                     </video>
                 </div>
-                <div class="drimemidimage">
+                <div class="drimemidimage parallax">
                     <video class="vid" playsinline autoplay loop preload=metadata muted>
-                        <source src="assets/videos/drimeillustratorview.webm" type="video/mp4">
-                        <source src="assets/videos/drimeillustratorview.mp4" type="video/mp4">
+                        <source src="assets/videos/drimenewui.webm" type="video/mp4">
+                        <source src="assets/videos/drimenewui.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
+
 
             <div id="drimestoryboardsection">
-                <h3>On commence par quoi ?</h3>
+                <h3>Planifier l'animation</h3>
                 <h5>
-                    L’enjeu autour du storyboard est de planifier un parcours utilisateur intuitif et immersif. Avec les
-                    nombreuses fonctionnalités à montrer, nous avons donc réalisé un plan logique selon les étapes de
-                    conception nécessaires d’un embed drime ainsi que de leur disposition dans l’interface.
+                    L’objectif du storyboard est de réussir à mettre en scène selon le plan musical un ensemble
+                    d'animations logiques, immersives et efficaces. La narration est faite de sorte à être engageante
+                    vis-à-vis du spectateur, et la mise en scène comme correspondante aux dynamiques de Drime tout en étant
+                    synchronisée avec la musique.
                 </h5>
 
             </div>
 
-            <div class="drimecolumnwrapper">
-                <div class="drimemidimage">
-                    <img src="assets/images/drimebaduserflow.webp">
-                </div>
-                <div class="drimemidimage">
-                    <img src="assets/images/drimegooduserflow.webp">
-                </div>
+            <div class="drimestoryboardgallery">
+                <img src="assets/images/drimestoryboard1.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard2.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard3.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard4.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard5.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard6.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard7.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard8.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard9.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard10.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard11.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard12.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard13.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard14.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard15.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard16.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard17.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard18.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard19.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard20.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard21.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard22.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard23.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard24.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard25.webp" alt="Image 1">
+                <img src="assets/images/drimestoryboard26.webp" alt="Image 1">
             </div>
 
-            <div id="drimestoryboardfinal">
-                <h5>
-                    <span>Storyboard final :</span>
-                </h5>
-            </div>
-
-            <div class="storyboardgallery">
-                <img src="assets/images/drimestoryboard0.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard1.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard2.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard3.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard4.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard5.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard6.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard7.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard8.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard9.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard10.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard11.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard12.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard13.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard14.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard15.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard16.jpg" alt="Image 1">
-                <img src="assets/images/drimestoryboard17.jpg" alt="Image 1">
+            <div class="drimefullimage parallax">
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/drimesequence3.webm" type="video/mp4">
+                    <source src="assets/videos/drimesequence3.mp4" type="video/mp4">
+                </video>
             </div>
 
 
@@ -401,28 +420,52 @@
                     <source src="assets/videos/drimewireframe4.webm" type="video/mp4">
                     <source src="assets/videos/drimewireframe4.mp4" type="video/mp4">
                 </video>
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/drimewireframe5.webm" type="video/mp4">
+                    <source src="assets/videos/drimewireframe5.mp4" type="video/mp4">
+                </video>
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/drimewireframe6.webm" type="video/mp4">
+                    <source src="assets/videos/drimewireframe6.mp4" type="video/mp4">
+                </video>
             </div>
 
             <div id="drimestatisticssection">
                 <h5>
-                    Statistiques : 366 calques - 2071 images clés
+                    Statistiques : 520 calques - 1329 images clés
                 </h5>
 
-            </div>
-
-
-
-            <div id="drimetraductionsection">
-                <h3>drime, vraiment pour tout le monde.</h3>
-                <h5>
-                    Le créateur d'embeds se veut d'être un outil ouvert à l'international. Nous avons donc pour terminer
-                    réalisé une version déclinée traduite en anglais.
-                </h5>
             </div>
 
             <div class="drimefullimage parallax">
-                <img src="assets/images/drimeen.webp">
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/drimesequence4.webm" type="video/mp4">
+                    <source src="assets/videos/drimesequence4.mp4" type="video/mp4">
+                </video>
             </div>
+
+
+
+            <div id="drimesdsection">
+                <h3>Sound design final</h3>
+
+                <h5>
+                    Ajouter une couche audio supplémentaire par dessus l'animation, ici principalement appliquée lors des jeux d'interface,  vise à rendre chaque interaction visuelle plus immersive. Le spectateur interprète avec plus de clarté ce qu'il se passe à l'écran, et plonge l'univers sonore de la vidéo dans une ambiance plus vivante et dynamique.
+                </h5>
+            </div>
+
+            <media-player id="link" loop="true" playsinline preload="none" title="Drime Audio" viewType="video"
+                    class="drimeaudio" src="assets/videos/drimesounddesign.mp4">
+                    <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
+                        :placement="tooltipPlacement"></n-tooltip>
+                    <media-toggle-button disabled="false" aria-label="false">
+                        <!-- ... -->
+                    </media-toggle-button>
+                    <media-provider>
+                        <media-poster class="vds-poster" src="" alt="drime cover"></media-poster>
+                    </media-provider>
+                    <media-video-layout thumbnails=""></media-video-layout>
+                </media-player>
 
 
 
@@ -525,16 +568,16 @@
                             <div>Features</div>
                         </a><a id="textlink" href="#drimeconceptionsection" onmouseenter="textOnHover('btn')"
                             onclick="lenis.scrollTo('#drimeconceptionsection')" class="chapter w-inline-block">
-                            <div>Début de conception</div>
+                            <div>Conception</div>
                         </a><a id="textlink" href="#drimestoryboardsection" onmouseenter="textOnHover('btn')"
                             onclick="lenis.scrollTo('#drimestoryboardsection')" class="chapter w-inline-block">
                             <div>Storyboard</div>
                         </a><a id="textlink" href="#drimetimelinesection" onmouseenter="textOnHover('btn')"
                             onclick="lenis.scrollTo('#drimetimelinesection')" class="chapter w-inline-block">
                             <div>Behind the scene</div>
-                        </a><a id="textlink" href="#drimetraductionsection" onmouseenter="textOnHover('btn')"
+                        </a><a id="textlink" href="#drimesdsection" onmouseenter="textOnHover('btn')"
                             onclick="lenis.scrollTo('#drimetraductionsection')" class="chapter w-inline-block">
-                            <div>Traduction</div>
+                            <div>Sound design</div>
                         </a></div>
                 </div>
             </div>
