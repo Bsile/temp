@@ -27,7 +27,7 @@ barba.hooks.once((data) => {
   initializeLenis(); // Initialiser Lenis lors du chargement initial
 });
 
-barba.hooks.enter((data) => {
+barba.hooks.beforeEnter((data) => {
   window.scrollTo(0, 0);
   if (data.next.namespace === 'about') {
     setupXpHover();
@@ -51,10 +51,67 @@ barba.hooks.enter((data) => {
     initParallax();
   }
   if (data.next.namespace === 'drime') {
-    loadPlayerScripts();
-    initParallax();
+    reloadVidstackResources().then(() => {
+      initParallax();
+      initializeLenis();
+    });
+  }
+  if (data.next.namespace === 'upreview') {
+    reloadVidstackResources().then(() => {
+      initParallax();
+      initializeLenis();
+    });
   }
 });
+
+
+
+
+
+barba.hooks.afterEnter((data) => {
+  if (data.next.namespace === 'makebetter') {
+    const posters = document.querySelectorAll('media-poster');
+    posters.forEach(poster => {
+      const src = poster.getAttribute('src');
+      if (!src) {
+        poster.setAttribute('src', 'poster'); // Remplacer avec une miniature par défaut
+      }
+    });
+  }
+  if (data.next.namespace === 'drime') {
+    const posters = document.querySelectorAll('media-poster');
+    posters.forEach(poster => {
+      const src = poster.getAttribute('src');
+      if (!src) {
+        poster.setAttribute('src', 'poster'); // Remplacer avec une miniature par défaut
+      }
+    });
+  }
+  if (data.next.namespace === 'upreview') {
+    const posters = document.querySelectorAll('media-poster');
+    posters.forEach(poster => {
+      const src = poster.getAttribute('src');
+      if (!src) {
+        poster.setAttribute('src', 'poster'); // Remplacer avec une miniature par défaut
+      }
+    });
+  }
+});
+
+
+
+
+
+barba.hooks.afterEnter((data) => {
+  const posters = document.querySelectorAll('media-poster');
+  posters.forEach(poster => {
+    const src = poster.getAttribute('src');
+    poster.setAttribute('src', ''); // Supprime temporairement l'image
+    poster.setAttribute('src', src); // Recharge l'image
+  });
+});
+
+
 
 
 barba.hooks.afterLeave((data) => {
@@ -68,6 +125,9 @@ barba.hooks.afterLeave((data) => {
     cleanupParallax();
   }
   if (data.current.namespace === 'drime') {
+    cleanupParallax();
+  }
+  if (data.current.namespace === 'upreview') {
     cleanupParallax();
   }
   if (data.current.namespace === 'extrapixels') {
@@ -92,8 +152,9 @@ barba.hooks.after((data) => {
 });
 
 barba.hooks.afterEnter((data) => {
-  var vids = document.querySelectorAll(".vid"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => {}).catch(error => {}); }; });
+  var vids = document.querySelectorAll(".vid"); vids.forEach(vid => { var playPromise = vid.play(); if (playPromise !== undefined) { playPromise.then(_ => { }).catch(error => { }); }; });
   ScrollTrigger.refresh();
+  window.lenis.update();
 });
 
 function leaveAnimation(container) {

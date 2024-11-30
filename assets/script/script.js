@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function isMakebetterPage() {
     return window.location.pathname.endsWith('makebetter.html');
   }
+  function isDrimePage() {
+    return window.location.pathname.endsWith('drime.html');
+  }
+  function isUpreviewPage() {
+    return window.location.pathname.endsWith('upreview.html');
+  }
 
   if (isHomePage()) {
     popupvimeo();
@@ -38,6 +44,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (isMakebetterPage()) {
+    initParallax();
+  }
+
+  if (isDrimePage()) {
+    initParallax();
+  }
+
+  if (isUpreviewPage()) {
     initParallax();
   }
 });
@@ -158,7 +172,7 @@ function growOnHover() {
 
   function onMouseHover() {
     TweenMax.to(mouse, .3, {
-      scale: 2,
+      scale: 1,
     });
     TweenMax.to(textinteraction, .3, {
       scale: 1,
@@ -167,7 +181,7 @@ function growOnHover() {
 
   function onMouseHoverOut() {
     TweenMax.to(mouse, .3, {
-      scale: 1,
+      scale: 0.5,
     });
     TweenMax.to(textinteraction, .3, {
       scale: 0,
@@ -176,7 +190,7 @@ function growOnHover() {
 
   function textOnMouseHover() {
     TweenMax.to(mouse, .3, {
-      scale: 2,
+      scale: 1,
     });
     TweenMax.to(mouse, 0, {
       backdropFilter: 'invert(1) grayscale(1)',
@@ -186,7 +200,7 @@ function growOnHover() {
 
   function textOnMouseHoverOut() {
     TweenMax.to(mouse, .3, {
-      scale: 1,
+      scale: 0.5,
     });
     TweenMax.to(mouse, 0, {
       backdropFilter: 'none',
@@ -311,6 +325,9 @@ function changeText(text) {
       break;
     case 'about':
       divTexte.textContent = 'About';
+      break;
+      case 'upreview':
+      divTexte.textContent = 'Up Review';
       break;
     case 'drime':
       divTexte.textContent = 'Drime';
@@ -1108,12 +1125,17 @@ const osInstance = OverlayScrollbars(document.querySelector('body'), {
 
 
 
+function reloadVidstackResources() {
+  const themeLink = document.querySelector('link[href="https://cdn.vidstack.io/player/theme.css"]');
+  const videoLink = document.querySelector('link[href="https://cdn.vidstack.io/player/video.css"]');
+  const playerScript = document.querySelector('script[src="https://cdn.vidstack.io/player"]');
 
+  if (themeLink) themeLink.remove();
+  if (videoLink) videoLink.remove();
+  if (playerScript) playerScript.remove();
 
-
-
-
-
+  loadPlayerScripts();
+}
 
 
 function loadPlayerScripts() {
@@ -1189,3 +1211,9 @@ function loadPlayerScripts() {
     }
   });
 }
+
+
+
+
+
+

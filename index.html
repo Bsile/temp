@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basile. R - Motion Designer</title>
-    
+
     <link rel="shortcut icon" href="assets/favicon/android-chrome-512x512.png" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -49,15 +49,15 @@
     <!-- Cal element-click embed code begins -->
     <script type="text/javascript">
         (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", { origin: "https://cal.com" });
+        Cal("init", "30min", { origin: "https://cal.com" });
 
 
         // Important: Please add the following attributes to the element that should trigger the calendar to open upon clicking.
         // `data-cal-link="basiler/30min"`
-        // data-cal-namespace=""
-        // `data-cal-config='{"layout":"month_view"}'`
+        // data-cal-namespace="30min"
+        // `data-cal-config='{"layout":"month_view","theme":"dark"}'`
 
-        Cal("ui", { "theme": "dark", "styles": { "branding": { "brandColor": "#000000" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+        Cal.ns["30min"]("ui", { "theme": "dark", "styles": { "branding": { "brandColor": "#000000" } }, "hideEventTypeDetails": false, "layout": "month_view" });
     </script>
     <!-- Cal element-click embed code ends -->
 
@@ -91,7 +91,7 @@
                     </div>
                     <div id="description">
                         <h2>
-                            Freelance & étudiant motion designer
+                            Freelance & alternant motion designer
                         </h2>
                         <h3>
                             Créateur passionné d’expériences motion innovantes, <br>je façonne avec le cœur un avenir
@@ -176,7 +176,8 @@
                         </div>
                     </div>
                 </a>
-                <div class="box" onmouseenter="textOnHover('project')" id="link" href="ring.html">
+                <a class="box" onmouseenter="textOnHover('project')" onclick="changeText('upreview')" id="link"
+                    href="upreview.html">
                     <div id="cover">
                         <img src="assets/images/ninecover.webp" alt="MakeBetter">
                         <video class="vid" loop preload=metadata muted onmouseover="this.play()"
@@ -185,13 +186,13 @@
                         </video>
                     </div>
                     <div id="desc">
-                        <h3>Ring</h3>
+                        <h3>Up Review</h3>
                         <div id="details">
                             <h5>Essai à la fake 3D</h5>
-                            <h6>2023 - Projet personnel</h6>
+                            <h6>2024 - Projet client</h6>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
         <footer class="desk">
