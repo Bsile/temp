@@ -74,8 +74,8 @@
 
 
             <div id="drimeheader" class="intro1">
-                <media-player aspectRatio="16/9" onmouseenter="textOnHover('btn')" id="link" loop="true" playsinline
-                    preload="metadata" title="Drime" viewType="video" src="vimeo/998298032">
+                <media-player load="eager" aspectRatio="16/9" onmouseenter="textOnHover('btn')" id="link" loop="true"
+                    playsinline preload="metadata" title="Drime" viewType="video" src="vimeo/998298032">
                     <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
                         :placement="tooltipPlacement"></n-tooltip>
                     <media-toggle-button disabled="true" aria-label="false">
@@ -204,8 +204,9 @@
                     <div class="drimeproblemcontent">
                         <div class="drimealtvideos drimevideo2">
 
-                            <media-player aspectRatio="16/9" onmouseenter="textOnHover('btn')" id="link" loop="true"
-                                playsinline preload="auto" title="Drime" viewType="video" src="vimeo/999850389">
+                            <media-player load="eager" aspectRatio="16/9" onmouseenter="textOnHover('btn')" id="link"
+                                loop="true" playsinline preload="auto" title="Drime" viewType="video"
+                                src="vimeo/999850389">
                                 <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
                                     :placement="tooltipPlacement"></n-tooltip>
                                 <media-toggle-button disabled="true" aria-label="false">
@@ -308,8 +309,8 @@
                     storyboard la répartition des messages à afficher et mises en scènes :<br><br>
                 </h5>
 
-                <media-player aspectRatio="auto" onmouseenter="textOnHover('btn')" id="link" loop="true" playsinline
-                    preload="none" title="Drime Audio" viewType="video" class="drimeaudio"
+                <media-player load="eager" aspectRatio="auto" onmouseenter="textOnHover('btn')" id="link" loop="true"
+                    playsinline preload="none" title="Drime Audio" viewType="video" class="drimeaudio"
                     src="assets/videos/drimeaudio.mp4">
                     <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
                         :placement="tooltipPlacement"></n-tooltip>
@@ -466,8 +467,8 @@
                 </h5>
             </div>
 
-            <media-player aspectRatio="61/20" onmouseenter="textOnHover('btn')" id="link" loop="true" playsinline
-                preload="none" title="Drime Audio" viewType="video" class="drimesd"
+            <media-player load="eager" aspectRatio="61/20" onmouseenter="textOnHover('btn')" id="link" loop="true"
+                playsinline preload="none" title="Drime Audio" viewType="video" class="drimesd"
                 src="assets/videos/drimesounddesign.mp4">
                 <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
                     :placement="tooltipPlacement"></n-tooltip>
@@ -479,6 +480,38 @@
                 </media-provider>
                 <media-video-layout thumbnails=""></media-video-layout>
             </media-player>
+
+
+
+
+            <div id="testimonial">
+
+                <div class="testislide">
+                    <div class="testiprofile">
+                        <img src="assets/images/tibalt.webp">
+                        <h4>Tibalt <span>/ CEO Drime</span></h4>
+                    </div>
+                    <h6>
+                        Afin de préparer le lancement de notre produit, <span>nous avions besoin d'une publicité dans
+                            des
+                            délais assez sérrés.</span> Nous avions déjà passé commande une première fois chez Basile et
+                        avons été
+                        très satisfaits, alors nous nous sommes naturellement tourné vers lui pour lui en commander une
+                        deuxième. Et il n'y a pas à dire, <span>Basile a su respecter la deadline dans les temps, et
+                            nous avons
+                            pu nous lancer à l'heure avec une magnifique vidéo.</span><br><br>
+                        Pendant tout le processus, Basile est resté à l'écoute, est venu me voir avec plusieurs idées,
+                        afin que je puisse faire le bon choix et trier ce qui allait ou non avec ce que nous avions en
+                        tête et avec plusieurs illustrations.<br><br>
+                        Par la suite, la réalisation a été fluide et efficace.
+                        <span>Basile a également pris le temps de m'expliquer les différents aspects techniques afin
+                            d'appuyer
+                            ses choix.</span> Je ne peux que le conseiller de nouveau, et nous n'hésiterons pas à lui
+                        repasser
+                        commande par la suite !
+                    </h6>
+                </div>
+            </div>
 
 
 
@@ -589,8 +622,11 @@
                             onclick="lenis.scrollTo('#drimetimelinesection')" class="chapter w-inline-block">
                             <div>Behind the scene</div>
                         </a><a id="textlink" href="#drimesdsection" onmouseenter="textOnHover('btn')"
-                            onclick="lenis.scrollTo('#drimetraductionsection')" class="chapter w-inline-block">
+                            onclick="lenis.scrollTo('#drimesdsection')" class="chapter w-inline-block">
                             <div>Sound design</div>
+                        </a><a id="textlink" href="#testimonial" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#testimonial')" class="chapter w-inline-block">
+                            <div>Avis client</div>
                         </a></div>
                 </div>
             </div>

@@ -74,8 +74,8 @@
 
 
             <div id="upreviewheader" class="intro1">
-                <media-player aspectRatio="16/9" onmouseenter="textOnHover('btn')" id="link" loop="true" playsinline
-                    preload="metadata" title="upreview" viewType="video" src="vimeo.com/1021430005">
+                <media-player load="eager" aspectRatio="16/9" onmouseenter="textOnHover('btn')" id="link" loop="true"
+                    playsinline preload="metadata" title="upreview" viewType="video" src="vimeo.com/1021430005">
                     <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
                         :placement="tooltipPlacement"></n-tooltip>
                     <media-toggle-button disabled="true" aria-label="false">
@@ -239,19 +239,20 @@
             <div id="upreviewfeaturesection">
                 <div class="upreviewcolumnwrapper">
                     <h3>
-                        Avec sa refonte, le jeu concours devient encore plus avancé, avec un ensemble complet de paramètres :</h3>
+                        Avec sa refonte, le jeu concours devient encore plus avancé, avec un ensemble complet de
+                        paramètres :</h3>
                     <div></div>
                 </div>
                 <div class="upreviewcolumnwrapper">
                     <div class="upreviewfeaturesgrid">
-                        <img src="assets/images/makebetterbackground.webp">
+                        <img src="assets/images/upreviewobjectif.webp">
                         <h4>- <span>L'objectif marketing</span>, le client gagne sa participation au jeu, en échange
                             d'un avis google ou de suivi sur les réseaux sociaux.
                         </h4>
                     </div>
 
                     <div class="upreviewfeaturesgrid">
-                        <img src="assets/images/makebetterbackground.webp">
+                        <img src="assets/images/upreviewmultiobjectif.webp">
                         <h4>
                             - <span>Le multi-objectif</span>, si le client essaye une nouvelle fois de jouer, celui-ci
                             doit remplir un autre objectif.
@@ -260,14 +261,14 @@
                 </div>
                 <div class="upreviewcolumnwrapper">
                     <div class="upreviewfeaturesgrid">
-                        <img src="assets/images/makebetterbackground.webp">
+                        <img src="assets/images/upreviewpersonnalisation.webp">
                         <h4>
                             - <span>Jeu 100% personnalisable</span>, le commerçant peut adapter le jeu et ses lots à sa
                             guise avec une personnalisation poussée.
                         </h4>
                     </div>
                     <div class="upreviewfeaturesgrid">
-                        <img src="assets/images/makebetterbackground.webp">
+                        <img src="assets/images/upreviewprobabilites.webp">
                         <h4>
                             - <span>Le choix de probabilités</span>, le commerçant peut choisir le pourcentage de chance
                             de gagner tel ou tel lot.
@@ -276,7 +277,7 @@
                 </div>
                 <div class="upreviewcolumnwrapper">
                     <div class="upreviewfeaturesgrid">
-                        <img src="assets/images/makebetterbackground.webp">
+                        <img src="assets/images/upreviewdonneespersonnelles.webp">
                         <h4>
                             - <span>Données personnelles</span>, le commerçant peut demander de récupérer diverses
                             informations personnelles client, afin d'en constituer une base de donnée et de l'utiliser
@@ -287,26 +288,94 @@
 
             </div>
 
+            <div id="upreviewcomsection">
+
+                <div class="upreviewcomcontent">
+                    <h3>Faciliter la présentation d'un service complexe.</h3>
+                    <h5>
+                        La principale difficultée vis à vis de l'introduction de la plateforme fut de la rendre
+                        accessible en incluant un maximum d'informations, sans pour autant la rendre indigeste ou lourde
+                        pour le spectateur. Nous avons pour cela établit un plan de communication visant à limiter la
+                        friction narrative en divisant la communication du service en deux vidéos :
+                    </h5>
+                </div>
+                <div class="upreviewcolumnwrapper">
+                    <div class="upreviewcomleft">
+                        <h5>- Une première vidéo teaser format réseaux sociaux, réduite dans sa narration incitant le
+                            spectateur à se rediriger vers le site d'Up Review.
+                        </h5>
+                    </div>
+                    <div class="upreviewcomright">
+                        <h5>
+                            - Une deuxième vidéo complète présentant les fonctionnalités d'Up Review, incitant le
+                            spectateur à adhérer au service.
+                        </h5>
+                    </div>
+                </div>
+                <div class="upreviewteaser">
+                    <div class="upreviewcolumnwrapper">
+
+                        <div class="upreviewcomcolumncontentleft">
+                            <div class="upreviewvideo2">
+
+                                <media-player load="eager" aspectRatio="9/16" onmouseenter="textOnHover('btn')"
+                                    id="link" loop="true" playsinline preload="auto" title="Up Review Teaser"
+                                    viewType="video" src="vimeo/1042342774">
+                                    <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
+                                        :placement="tooltipPlacement"></n-tooltip>
+                                    <media-toggle-button disabled="true" aria-label="false">
+                                        <!-- ... -->
+                                    </media-toggle-button>
+                                    <media-provider>
+                                        <media-poster class="vds-poster" alt="upreview cover"></media-poster>
+                                    </media-provider>
+                                    <media-video-layout thumbnails=""></media-video-layout>
+                                </media-player>
+                            </div>
+                        </div>
+                        <div class="upreviewcomcolumncontentright">
+                            <h5>Le teaser introduit Up Review en adoptant une approche futuriste et minimaliste. Le
+                                site vient ensuite complémenter les informations essentielles. Puis, la vidéo complète
+                                présente sur la
+                                landing page apporte finalement un avant goût
+                                immersif du cœur de l'outil.<br><br>
+
+                                Ainsi avec une narration
+                                "step-by-step", un spectateur X peu facilement s'approprier le service et en finalité y
+                                adhérer.
+                            </h5>
+
+                            <img src="assets/images/upreviewsitepreview.webp">
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
 
             <div id="upreviewconceptionsection">
-                <h3>Un service cloud à échelle humaine.</h3>
-                <h5>
-                    La premère étape de conception se base sur les objectifs de la vidéo avec la mise en place d'un plan
-                    en trois étapes :<br><br>
-                    - <span>Une première partie impactante</span> afin d'accorcher le spectateur.<br>
-                    - <span>La présentation dynamique des features</span> dans un ordre logique.<br>
-                    - Une fin engageante avec <span>l'utilisation d'un call to action</span> en lien avec l'offre
-                    gratuite de upreview,
-                    puis un lien vers sa landing page.<br><br><br>
+                <h3>Une immersion dans l'expérience Up Review.</h3>
+                <h5>La conception de la vidéo complète présentant l'outil a débuté à partir d'un premier découpage
+                    technique de la bande son sélectionnée. Cela nous a permis de planifier en amont du storyboard la
+                    répartition des messages et mises en scène à afficher. Ainsi, le plan de la vidéo s'est réparti en
+                    trois grandes étapes :
 
-
-
-                    Derrière ce plan de la vidéo, nous avons également adopté une musique afin de prévoir en amont du
-                    storyboard la répartition des messages à afficher et mises en scènes :<br><br>
+                    <br><br>- L'animation commencera par un mot clef impactant, enchaînant sur la suite du slogan
+                    puis du logo.
+                    <br>- Seront ensuite divisées selon les parties sonores 8 séquences clefs présentant une navigation
+                    progressive au sein des fonctionnalités de l'outil.<br>
+                    - La conclusion de la vidéo se fera sur un call to action mettant en avant Up Review, puis un aperçu
+                    final de son interface accompagnée du logo.
                 </h5>
 
-                <media-player aspectRatio="auto" onmouseenter="textOnHover('btn')" id="link" loop="true" playsinline
-                    preload="none" title="upreview Audio" viewType="video" class="upreviewaudio"
+                <media-player load="eager" aspectRatio="auto" onmouseenter="textOnHover('btn')" id="link" loop="true"
+                    playsinline preload="none" title="upreview Audio" viewType="video" class="upreviewaudio"
                     src="assets/videos/upreviewaudio.mp4">
                     <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
                         :placement="tooltipPlacement"></n-tooltip>
@@ -320,16 +389,12 @@
                 </media-player>
 
                 <h5>
-                    L'étape suivante de conception consiste à recréer et adapter l'interface de upreview afin de
+                    L'étape suivante de conception consistera à recréer et adapter certains éléments clefs de la
+                    nouvelle interface d'Up Review afin de
                     faciliter,
                     par
-                    la suite, son animation. <span>L’objectif est d’individualiser chaque élément de l’interface</span>
-                    afin de
-                    rendre celle-ci
-                    entièrement flexible. Cela va permettre de faciliter les processus de création et
-                    d’animation. Nous avons également choisis de <span>simplifier celle-ci avec l'utilisations
-                        d'éléments
-                        squelettes</span> afin de centrer le regard du spectateur sur le sujet mis en avant.
+                    la suite, son animation. <span>L’objectif est d’individualiser chaque élément</span>
+                    afin de les rendre entièrement flexibles.
                 </h5>
 
             </div>
@@ -337,8 +402,8 @@
             <div class="upreviewcolumnwrapper">
                 <div class="upreviewmidimage parallax">
                     <video class="vid" playsinline autoplay loop preload=metadata muted>
-                        <source src="assets/videos/upreviewbaseui.webm" type="video/mp4">
-                        <source src="assets/videos/upreviewbaseui.mp4" type="video/mp4">
+                        <source src="assets/videos/upreviewnavpreview.webm" type="video/mp4">
+                        <source src="assets/videos/upreviewnavpreview.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="upreviewmidimage parallax">
@@ -354,12 +419,9 @@
                 <h3>Planifier l'animation</h3>
                 <h5>
                     L’objectif du storyboard est de réussir à mettre en scène selon le plan musical un ensemble
-                    d'animations logiques, immersives et efficaces. <span>La narration est faite de sorte à être
-                        engageante
-                        vis-à-vis du spectateur</span>, et la mise en scène comme correspondante aux dynamiques de
-                    upreview
-                    tout en étant
-                    synchronisée avec la musique.
+                    d'animations logiques, intuitives et percutantes. <span>La narration est faite de sorte à présenter
+                        progressivement au spectateur l'outil</span> sans le surcharger d'informations, le tout
+                    synchronisé avec la musique.
                 </h5>
 
             </div>
@@ -421,6 +483,14 @@
                     <source src="assets/videos/upreviewwireframe4.webm" type="video/mp4">
                     <source src="assets/videos/upreviewwireframe4.mp4" type="video/mp4">
                 </video>
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/upreviewwireframe5.webm" type="video/mp4">
+                    <source src="assets/videos/upreviewwireframe5.mp4" type="video/mp4">
+                </video>
+                <video class="vid" playsinline autoplay loop preload=metadata muted>
+                    <source src="assets/videos/upreviewwireframe6.webm" type="video/mp4">
+                    <source src="assets/videos/upreviewwireframe6.mp4" type="video/mp4">
+                </video>
             </div>
 
             <div id="upreviewstatisticssection">
@@ -443,16 +513,16 @@
                 <h3>Sound design final</h3>
 
                 <h5>
-                    Ajouter une couche audio supplémentaire par dessus l'animation, ici principalement appliquée lors
-                    des jeux d'interface, vise à rendre chaque interaction visuelle plus immersive. Le spectateur
+                    Ajouter une couche audio supplémentaire par dessus l'animation vise à rendre chaque interaction
+                    visuelle plus immersive. Le spectateur
                     interprète avec plus de clarté ce qu'il se passe à l'écran, et <span>plonge l'univers sonore de la
                         vidéo
                         dans une ambiance plus vivante et dynamique.</span>
                 </h5>
             </div>
 
-            <media-player aspectRatio="61/20" onmouseenter="textOnHover('btn')" id="link" loop="true" playsinline
-                preload="none" title="upreview Audio" viewType="video" class="upreviewsd"
+            <media-player load="eager" aspectRatio="1446/520" onmouseenter="textOnHover('btn')" id="link" loop="true"
+                playsinline preload="none" title="upreview Audio" viewType="video" class="upreviewsd"
                 src="assets/videos/upreviewsounddesign.mp4">
                 <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
                     :placement="tooltipPlacement"></n-tooltip>
@@ -464,6 +534,44 @@
                 </media-provider>
                 <media-video-layout thumbnails=""></media-video-layout>
             </media-player>
+
+
+
+
+            <div id="testimonial">
+
+                <div class="testislide">
+                    <div class="testiprofile">
+                        <img src="assets/images/patrick.webp">
+                        <h4>Patrick Navarro <span>/ Co-fondateur Paloha - Up Review</span></h4>
+                    </div>
+                    <h6>
+                        <span>Basile a démontré un excellent niveau de compétence dans son domaine.</span> Son
+                        principal projet a consisté en la réalisation d'une vidéo de présentation pour notre SaaS, un
+                        projet d'envergure qui nécessitait à la fois créativité, technicité et rigueur.<br><br>
+
+                        Basile a non
+                        seulement mené à bien ce projet avec brio, mais il a également su apporter une réelle plus-value
+                        grâce à ses propositions innovantes et à son sens artistique développé.
+                        En parallèle de ce projet majeur, Basile a également contribué à plusieurs mini-projets pour Up
+                        Review. <span>À chaque étape, il s'est montré particulièrement organisé, respectant les délais
+                            avec une grande efficacité, tout en maintenant
+                            un haut niveau de qualité dans ses livrables.</span><br><br>
+
+
+                        Ce qui distingue particulièrement Basile est sa capacité à être force de proposition. Il
+                        n'hésite pas à partager ses idées et à les défendre, tout en restant à l'écoute des retours et
+                        des besoins exprimés par l'équipe. <span>Sa motivation et son esprit d'initiative ont été
+                            grandement
+                            appréciés au sein de notre structure.</span><br><br>
+                        Nous avons été convaincus par la qualité du travail de Basile et son
+                        potentiel, au point de lui proposer un contrat d'apprentissage afin de poursuivre notre
+                        collaboration sur le long terme.
+                        <span>Nous recommandons Basile sans hésitation pour tout projet de motion design.</span>
+                    </h6>
+                </div>
+            </div>
+
 
 
 
@@ -564,7 +672,10 @@
                         </a><a id="textlink" href="#upreviewfeaturesection" onmouseenter="textOnHover('btn')"
                             onclick="lenis.scrollTo('#upreviewfeaturesection')" class="chapter w-inline-block">
                             <div>Features</div>
-                        </a><a id="textlink" href="#upreviewconceptionsection" onmouseenter="textOnHover('btn')"
+                        </a><a id="textlink" href="#upreviewcomsection" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#upreviewcomsection')" class="chapter w-inline-block">
+                            <div>Plan de com</div>
+                        </a></a><a id="textlink" href="#upreviewconceptionsection" onmouseenter="textOnHover('btn')"
                             onclick="lenis.scrollTo('#upreviewconceptionsection')" class="chapter w-inline-block">
                             <div>Conception</div>
                         </a><a id="textlink" href="#upreviewstoryboardsection" onmouseenter="textOnHover('btn')"
@@ -574,8 +685,11 @@
                             onclick="lenis.scrollTo('#upreviewtimelinesection')" class="chapter w-inline-block">
                             <div>Behind the scene</div>
                         </a><a id="textlink" href="#upreviewsdsection" onmouseenter="textOnHover('btn')"
-                            onclick="lenis.scrollTo('#upreviewtraductionsection')" class="chapter w-inline-block">
+                            onclick="lenis.scrollTo('#upreviewsdsection')" class="chapter w-inline-block">
                             <div>Sound design</div>
+                        </a><a id="textlink" href="#testimonial" onmouseenter="textOnHover('btn')"
+                            onclick="lenis.scrollTo('#testimonial')" class="chapter w-inline-block">
+                            <div>Avis client</div>
                         </a></div>
                 </div>
             </div>

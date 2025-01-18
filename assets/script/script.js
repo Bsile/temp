@@ -213,7 +213,7 @@ growOnHover();
 
 function resetCursor() {
   TweenMax.to(mouse, .3, {
-    scale: 1,
+    scale: 0.5,
     backdropFilter: 'none',
     backgroundColor: 'var(--content)'
   })

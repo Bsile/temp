@@ -1172,6 +1172,10 @@ body {
     height: auto;
 }
 
+.vds-buffering-spinner {
+    display: none;
+}
+
 [data-media-player]:not([data-view-type=audio]) [data-media-provider] {
     height: 100% !important;
 }
@@ -1238,6 +1242,24 @@ media-tooltip-content {
     display: block !important;
     aspect-ratio: 16/9 !important;
     margin-bottom: 4vw;
+    margin-top: 2vw;
+}
+
+.upreviewaudio {
+    display: block !important;
+    margin-bottom: 4vw;
+    aspect-ratio: 1920/236 !important;
+    margin-top: 2vw;
+}
+
+.upreviewaudio .vds-time-slider {
+    margin: 0vw 5vw 0vw 5vw !important;
+}
+
+.upreviewsd {
+    display: block !important;
+    margin-bottom: 4vw;
+    aspect-ratio: 1446/520 !important;
     margin-top: 2vw;
 }
 
@@ -2457,6 +2479,38 @@ span .three {
     padding-bottom: 60px;
 }
 
+#testimonial h6 {
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+    vertical-align: middle;
+}
+
+#testimonial h6 span {
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+.testislide {
+    margin: 10vw 0vw 0vw 0vw;
+    width: 50%;
+    border-left: 1px solid var(--border);
+    padding: 0 2vw;
+    transition: all ease 0.4s;
+    justify-self: center;
+}
+
 .swiper {
     width: 100%;
     height: 100%;
@@ -2767,6 +2821,7 @@ span .three {
 #makebetterheader {
     width: 100%;
     height: 100%;
+    min-height: 75dvh;
     cursor: pointer;
 }
 
@@ -3692,6 +3747,7 @@ span .three {
 #drimeheader {
     width: 100%;
     height: 100%;
+    min-height: 75dvh;
     cursor: pointer;
 }
 
@@ -4551,11 +4607,12 @@ span .three {
 
 
 
-/* Drime */
+/* UpReview */
 
 #upreviewheader {
     width: 100%;
     height: 100%;
+    min-height: calc();
     cursor: pointer;
 }
 
@@ -4748,7 +4805,7 @@ span .three {
 #upreviewproblemsection {
     width: 100%;
     height: 100%;
-    padding: 0vw 2.5vw 0vw 2.5vw;
+    padding: 0vw 2.5vw 5vw 2.5vw;
 }
 
 #upreviewproblemsection h3 {
@@ -4884,6 +4941,98 @@ span .three {
     border-radius: 10px;
     margin-right: 10px;
     margin-bottom: 30px;
+}
+
+#upreviewcomsection {
+    width: 100%;
+    height: 100%;
+    padding: 0vw 2.5vw 5vw 2.5vw;
+}
+
+#upreviewcomsection h3 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+    padding-top: 120px;
+}
+
+#upreviewcomsection h4 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+    padding-bottom: 60px;
+}
+
+#upreviewcomsection h5 {
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: var(--contenttransparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all ease 0.4s;
+}
+
+#upreviewcomsection h5 span {
+    color: var(--content);
+    transition: all ease 0.4s;
+}
+
+.upreviewcomcontent {
+    width: 100%;
+    height: 100%;
+}
+
+.upreviewcomcolumncontentleft {
+    width: calc(40% - 2.5vw);
+    height: 100%;
+    align-items: center;
+}
+
+.upreviewcomcolumncontentright {
+    width: calc(50% - 2.5vw);
+    display: grid;
+}
+
+.upreviewcomleft {
+    width: calc(50% - 2.5vw);
+    height: 100%;
+    padding-top: 3vw;
+}
+
+.upreviewcomright {
+    width: calc(50% - 2.5vw);
+    height: 100%;
+    padding-top: 3vw;
+}
+
+.upreviewteaser {
+    padding-top: 5vw;
+}
+
+.upreviewvideo2 {
+    display: block !important;
+    aspect-ratio: 9/16 !important;
+}
+
+.upreviewcomcolumncontentright img {
+    width: 100%;
+    height: unset;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 2vw;
 }
 
 #upreviewconceptionsection {
