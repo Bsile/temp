@@ -5573,71 +5573,103 @@ span .three {
     }
 
     #upreviewproblemsection h3 {
-    font-family: Inter;
-    font-size: 1.125rem;
-    font-weight: 500;
-    letter-spacing: -1px;
-    color: var(--content);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: all ease 0.4s;
-    padding-bottom: 60px;
-    padding-top: 120px;
-}
+        font-family: Inter;
+        font-size: 1.125rem;
+        font-weight: 500;
+        letter-spacing: -1px;
+        color: var(--content);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transition: all ease 0.4s;
+        padding-bottom: 60px;
+        padding-top: 120px;
+    }
 
-.upreviewproblemleftfeature {
-    width: 100%;
-}
+    .upreviewproblemleftfeature {
+        width: 100%;
+    }
 
-#upreviewfeaturesection {
-    padding: 10vw 2.5vw;
-}
+    #upreviewfeaturesection {
+        padding: 10vw 2.5vw;
+    }
 
-.upreviewfeaturesgrid {
-    width: 100%;
-    display: flex;
-}
+    .upreviewfeaturesgrid {
+        width: 100%;
+        display: flex;
+    }
 
-.upreviewfeaturesgrid img {
-    width: 60px;
-    height: 60px;
-    margin-right: 30px;
-}
+    .upreviewfeaturesgrid img {
+        width: 60px;
+        height: 60px;
+        margin-right: 30px;
+    }
 
-#upreviewfeaturesection h4 {
-    padding-bottom: 5vh;
-}
+    #upreviewfeaturesection h4 {
+        padding-bottom: 5vh;
+    }
 
-.upreviewcomleft {
-    width: 100%;
-}
+    .upreviewcomleft {
+        width: 100%;
+    }
 
-.upreviewcomright {
-    width: 100%;
-}
+    .upreviewcomright {
+        width: 100%;
+    }
 
-.upreviewcomcolumncontentleft {
-    width: 60%;
-    justify-self: center;
-}
+    .upreviewteaser {
+        padding-top: 5vw;
+        max-width: 100%;
+        display: grid;
+    }
 
-.upreviewcomcolumncontentright {
-    width: 100%;
-    padding-top: 5vh;
-}
+    .upreviewvideo2 {
+        display: block !important;
+        aspect-ratio: 9/16 !important;
+        position: relative;
+        width: 100%;
+        /* Prend toute la largeur disponible */
+        padding-top: 177.78%;
+        /* (16/9) * 100 = 177.78% pour maintenir le ratio 9:16 */
+        background-color: #000;
+        /* Optionnel : fond noir pour simuler la vidéo avant son chargement */
+        overflow: hidden;
+    }
 
-.upreviewcomcolumncontentright img {
-    margin-top: 5vh;
-}
 
-.upreviewaudio {
-    margin-bottom: 6vh;
-    margin-top: 5vh;
-}
+    .upreviewvideo2 video,
+    .upreviewvideo2 media-player {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ajuste la vidéo pour couvrir l'espace disponible */
+    }
 
-.upreviewfixpadding {
-    padding-top: 0px !important;
-}
+    .upreviewcomcolumncontentleft {
+        width: 60%;
+        justify-self: center;
+    }
+
+    .upreviewcomcolumncontentright {
+        width: 100%;
+        padding-top: 5vh;
+    }
+
+    .upreviewcomcolumncontentright img {
+        margin-top: 5vh;
+    }
+
+    .upreviewaudio {
+        margin-bottom: 6vh;
+        aspect-ratio: 136 / 19 !important;
+        margin-top: 5vh;
+    }
+
+    .upreviewfixpadding {
+        padding-top: 0px !important;
+    }
 
 }
 
