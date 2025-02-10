@@ -41,25 +41,33 @@ barba.hooks.beforeEnter((data) => {
     });
   }
   if (data.next.namespace === 'home') {
-    popupvimeo();
+    reloadVidstackResources().then(() => {
+      popupvimeo();
+      initializeLenis();
+    });
   }
   if (data.next.namespace === 'extrapixels') {
     initScroll();
   }
   if (data.next.namespace === 'makebetter') {
-    loadPlayerScripts();
-    initParallax();
+    reloadVidstackResources().then(() => {
+      initParallax();
+      initializeLenis();
+      observeSections();
+    });
   }
   if (data.next.namespace === 'drime') {
     reloadVidstackResources().then(() => {
       initParallax();
       initializeLenis();
+      observeSections();
     });
   }
   if (data.next.namespace === 'upreview') {
     reloadVidstackResources().then(() => {
       initParallax();
       initializeLenis();
+      observeSections();
     });
   }
 });
@@ -132,6 +140,7 @@ barba.hooks.afterLeave((data) => {
   }
   if (data.current.namespace === 'extrapixels') {
     cleanupScroll();
+    destroySwiper();
   }
 });
 

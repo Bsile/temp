@@ -3,7 +3,38 @@
 
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Basile. R - Motion Designer</title>
+    <meta name="description"
+        content="Créateur passionné d’expériences motion innovantes, je façonne avec le cœur un avenir aux pixels uniques.">
+
+
+
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Basile. R - Motion & Graphic Designer">
+    <meta itemprop="description"
+        content="Créateur passionné d’expériences motion innovantes, je façonne avec le cœur un avenir aux pixels uniques.">
+    <meta itemprop="image" content="https://basiler.fr/assets/images/index-meta.webp">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://basiler.fr">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Basile. R - Motion & Graphic Designer">
+    <meta property="og:description"
+        content="Créateur passionné d’expériences motion innovantes, je façonne avec le cœur un avenir aux pixels uniques.">
+    <meta property="og:image" content="https://basiler.fr/assets/images/index-meta.webp">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Basile. R - Motion & Graphic Designer">
+    <meta name="twitter:description"
+        content="Créateur passionné d’expériences motion innovantes, je façonne avec le cœur un avenir aux pixels uniques.">
+    <meta name="twitter:image" content="https://basiler.fr/assets/images/index-meta.webp">
+
+
+
 
     <link rel="shortcut icon" href="assets/favicon/android-chrome-512x512.png" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
@@ -22,10 +53,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.9.2/styles/overlayscrollbars.min.css" />
+    <link rel="stylesheet" href="https://cdn.vidstack.io/player/theme.css" />
+    <link rel="stylesheet" href="https://cdn.vidstack.io/player/video.css" />
     <link rel="stylesheet" href="assets/css/style.css">
+
+
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-M5GDL29L');</script>
+<!-- End Google Tag Manager -->
+
+
 </head>
 
 <body data-overlayscrollbars-initialize onload="onload()" data-barba="wrapper">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5GDL29L" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
     <div id="loader">
         <div class="transiline">
@@ -134,24 +187,108 @@
                     </nav>
                 </div>
                 <div id="reel" onmouseenter="textOnHover('reel')" class="desk">
+                    <div id="link">
+                        <div id="video" class="intro1">
+                            <media-player poster-load="custom" load="visible" aspectRatio="16/9" id="link" loop="true"
+                                playsinline preload="metadata" title="Créateur d'Embeds MakeBetter" viewType="video"
+                                src="vimeo/1052677818">
+                                <n-tooltip :show-arrow="false" trigger="manual" :show="showTooltip"
+                                    :placement="tooltipPlacement"></n-tooltip>
+                                <media-toggle-button disabled="true" aria-label="false">
+                                    <!-- ... -->
+                                </media-toggle-button>
+                                <media-provider>
+                                    <media-poster class="vds-poster" alt="Reel overview">
+                                        <video id="video" class="vid" playsinline autoplay loop preload=metadata muted
+                                            alt="Reel overview">
+                                            <source src="assets/videos/reeloverview.webm" type="video/mp4">
+                                            <source src="assets/videos/reeloverview.mp4" type="video/mp4">
+                                        </video>
+                                    </media-poster>
+                                    <iframe></iframe>
+                                </media-provider>
+                                <media-video-layout custom-icons>
 
-                    <a id="link" class="popup-vimeo" href="http://vimeo.com/898815441?autoplay=1&loop=1&">
-                        <video id="video" class="vid intro1" playsinline autoplay loop preload=metadata muted>
-                            <source src="assets/videos/makebetterthumb.webm" type="video/mp4">
-                            <source src="assets/videos/Mixxmotion.mp4" type="video/mp4">
-                        </video>
-                    </a>
+                                    <svg slot="play-icon" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                        viewBox="0 0 32 32">
+                                        <path class="vdsresizeicon"
+                                            d="M27,15.8c0-.9-.6-1.8-1.5-2.4l-14-8c-2-1.1-4.5.3-4.5,2.6v16c0,2.3,2.5,3.7,4.5,2.6l14-8c.9-.5,1.4-1.4,1.5-2.4,0-.1,0-.3,0-.4Z" />
+                                    </svg>
+
+                                    <svg slot="pause-icon" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                        viewBox="0 0 32 32">
+                                        <path class="vdsresizeicon"
+                                            d="M18.3,7.1c0-.6.5-1.1,1.1-1.1h3.4c.6,0,1.1.5,1.1,1.1v17.8c0,.6-.5,1.1-1.1,1.1h-3.4c-.6,0-1.1-.5-1.1-1.1V7.1Z" />
+                                        <path class="vdsresizeicon"
+                                            d="M8,7.1c0-.6.5-1.1,1.1-1.1h3.4c.6,0,1.1.5,1.1,1.1v17.8c0,.6-.5,1.1-1.1,1.1h-3.4c-.6,0-1.1-.5-1.1-1.1V7.1Z" />
+                                    </svg>
+
+
+                                    <svg slot="mute-icon" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                        viewBox="0 0 32 32">
+                                        <path class="vdsnormalicon"
+                                            d="M22.3,24.2c.3.2.7.2.9,0,.2-.3.2-.7,0-.9L6.1,7.8c-.3-.2-.7-.2-.9,0-.2.3-.2.7,0,.9l17.1,15.6Z" />
+                                        <path class="vdsnormalicon"
+                                            d="M12.9,11.9l2.8-2.4c.4-.4,1.1,0,1.1.5v5.4l-3.8-3.5Z" />
+                                        <path class="vdsnormalicon"
+                                            d="M11.6,19h-3.5c-.9,0-1.6-.7-1.6-1.6v-2.9c0-.9.7-1.6,1.6-1.6l8.6,7.9v.4c0,.2,0,.5,0,.7,0,.5-.6.8-1.1.5l-4.1-3.5Z" />
+                                    </svg>
+
+                                    <svg slot="volume-low-icon" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                        viewBox="0 0 32 32">
+                                        <path class="vdsnormalicon"
+                                            d="M11.6,19h-3.5c-.9,0-1.6-.7-1.6-1.6v-2.9c0-.9.7-1.6,1.6-1.6h3.5l4.1-3.5c.4-.4,1.1,0,1.1.5v12.2c0,.5-.6.8-1.1.5l-4.1-3.5h0Z" />
+                                        <path class="vdsnormalicon"
+                                            d="M19.1,11.9c.3-.2.7-.2.9,0,1,1,1.6,2.5,1.6,4.1s-.6,3.1-1.6,4.1c-.2.3-.6.3-.9,0-.3-.2-.3-.6,0-.9.7-.7,1.2-1.9,1.2-3.2s-.5-2.5-1.2-3.2c-.2-.3-.2-.7,0-.9Z" />
+                                        <path class="vdstransparenticon"
+                                            d="M23.8,9.1c-.2-.2-.5-.2-.7,0s-.2.5,0,.7c1.4,1.4,2.4,3.6,2.4,6.2s-1,4.8-2.4,6.2c-.2.2-.2.5,0,.7s.5.2.7,0c1.6-1.6,2.7-4.1,2.7-6.9s-1-5.3-2.7-6.9Z" />
+                                    </svg>
+
+                                    <svg slot="volume-high-icon" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                        viewBox="0 0 32 32">
+                                        <path class="vdsnormalicon"
+                                            d="M11.7,19h-3.5c-.9,0-1.6-.7-1.6-1.6v-2.9c0-.9.7-1.6,1.6-1.6h3.5l4.1-3.5c.4-.4,1.1,0,1.1.5v12.2c0,.5-.6.8-1.1.5l-4.1-3.5h0Z" />
+                                        <path class="vdsnormalicon"
+                                            d="M19.1,11.9c.3-.2.7-.2.9,0,1,1,1.6,2.5,1.6,4.1s-.6,3.1-1.6,4.1c-.2.3-.6.3-.9,0-.3-.2-.3-.6,0-.9.7-.7,1.2-1.9,1.2-3.2s-.5-2.5-1.2-3.2c-.2-.3-.2-.7,0-.9Z" />
+                                        <path class="vdsnormalicon"
+                                            d="M23.8,9.1c-.2-.2-.5-.2-.7,0s-.2.5,0,.7c1.4,1.4,2.4,3.6,2.4,6.2s-1,4.8-2.4,6.2c-.2.2-.2.5,0,.7s.5.2.7,0c1.7-1.6,2.7-4.1,2.7-6.9s-1-5.3-2.7-6.9Z" />
+                                    </svg>
+
+
+                                    <svg slot="fs-enter-icon" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                        viewBox="0 0 32 32">
+                                        <path class="vdsnormalicon"
+                                            d="M8,14c-.6,0-1-.4-1-1v-3c0-1.7,1.3-3,3-3h3c.6,0,1,.4,1,1s-.4,1-1,1h-3c-.6,0-1,.4-1,1v3c0,.6-.4,1-1,1Z" />
+                                        <path class="vdsnormalicon"
+                                            d="M22,25h-3c-.6,0-1-.4-1-1s.4-1,1-1h3c.6,0,1-.4,1-1v-3c0-.6.4-1,1-1s1,.4,1,1v3c0,1.7-1.3,3-3,3Z" />
+                                        <path class="vdsnormalicon"
+                                            d="M24,14c-.6,0-1-.4-1-1v-3c0-.6-.4-1-1-1h-3c-.6,0-1-.4-1-1s.4-1,1-1h3c1.7,0,3,1.3,3,3v3c0,.6-.4,1-1,1Z" />
+                                        <path class="vdsnormalicon"
+                                            d="M13,25h-3c-1.7,0-3-1.3-3-3v-3c0-.6.4-1,1-1s1,.4,1,1v3c0,.6.4,1,1,1h3c.6,0,1,.4,1,1s-.4,1-1,1Z" />
+                                    </svg>
+                                    <svg slot="fs-exit-icon" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                        viewBox="0 0 32 32">
+                                        <path class="vdsnormalicon"
+                                            d="M11,14h-3c-.6,0-1-.4-1-1s.4-1,1-1h3c.6,0,1-.4,1-1v-3c0-.6.4-1,1-1s1,.4,1,1v3c0,1.7-1.3,3-3,3Z" />
+                                        <path class="vdsnormalicon"
+                                            d="M19,25c-.6,0-1-.4-1-1v-3c0-1.7,1.3-3,3-3h3c.6,0,1,.4,1,1s-.4,1-1,1h-3c-.6,0-1,.4-1,1v3c0,.6-.4,1-1,1Z" />
+                                        <path class="vdsnormalicon"
+                                            d="M24,14h-3c-1.7,0-3-1.3-3-3v-3c0-.6.4-1,1-1s1,.4,1,1v3c0,.6.4,1,1,1h3c.6,0,1,.4,1,1s-.4,1-1,1Z" />
+                                        <path class="vdsnormalicon"
+                                            d="M13,25c-.6,0-1-.4-1-1v-3c0-.6-.4-1-1-1h-3c-.6,0-1-.4-1-1s.4-1,1-1h3c1.7,0,3,1.3,3,3v3c0,.6-.4,1-1,1Z" />
+                                    </svg>
+
+                                </media-video-layout>
+                            </media-player>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="work" class="intro2">
                 <a class="box" onmouseenter="textOnHover('project')" onclick="changeText('upreview')" id="link"
                     href="upreview.html">
                     <div id="cover">
-                        <img src="assets/images/ninecover.webp" alt="MakeBetter">
-                        <video class="vid" loop preload=metadata muted onmouseover="this.play()"
-                            onmouseout="this.pause()" onmouseleave="this.pause();this.currentTime=0;">
-                            <source src="assets/videos/ninethumb.webm" type="video/mp4">
-                        </video>
+                        <img src="assets/images/upreviewthumb.webp" alt="Up Review">
                     </div>
                     <div id="desc">
                         <h3>Up Review</h3>
@@ -164,10 +301,7 @@
                 <a class="box" onmouseenter="textOnHover('project')" onclick="changeText('drime')" id="link"
                     href="drime.html">
                     <div id="cover">
-                        <video class="vid" loop preload=metadata muted onmouseover="this.play()"
-                            onmouseout="this.pause()">
-                            <source src="assets/videos/ltddthumb.webm" type="video/mp4">
-                        </video>
+                        <img src="assets/images/drimethumb.webp" alt="Drime">
                     </div>
                     <div id="desc">
                         <h3>Drime</h3>
@@ -180,10 +314,7 @@
                 <a class="box" onmouseenter="textOnHover('project')" onclick="changeText('makebetter')" id="link"
                     href="makebetter.html">
                     <div id="cover">
-                        <video class="vid" autoPlay muted loop playsInline preload=metadata>
-                            <source src="assets/videos/makebetterthumb.webm" type="video/mp4">
-                            <source src="assets/videos/Mixxmotion.mp4" type="video/mp4">
-                        </video>
+                        <img src="assets/images/makebetterthumb.webp" alt="MakeBetter">
                     </div>
                     <div id="desc">
                         <h3>MakeBetter</h3>
@@ -214,19 +345,18 @@
                         <h4>Mentions légales</h4>
                     </a>
                     <a id="textlink" onmouseenter="textOnHover('btn')"
-                        href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
+                        href="assets/files/CGU.pdf" target="_blank">
                         <h4>CGU</h4>
                     </a>
                     <a id="textlink" onmouseenter="textOnHover('btn')"
-                        href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
+                        href="assets/files/CGV.pdf" target="_blank">
                         <h4>CGV</h4>
                     </a>
                 </div>
             </div>
             <div id="line2">
                 <div id="socials">
-                    <a id="textlink" onmouseenter="textOnHover('btn')"
-                        href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://wa.me/+33768338085"
                         target="_blank">
                         <h2>WhatsApp <svg class="arrowiconbot" version="1.1" id="Calque_1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -250,7 +380,7 @@
                                 </g>
                             </svg></h2>
                     </a><br>
-                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://www.instagram.com/Bsile_R/"
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://www.instagram.com/bybasiler/"
                         target="_blank">
                         <h2>Instagram <svg class="arrowiconbot" version="1.1" id="Calque_1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -262,8 +392,7 @@
                                 </g>
                             </svg></h2>
                     </a>
-                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://twitter.com/Bsile_R"
-                        target="_blank">
+                    <a id="textlink" onmouseenter="textOnHover('btn')" href="https://x.com/bybasiler" target="_blank">
                         <h2>X <svg class="arrowiconbot" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
                                 style="enable-background:new 0 0 20 20;" xml:space="preserve">
@@ -286,7 +415,7 @@
                         <h4>Code repo</h4>
                     </a>
                     <br>
-                    <h4>© 2024 legal</h4>
+                    <h4>© 2025 legal</h4>
                 </div>
             </div>
         </footer>
@@ -303,8 +432,7 @@
                     <a class="footerdarkmode" onclick="darkmode()"><span class="darkcircle"></span></a>
                 </div>
                 <div id="socials">
-                    <a href="https://wa.me/+33768338085?text=Et%20si%20on%20faisait%20bouger%20ton%20prochain%20projet%20?"
-                        target="_blank">
+                    <a href="https://wa.me/+33768338085" target="_blank">
                         <h2>WhatsApp <svg class="arrowiconbot" version="1.1" id="Calque_1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                 y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
@@ -326,7 +454,7 @@
                                 </g>
                             </svg></h2>
                     </a><br>
-                    <a href="https://www.instagram.com/Bsile_R/" target="_blank">
+                    <a href="https://www.instagram.com/bybasiler/" target="_blank">
                         <h2>Instagram <svg class="arrowiconbot" version="1.1" id="Calque_1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                 y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
@@ -337,7 +465,7 @@
                                 </g>
                             </svg></h2>
                     </a>
-                    <a href="https://twitter.com/Bsile_R">
+                    <a href="https://x.com/bybasiler">
                         <h2>X <svg class="arrowiconbot" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20"
                                 style="enable-background:new 0 0 20 20;" xml:space="preserve">
@@ -359,10 +487,10 @@
                     <a href="mentions-legales.html" onclick="changeText('legal')">
                         <h4>Mentions légales</h4>
                     </a><br>
-                    <a href="assets/files/Conditions_Generales_d-Utilisation.pdf" target="_blank">
+                    <a href="assets/files/CGU.pdf" target="_blank">
                         <h4>CGU</h4>
                     </a>
-                    <a href="assets/files/Conditions_Generales_de_Vente.pdf" target="_blank">
+                    <a href="assets/files/CGV.pdf" target="_blank">
                         <h4>CGV</h4>
                     </a>
                 </div>
@@ -370,7 +498,7 @@
                     <a id="link" href="https://github.com/Bsile/portfolio" target="_blank">
                         <h4>Code source</h4>
                     </a>
-                    <h4>© 2024 legal</h4>
+                    <h4>© 2025 legal</h4>
                 </div>
 
             </div>
@@ -391,7 +519,7 @@
                 </svg>
                 <h6>Work</h6>
             </a>
-            <a href="http://vimeo.com/898815441?autoplay=1&loop=1&" class="popup-vimeo floatnavsection">
+            <a href="http://vimeo.com/1052677818?autoplay=1&loop=1&" class="popup-vimeo floatnavsection">
                 <svg class="floatnavicon" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 35"
                     style="enable-background:new 0 0 35 35;" xml:space="preserve">
@@ -456,6 +584,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.9.2/browser/overlayscrollbars.browser.es6.min.js"></script>
+    <script src="https://cdn.vidstack.io/player" type="module"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="assets/script/script.js"></script>

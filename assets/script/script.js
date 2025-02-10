@@ -227,15 +227,45 @@ function resetCursor() {
 
 
 
+function updateThemeColor() {
+  // Récupère l'état actuel du mode
+  const isDarkMode = document.body.classList.contains('dark-mode');
+
+  // Sélectionne ou crée la balise meta theme-color
+  let metaThemeColor = document.querySelector("meta[name='theme-color']");
+  if (!metaThemeColor) {
+    metaThemeColor = document.createElement('meta');
+    metaThemeColor.setAttribute('name', 'theme-color');
+    document.head.appendChild(metaThemeColor);
+  }
+
+  // Définit la couleur en fonction du mode
+  const themeColor = isDarkMode ? '#f0f0f0' : '#090B0C'; // Correspond à --background pour chaque mode
+  metaThemeColor.setAttribute('content', themeColor);
+}
+
 function darkmode() {
   const wasDarkmode = localStorage.getItem('darkmode') === 'true';
   localStorage.setItem('darkmode', !wasDarkmode);
+
   const element = document.body;
   element.classList.toggle('dark-mode', !wasDarkmode);
+
+  // Met à jour la couleur du fond du navigateur
+  updateThemeColor();
 }
+
 function onload() {
-  document.body.classList.toggle('dark-mode', localStorage.getItem('darkmode') === 'true');
+  const isDarkMode = localStorage.getItem('darkmode') === 'true';
+  document.body.classList.toggle('dark-mode', isDarkMode);
+
+  // Met à jour la couleur du fond du navigateur au chargement
+  updateThemeColor();
 }
+
+// Appelle `onload` lors du chargement de la page
+window.onload = onload;
+
 
 
 
@@ -326,7 +356,7 @@ function changeText(text) {
     case 'about':
       divTexte.textContent = 'About';
       break;
-      case 'upreview':
+    case 'upreview':
       divTexte.textContent = 'Up Review';
       break;
     case 'drime':
@@ -928,6 +958,7 @@ const lerp = (f0, f1, t) => (1 - t) * f0 + t * f1;
 const clamp = (val, min, max) => Math.max(min, Math.min(val, max));
 
 class DragScroll {
+
   constructor(obj) {
     this.el = document.querySelector(obj.el);
     this.wrap = document.querySelector(obj.wrap);
@@ -945,7 +976,29 @@ class DragScroll {
 
     this.bindings();
     this.events();
-    this.calculate();
+    this.calculate(); // Calcul initial
+    this.resetProgress(); // Ajouté pour gérer les transitions Barba.js
+  }
+
+  resetProgress() {
+    if (!this.el || !this.wrap || !this.bar) return; // Vérifications de sécurité
+
+    this.calculate(); // Recalculer la largeur du slider
+    this.progress = this.maxScroll * 0.0018; // Ajustez ici le pourcentage initial (0.18 % de maxScroll)
+    this.x = this.progress;
+
+    // Réinitialiser la position et la taille de la progress bar
+    const initialScale = this.progress / this.maxScroll;
+    this.bar.style.transform = `scaleX(${initialScale})`;
+  }
+
+
+
+
+  updateProgressBar() {
+    // Force la position initiale de la barre selon la progression
+    const initialPlayrate = this.progress / this.maxScroll;
+    this.bar.style.transform = `scaleX(${0.18 + initialPlayrate * 0.82})`;
   }
 
   bindings() {
@@ -965,13 +1018,23 @@ class DragScroll {
 
   calculate() {
     this.progress = 0;
-    // Utiliser la largeur des éléments pour calculer la largeur totale du contenu
+
+    // Calcul de la largeur totale
     this.wrapWidth = Array.from(this.items).reduce((totalWidth, item) => {
       return totalWidth + item.clientWidth;
     }, 0);
     this.wrap.style.width = `${this.wrapWidth}px`;
+
     this.maxScroll = this.wrapWidth - this.el.clientWidth;
+
+    // Ajout pour recalculer la position de la progress bar
+    const progressParent = this.bar.parentElement;
+    const parentWidth = progressParent.clientWidth;
+
+    this.bar.style.transform = `scaleX(${this.progress / this.maxScroll})`; // Reset bar
+    this.bar.style.left = `${(parentWidth - this.bar.clientWidth) / 2}px`; // Centrer
   }
+
 
   handleWheel(e) {
     this.progress += e.deltaY;
@@ -1018,17 +1081,41 @@ class DragScroll {
 
   removeEvents() {
     window.removeEventListener("resize", this.calculate);
+
+    // Remove wheel scroll listener
     window.removeEventListener("wheel", this.handleWheel);
 
+    // Remove touch events
     this.el.removeEventListener("touchstart", this.handleTouchStart);
     window.removeEventListener("touchmove", this.handleTouchMove);
     window.removeEventListener("touchend", this.handleTouchEnd);
 
+    // Remove mouse events
     window.removeEventListener("mousedown", this.handleTouchStart);
     window.removeEventListener("mousemove", this.handleTouchMove);
     window.removeEventListener("mouseup", this.handleTouchEnd);
+
+    // Remove mouse leave event for body
     document.body.removeEventListener("mouseleave", this.handleTouchEnd);
+
+    // Remove forced load listener
+    window.removeEventListener("load", this.calculate); // Assuming added previously
+
+    // Cancel any running animation frames
+    if (this.rafId) {
+      cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    }
+
+    // Clear any custom timers or timeouts (if used)
+    if (this.resizeTimeout) {
+      clearTimeout(this.resizeTimeout);
+      this.resizeTimeout = null;
+    }
+
+    console.log("All listeners and timers removed");
   }
+
 
   raf() {
     this.x = lerp(this.x, this.progress, 0.1);
@@ -1036,7 +1123,8 @@ class DragScroll {
 
     this.wrap.style.transform = `translatex(${-this.x}px)`;
 
-    this.bar.style.transform = `scaleX(${0.18 + this.playrate * 0.82})`;
+    // Inclure l'offset initial de 0.18
+    this.bar.style.transform = `scaleX(${0.18 + this.playrate * (1 - 0.18)})`;
 
     this.speed = Math.min(100, this.oldX - this.x);
     this.oldX = this.x;
@@ -1059,6 +1147,14 @@ class DragScroll {
   }
 }
 
+window.addEventListener("load", () => {
+  if (scroll) {
+    scroll.calculate();
+    scroll.resetProgress();
+  }
+});
+
+
 let scroll = null;
 
 const initScroll = () => {
@@ -1069,15 +1165,18 @@ const initScroll = () => {
     bar: ".sandboxslider-progress-bar",
   });
 
+  scroll.resetProgress(); // Appel explicite pour définir l'état initial
+
   const animateScroll = () => {
     if (scroll) {
       requestAnimationFrame(animateScroll);
       scroll.raf();
     }
-  }
+  };
 
   animateScroll();
 };
+
 
 
 const cleanupScroll = () => {
@@ -1217,3 +1316,113 @@ function loadPlayerScripts() {
 
 
 
+
+
+
+let observer;
+
+function observeSections() {
+  const sections = document.querySelectorAll(".sidebar-chapters-wrapper a[data-target]");
+  const sidebarLinks = document.querySelectorAll(".chapter");
+
+  console.log("Sections trouvées :", sections.length);
+
+  // Déconnexion de l'ancien observer si existant
+  if (observer) {
+    observer.disconnect();
+    console.log("Ancien observer déconnecté.");
+  }
+
+  // Initialisation de l'observateur
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      let margin = entry.target.id === "main" ? "-10% 0px -90% 0px" : "0px 0px -80% 0px";
+      observer.rootMargin = margin;  // Ajuste dynamiquement
+
+      console.log("Observée :", entry.target.id, "rootMargin:", margin, "Visible:", entry.isIntersecting);
+      
+      if (entry.isIntersecting) {
+        // Suppression de l'active de tous les liens
+        sidebarLinks.forEach(link => link.classList.remove("active"));
+
+        // Ajout de l'active au lien correspondant
+        const matchingLink = document.querySelector(`.sidebar-chapters-wrapper a[data-target="#${entry.target.id}"]`);
+        if (matchingLink) {
+          matchingLink.classList.add("active");
+          console.log("Ajout de active à :", matchingLink.textContent.trim());
+        }
+      }
+    });
+  }, { rootMargin: "0px 0px -80% 0px", threshold: 0.2 });
+
+  // Observer uniquement les sections pertinentes liées aux div spécifiques
+  sections.forEach(link => {
+    const sectionId = link.getAttribute("data-target").substring(1);
+    const section = document.getElementById(sectionId);
+    if (section) {
+      observer.observe(section);
+      console.log("Observation de la section :", sectionId);
+    } else {
+      console.log("⚠️ Aucune section trouvée pour l'ID :", sectionId);
+    }
+  });
+}
+
+// Fonction améliorée pour détecter la section la plus proche du centre
+function updateActiveChapter() {
+  console.log("Mise à jour des chapitres actifs...");
+
+  const sections = document.querySelectorAll(".sidebar-chapters-wrapper a[data-target]");
+  let minDistance = Infinity;
+  let activeSection = null;
+  let screenCenter = window.innerHeight / 2;
+
+  sections.forEach(section => {
+    const sectionId = section.getAttribute("data-target").substring(1);
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      const rect = targetSection.getBoundingClientRect();
+      const sectionCenter = rect.top + rect.height / 2;
+      const distanceFromCenter = Math.abs(sectionCenter - screenCenter);
+
+      // Vérifier que la section est bien dans la fenêtre visible
+      if (rect.bottom > 0 && rect.top < window.innerHeight) {
+        console.log(`Section: ${sectionId}, Centre: ${sectionCenter}, Distance from center: ${distanceFromCenter}`);
+
+        // Sélectionner la section la plus proche du centre de l'écran
+        if (distanceFromCenter < minDistance) {
+          minDistance = distanceFromCenter;
+          activeSection = targetSection;
+        }
+      }
+    }
+  });
+
+  if (activeSection) {
+    console.log(`🌟 Section active détectée : ${activeSection.id}`);
+    // Désactive tous les chapitres avant d'activer celui en cours
+    document.querySelectorAll('.chapter').forEach(chap => chap.classList.remove('active'));
+
+    // Active le lien correspondant
+    let activeLink = document.querySelector(`.sidebar-chapters-wrapper a[data-target="#${activeSection.id}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+      console.log(`✔️ Activation du chapitre : ${activeLink.textContent.trim()}`);
+    }
+  }
+}
+
+// Appel initial au chargement de la page
+
+
+// Déclenche la détection au scroll
+window.addEventListener("scroll", updateActiveChapter);
+
+// Nettoyage au changement de page
+function clearObserver() {
+  if (observer) {
+    observer.disconnect();
+    console.log("Observer nettoyé.");
+  }
+}
