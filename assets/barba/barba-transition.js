@@ -28,6 +28,7 @@ barba.hooks.once((data) => {
 });
 
 barba.hooks.beforeEnter((data) => {
+  $('img').attr('draggable', false);
   window.scrollTo(0, 0);
   if (data.next.namespace === 'about') {
     setupXpHover();
@@ -38,6 +39,7 @@ barba.hooks.beforeEnter((data) => {
     });
     loadAboutScripts().then(() => {
       webglpixeleffect();
+      observeSections();
     });
   }
   if (data.next.namespace === 'home') {
